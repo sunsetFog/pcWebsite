@@ -1,0 +1,4 @@
+
+# src  这里写src名能去掉全局校验
+src/main.ts
+store

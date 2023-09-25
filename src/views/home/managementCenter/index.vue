@@ -1,0 +1,213 @@
+<template>
+<section id="management">
+    <div class="example-frame">
+        <img class="big-fish" src="@sky/static/picture/login/fish.png"/>
+        <div class="manage--content">
+            <router-view v-if="!manage_state"></router-view>
+            <div class="manage-content-left" v-if="manage_state">
+                <el-scrollbar style="width:100%;height:100%;">
+                    <el-menu
+                    :default-active="menuValue"
+                    :unique-opened="true"
+                    class="el-menu-vertical-demo"
+                    @select="selectMenu"
+                    @open="handleOpen"
+                    @close="handleClose"
+                    background-color="#513663"
+                    text-color="#d4c3b2"
+                    active-text-color="#ffd04b"
+                    >
+                    <template v-for="(item, index01) in menuList">
+                        <!-- 第一级 -->
+                        <!-- el-menu-item的index绑定是@select事件的参数,也是:default-active的参数 -->
+                        <el-menu-item :index="item.key" v-if="item.children.length == 0" :key="item.key">
+                            <div style="width: 100%;height: 100%;">
+                                <img class="icon-url-margin" src="@sky/static/picture/center/shezhi.png"/>
+                                管理中心
+                            </div>
+                        </el-menu-item>
+                        <!-- el-submenu的index绑定是@open事件的参数 -->
+                        <el-sub-menu :index="item.key" v-else :key="item.key">
+                            <template #title>
+                            <img class="icon-url-margin" :src="item.icon"/>
+                            <span>{{item.title}}</span>
+                            </template>
+
+                            <section v-for="(row, index02) in item.children">
+                                <!-- 第二级 -->
+                                <el-menu-item :index="row.key" v-if="row.children.length == 0">
+                                    <img class="icon-url-margin" :src="row.icon"/>
+                                    {{row.title}}
+                                </el-menu-item>
+
+                                <el-sub-menu :index="row.key" v-else>
+                                    <template #title>
+                                    <img class="icon-url-margin" :src="row.icon"/>
+                                    <span>{{row.title}}</span>
+                                    </template>
+                                    <section v-for="(val,index03) in row.children">
+                                        <!-- 第三级 -->
+                                        <el-menu-item  :index="val.key">
+                                            <img class="icon-url-margin" :src="val.icon"/>
+                                            {{val.title}}
+                                        </el-menu-item>
+                                    </section>
+                                </el-sub-menu>
+
+                            </section>
+
+                        </el-sub-menu>
+                    </template>
+
+                    </el-menu>
+
+                </el-scrollbar>
+
+            </div>
+            <div class="manage-content-right" v-if="manage_state">
+
+
+                <!--
+                    study: keep-alive组件缓存
+
+                    keep-alive组件缓存，页面加载快，从而节省性能
+                    注意：keep-alive包含的<router-view>有效，下一级的<router-view>无效
+
+                    keep-alive添加生命周期钩子函数：
+                        activated创建，可替换created用、
+                        deactivated销毁，可替换destroyed用
+
+                    路由跳转时，activated能打印就缓存成功了，跳回来后，inpute输入框敲的内容不会初始化
+                    created只触发一次，activated都触发
+                    刷新才能缓存初始化
+
+                    区分缓存与不缓存：
+                    方式1. keep-alive标签属性：
+                        :include="['组件name']" 需要缓存的组件名单   注意vue文件name 必须等于 include数组项
+                        :exclude="['组件name']" 不需要缓存的组件名单
+
+                    方式2. v-if控制keep-alive出现       在路由文件加参数meta: {keepAlive: true}
+
+
+                    测试：输入框改变内容，跳转组件，输入框内容不变就缓存ok了
+                -->
+                <keep-alive :include="['lifeCycle']">
+                    <router-view></router-view>
+                </keep-alive>
+                <!-- <router-view v-if="$route.meta.keepAlive"></router-view> -->
+
+
+            </div>
+        </div>
+    </div>
+    <footers :vip_foot="false"></footers>
+</section>
+</template>
+
+<script>
+import footers from '@/components/footer.vue';
+import lodash from 'lodash'
+import {mapMutations,mapGetters,mapActions} from 'vuex';
+export default{
+    name: 'management',
+    components: {footers},
+    data(){
+        return{
+            manage_state: true,// 管理中心
+        }
+    },
+    computed: {
+        ...mapGetters(['menuList', 'menuValue'])
+    },
+    created() {
+        console.log('---managementCenter-created---');
+        // 刷新初始化赋值
+        this.$store.commit("menuOfValue", sessionStorage.getItem('menu_value'));
+    },
+    activated() {
+        console.log('---managementCenter-activated---');
+    },
+    deactivated() {
+        console.log('---managementCenter-deactivated---');
+    },
+    methods:{
+        // 选中菜单
+        selectMenu(key) {
+            this.recursion(this.menuList, key);
+            console.log('selectMenu', key);
+        },
+        handleOpen(key, keyPath) {
+            // console.log(key, keyPath);
+        },
+        handleClose(key, keyPath) {
+            // console.log(key, keyPath);
+        },
+        recursion(arr, key) {
+            arr = arr || [];//退出遍历1. 空数组不会遍历，就不会调用自己了
+            for (let i = 0; i < arr.length; i++) {
+                let item = arr[i];
+
+                if(item.key == key) {
+                    console.log("--小白兔--", item);
+                    // 菜单选中值
+                    this.$store.commit('menuOfValue', item.key);
+                    // 跳转
+                    this.$router.push({ path: item.path });
+                    break;
+                }
+                this.recursion(item.children, key);
+            }
+        }
+    }
+}
+</script>
+
+<style lang="less" scoped>
+#management{
+    width: 100%;
+    .example-frame{
+        width: 100%;
+        height: 1200px;
+        .mixin_image(url('~@sky/static/picture/center/bg-guanli.jpg'));
+        position: relative;
+        .big-fish{
+            .mixin_img(326px;387px);
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+        }
+        .manage--content{
+            width: 1200px;
+            height: 1200px;
+            background: rgba(88,51,82,0.6);
+            border-left: 1px solid @color_blueviolet;
+            border-right: 1px solid @color_blueviolet;
+            position: absolute;
+            left: 50%;
+            top: 0px;
+            margin-left: -600px;
+            padding: 45px 43px 0px 43px;
+            .manage-content-left{
+                .mixin_float(230px,auto,left);
+                background: #513663;
+                margin-right: 40px;
+                height: 1130px;
+                text-align: left;
+                .icon-url-margin{
+                    .mixin_img(20px,20px);
+                    margin-right: 11px;
+                    margin-top: -5px;
+                }
+                :deep(.el-scrollbar__wrap) {
+                    overflow-x: hidden !important;
+                }
+            }
+            .manage-content-right{
+                .mixin_float(840px,1130px,right);
+                overflow-x: hidden;
+                color: #fff;
+            }
+        }
+    }
+}
+</style>
