@@ -1,7 +1,7 @@
 <template>
     <section id="game-recharge">
         <el-dialog
-        :visible.sync="rechargeActive"
+        v-model="rechargeActive"
         width="1100px"
         top="153px"
         center>

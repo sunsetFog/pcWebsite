@@ -2,7 +2,7 @@
     <section>
         <el-dialog
             title="口径说明"
-            :visible.sync="dialogVisible"
+            v-model="dialogVisible"
             width="320px">
             <div>
                 <p>1、项目范围：全口径项目</p>

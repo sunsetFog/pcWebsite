@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import footers from '@/components/footer.vue';
+import footers from '@sky/pcDesign/components/footer/index.vue';
 export default{
     name: 'line',
     components: {footers},

@@ -1,11 +1,11 @@
 <template>
     <section id="customAvatar">
-        <!-- 
+        <!--
             https://github.com/xyxiao001/vue-cropper
          -->
         <el-dialog
             title="头像裁切"
-            :visible.sync="dialogPortrait"
+            v-model="dialogPortrait"
             width="1000px">
                 <div class="isContent">
                     <vueCropper
@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import { VueCropper }  from 'vue-cropper' 
+import { VueCropper }  from 'vue-cropper'
 export default {
     name: "customAvatar",
     components: {
@@ -116,7 +116,7 @@ export default {
                 // this.base64Toerjinzhi(data)
                 console.log('---fileToBase64--', data);
             })
-            
+
         },
         beforeAvatarUpload (file) {
             // const isJPG = file.type === "image/jpeg";
@@ -170,7 +170,7 @@ export default {
         },
         //base64  转  二进制数组
         base64Toerjinzhi(res) {
-           
+
             var bytes = window.atob(res.split(',')[1]);    //去掉url的头，并转换为byte
 
             //处理异常,将ascii码小于0的转换为大于0
@@ -211,7 +211,7 @@ export default {
             font-weight: 600;
         }
     }
-    
+
 }
 </style>
 

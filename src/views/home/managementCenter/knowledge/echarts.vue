@@ -6,7 +6,8 @@
 
 <script>
 	// npm install echarts --save
-	import echarts from 'echarts';
+	// import echarts from 'echarts';
+    import * as echarts from 'echarts'
 	export default{
 		mounted:function(){//实例挂在，用于操作dom
 			this.echartEx();
@@ -36,8 +37,8 @@
 						})
 			},
 		}
-	
-	
+
+
 	}
 </script>
 

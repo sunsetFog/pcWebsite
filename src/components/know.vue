@@ -1,7 +1,7 @@
 <template>
     <section id="know">
         <el-dialog
-        :visible.sync="rechargeActive"
+        v-model="rechargeActive"
         width="535px"
         top="280px"
         center>

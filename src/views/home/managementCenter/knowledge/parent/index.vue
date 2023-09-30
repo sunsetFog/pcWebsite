@@ -11,7 +11,7 @@
 			其中article和purple是props传参
 			v-model与props的value对应
 		-->
-		<my-children :article='design' @purple='get' ref="rainbow" v-model="cosplay" :syncValue.sync="syncValue">
+		<my-children :article='design' @purple='get' ref="rainbow" v-model="cosplay" :syncValue="syncValue">
 			<!-- study: slot插槽 -->
                         <el-button>默认插槽</el-button>
 
@@ -32,8 +32,8 @@
 
 <script>
 import myChildren from './children';
-import cTitle from "@/components/footer.vue";
-import sMain from "@/components/footer.vue";
+import cTitle from "@sky/pcDesign/components/footer/index.vue";
+import sMain from "@sky/pcDesign/components/footer/index.vue";
 export default{
 	components:{myChildren,cTitle,sMain},
 	data(){

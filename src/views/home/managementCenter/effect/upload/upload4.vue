@@ -17,12 +17,12 @@
         <el-button size="small" type="primary">{{title_grain}}</el-button>
       </el-upload>
 
-      
+
     </div>
-    
+
 
     <el-dialog
-        :visible.sync="dialogVisible"
+        v-model="dialogVisible"
         width="420px"
         :close-on-click-modal="false"
         :show-close="false">
@@ -109,7 +109,7 @@ export default {
                     }
                 });
             }
-        
+
         },
         //上传前设置
         beforeAvatarUpload(file) {
@@ -117,7 +117,7 @@ export default {
         },
         downloadFile() {
             let that = this;
-            
+
             let params = {
                 filename: this.txt_name
             }
@@ -138,7 +138,7 @@ export default {
         },
         downloadNetFile() {
             let that = this;
-            
+
             let params = {
                 netAddress: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fmobile%2F2020-05-20%2F5ec4c771b5044.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1672209011&t=77eb65e03a05b87570642512f8d93810"
             }
@@ -159,7 +159,7 @@ export default {
         },
         netDownLoadNet() {
             let that = this;
-            
+
             let params = {
                 netAddress: "https://img1.baidu.com/it/u=3844628686,3106826718&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=1422",
                 isOnLine: true
@@ -207,6 +207,6 @@ export default {
 
 <style lang="less" rel="stylesheet/less">
 #upload4 {
-    
+
 }
 </style>

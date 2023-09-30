@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import footers from '@/components/footer.vue';
+import footers from '@sky/pcDesign/components/footer/index.vue';
 import lodash from 'lodash'
 import {mapMutations,mapGetters,mapActions} from 'vuex';
 export default{

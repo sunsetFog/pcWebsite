@@ -1,7 +1,7 @@
 <template>
     <section id="mail">
         <el-dialog
-        :visible.sync="rechargeActive"
+        v-model="rechargeActive"
         width="1215px"
         top="101px"
         center>

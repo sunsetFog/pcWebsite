@@ -1,7 +1,7 @@
 <template>
     <section id="add-alipay">
         <el-dialog
-        :visible.sync="rechargeActive"
+        v-model="rechargeActive"
         width="781px"
         top="240px"
         center>

@@ -40,7 +40,7 @@
 import {
     defineComponent
 } from "vue";
-import footers from '@/components/footer.vue';
+import footers from '@sky/pcDesign/components/footer/index.vue';
 export default defineComponent({
     name: 'home-index',
     components: {footers},

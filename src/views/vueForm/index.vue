@@ -5,12 +5,12 @@
             <span>活动素材</span>
         </div>
 
-        <VueForm
+        <!-- <VueForm
             v-model="formData"
             :ui-schema="uiSchema"
             :schema="schema"
         >
-        </VueForm>
+        </VueForm> -->
     </el-card>
     <div class="code-right">
         <CodeEditor v-model="curFormDataCode"></CodeEditor>
@@ -24,7 +24,9 @@ vue-json-schema-form
 https://vue-json-schema-form.lljj.me/
 自定义table
 */
-import VueForm from '@lljj/vue-json-schema-form';
+// import VueForm from '@lljj/vue-json-schema-form';
+// import VueForm from 'vue-json-schema-form';
+
 // import VueForm from "@goodgeek/vue-json-schema-form";
 import CodeEditor from '@/components/printEditor/index.vue';
 import * as schemaTypes from './playground/schemaTypes';

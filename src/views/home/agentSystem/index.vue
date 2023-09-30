@@ -19,7 +19,7 @@
         align="bottom" 垂直对齐   和img的align相同，也表示float
  -->
 <script>
-import footers from '@/components/footer.vue';
+import footers from '@sky/pcDesign/components/footer/index.vue';
 export default{
     name: 'agent-system',
     components: {footers},

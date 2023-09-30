@@ -1,7 +1,7 @@
 <template>
     <section id="withdrawal-password">
         <el-dialog
-        :visible.sync="rechargeActive"
+        v-model="rechargeActive"
         width="781px"
         top="190px"
         center>

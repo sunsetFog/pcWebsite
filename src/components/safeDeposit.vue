@@ -1,7 +1,7 @@
 <template>
     <section id="safe-deposit">
         <el-dialog
-        :visible.sync="rechargeActive"
+        v-model="rechargeActive"
         width="1100px"
         top="101px"
         center>
