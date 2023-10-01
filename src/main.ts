@@ -16,6 +16,7 @@ import 'font-awesome/css/font-awesome.min.css';
 // mock
 import '@sky/database/index';
 
+
 const rainbow = createApp(App);
 
 // 全局注册图标组件
