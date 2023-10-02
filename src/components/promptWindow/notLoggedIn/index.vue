@@ -3,7 +3,7 @@
         <main>
             <header>
                 温馨提示
-                <img src="@/assets/notLoggedIn/close.png" @click="closeWay"/>
+                <img src="./img/close.png" @click="closeWay"/>
             </header>
             <div v-if="isType == 0">
                 请先登录账号,才能了解更多

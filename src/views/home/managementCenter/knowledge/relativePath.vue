@@ -1,6 +1,6 @@
 <template>
     <section id="relativePath">
-        <img src="@/assets/lizhi.jpg"/>
+        <img src="@sky/static/image1/lizhi.jpg"/>
         <!-- build\webpack.base.conf.js 设置的全局路径变量 -->
         <img src="@sky/static/picture/breezy/mangguo.jpg"/>
         <h3>src绑定变量时：import相对变量</h3>
@@ -21,15 +21,15 @@ Module not found: Error: Can't resolve 'style-loader' in
 绝对定位: 从顶级目录src开始定位，形成的路径
 
 样式下
-background: url('~@/assets/theme/logo_blue.png') no-repeat center center;
+background: url('~@sky/static/image1/theme/logo_blue.png') no-repeat center center;
 
 1.相对路径: "./assets/logo_blue.png" 用的多，就是路径打包易报错，找不到
 2.相对路径，没前缀 "assets/logo_blue.png" 被webpack解析为 相对路径
-推荐3.绝对路径，带~  "~@/assets/theme/logo_blue.png" 被webpack解析为 require(src/assets/theme/logo_blue.png) 动态引入   @等于/src
+推荐3.绝对路径，带~  "~@sky/static/image1/theme/logo_blue.png" 被webpack解析为 require(src/assets/theme/logo_blue.png) 动态引入   @等于/src
 4.绝对路径，相对根目录的路径 "/assets/logo_blue.png" webpack不解析----没效果
 
 */
-import lizhi from '@/assets/lizhi.jpg'
+import lizhi from '@sky/static/image1/lizhi.jpg'
 export default {
     name: 'relativePath',
     data () {
@@ -48,10 +48,10 @@ export default {
             console.log('import=', this.import_ai)
         },
         requireAi(){
-            // this.require_ai = require('@/assets/lizhi.jpg');
+            // this.require_ai = require('@sky/static/image1/lizhi.jpg');
             let imgName = 'lizhi.jpg'
-            // this.require_ai = require('@/assets/' + imgName);
-            this.require_ai = require(`@/assets/${imgName}`);
+            // this.require_ai = require('@sky/static/image1/' + imgName);
+            this.require_ai = require(`@sky/static/image1/${imgName}`);
             console.log('require=', this.require_ai);
         }
     }

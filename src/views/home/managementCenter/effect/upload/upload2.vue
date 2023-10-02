@@ -41,7 +41,7 @@ export default {
         return{
 			imgArr: [{
 				name: "AR.png",
-				url: require('@sky/static/reportForms/image/AR.png')
+				url: require('@sky/static/image1/AR.png')
 			}],
 			imgList: [],// 格式为[{url:'图片路径'},{url: '图片路径'}]
 			limitNum: 3,  // 限制上传数量

@@ -57,7 +57,7 @@
                 target:链接在什么地方加载
             能定位上去，不好用
          -->
-        <img src="@sky/static/reportForms/image/AR.png" usemap="#Map" style="width: 200px;height: 200px;"/>
+        <img src="@sky/static/image1/AR.png" usemap="#Map" style="width: 200px;height: 200px;"/>
         <map name="Map">
             <area shape="circle" coords="160,150,50" alt="文字" href="12-eye.html" target="_blank"/>
             <area shape="circle" coords="240,200,50"  alt="文字" href="12-nose.html" target="_blank"/>
@@ -229,7 +229,7 @@
         <div class="picture-text">
             <dl>
                 <dt>
-                    <img src="@sky/static/reportForms/image/AR.png" />
+                    <img src="@sky/static/image1/AR.png" />
                 </dt>
                 <dd>长城旅游</dd>
                 <dd>风景优美</dd>
@@ -278,7 +278,7 @@ export default {
     },
     methods: {
         imgDefault(e) {
-            e.target.src = require('@sky/static/reportForms/image/AR.png')
+            e.target.src = require('@sky/static/image1/AR.png')
         }
     }
 }

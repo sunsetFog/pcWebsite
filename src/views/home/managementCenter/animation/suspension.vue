@@ -131,7 +131,7 @@
          <LineTextLine>悬浮出现</LineTextLine>
         <div class="portrait-center">
             <div class="tangerine1">
-                <img src="@sky/static/reportForms/image/invoice.png"/>
+                <img src="@sky/static/image1/invoice.png"/>
             </div>
             <div class="tangerine2">
                 <i class="el-icon-plus"></i>

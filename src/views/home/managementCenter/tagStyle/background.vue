@@ -93,8 +93,8 @@
         height: 180px;
         // 不推荐  兼容性  https://blog.csdn.net/JackieDYH/article/details/113850806
         background-image: image-set(
-            url("~@sky/static/reportForms/luckDraw/choujiang_bg.png") 1x,
-            url("~@sky/static/reportForms/luckDraw/choujiang_bg@2x.png") 2x
+            url("~@sky/static/image1/AheadVenus.png") 1x,
+            url("~@sky/static/image1/INVAGE.png") 2x
         );
         background-repeat: no-repeat;
         background-size: 100% 100%;
