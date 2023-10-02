@@ -5,7 +5,7 @@
 </section>
 </template>
 <script>
-import pagination from '@/components/pagination.vue';
+import pagination from '@sky/pcDesign/components/pagination.vue';
   export default {
     components:  { pagination },
     data () {

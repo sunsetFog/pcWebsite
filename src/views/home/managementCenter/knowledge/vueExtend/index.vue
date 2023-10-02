@@ -6,7 +6,7 @@
 
 <script>
 // import designDialog from './renderDialog';
-import pagination from '@/components/pagination.vue';
+import pagination from '@sky/pcDesign/components/pagination.vue';
 export default {
     name: 'vueExtend',
     components:  { pagination },

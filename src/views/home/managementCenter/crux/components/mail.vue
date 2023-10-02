@@ -1,14 +1,14 @@
 <template>
-    <section id="notice">
+    <section id="mail">
         <el-dialog
         v-model="rechargeActive"
         width="1215px"
         top="101px"
         center>
-        <div slot="title">公告</div>
+        <div slot="title">邮件</div>
         <div class="varieties-content">
             <div class="mail-content">
-                <div class="mail-example" v-for="(item,index) in mail_list" @click="consult(index,false)">
+                <div class="mail-example" v-for="(item,index) in mail_list.slice((pagingObj.pageNum-1)*pagingObj.pageSize,pagingObj.pageNum*pagingObj.pageSize)" @click="consult(index,false)">
                     <div class="picture-example">
                         <img v-show="!item.is_readed" src="@sky/static/picture/recharge/weidu.png"/>
                         <img v-show="item.is_readed" src="@sky/static/picture/recharge/yidu.png"/>
@@ -21,7 +21,7 @@
                         <img v-show="item.is_readed" src="@sky/static/picture/recharge/read.png"/>
                     </div>
                 </div>
-                <div class="no-time" v-show="no_have">暂无公告</div>
+                <div class="no-time" v-show="no_have">暂无邮件</div>
              </div>
              <div class="page-example">
                 <pagination :pagingObj="pagingObj" @emitWay="getJson"></pagination>
@@ -35,17 +35,20 @@
 </template>
 
 <script>
-import pagination from '@/components/pagination.vue';
+import pagination from '@sky/pcDesign/components/pagination.vue';
 export default {
-    name: 'notice',
+    name: 'mail',
     components:  { pagination },
     data(){
         return{
             rechargeActive: false,
             mail_list: [],
-            pagingObj: {pageNum: 1,pageSize: 25,total: 0},
+            pagingObj: {pageNum: 1,pageSize: 10,total: 0},
             no_have: false
         }
+    },
+    created(){
+        this.getJson();
     },
     methods:{
         changeMeans(){
@@ -55,9 +58,13 @@ export default {
         getJson(){
             var that = this;
             //console.log('youjian***',that.pagination);
-            that.$means.amateur_get_message(1,function(res){
+            that.$means.amateur_get_email(1,function(res){
                 //console.log('邮件##',res);
+                let count_readed = 0;
                 for(let i=0;i<res.list.length;i++){
+                    if(res.list[i].is_readed==false){
+                        count_readed+=1;
+                    }
                     res.list[i].created_at = that.$means.getLocalTime(res.list[i].created_at);
                     // let timestamp = res.list[i].created_at;
                     // let newDate = new Date();
@@ -68,70 +75,25 @@ export default {
                     // let yearData = yearArr[0]+'.'+yearArr[1]+'.'+yearArr[2]+' '+time.split(' ')[0];
                     // res.list[i].created_at = yearData;
                 }
-                if(that.pagingObj.pageNum==1){
-                    if(9<=res.list.length-1){
-                        var start = 0;
-                        var end = 9;
-                    }else{
-                        var start = 0;
-                        var end = res.list.length-1;
-                    }
-                }else if(that.pagingObj.pageNum==2){
-                    if(19<=res.list.length-1){
-                        var start = 10;
-                        var end = 19;
-                    }else{
-                        var start = 10;
-                        var end = res.list.length-1;
-                    }
-                }else if(that.pagingObj.pageNum==3){
-                    if(29<=res.list.length-1){
-                        var start = 20;
-                        var end = 29;
-                    }else{
-                        var start = 20;
-                        var end = res.list.length-1;
-                    }
-                }else if(that.pagingObj.pageNum==4){
-                    if(39<=res.list.length-1){
-                        var start = 30;
-                        var end = 39;
-                    }else{
-                        var start = 30;
-                        var end = res.list.length-1;
-                    }
-                }else if(that.pagingObj.pageNum==5){
-                    if(49<=res.list.length-1){
-                        var start = 40;
-                        var end = 49;
-                    }else{
-                        var start = 40;
-                        var end = res.list.length-1;
-                    }
-                }
-                that.mail_list = [];
-                for(let k=start;k<=end;k++){
-                    that.mail_list.push(res.list[k]);
-                }
-                that.pagingObj.pageSize = 10;
-                if(res.totalrows<=50){
-                    that.pagingObj.total = res.totalrows;
-                }else{
-                    that.pagingObj.total = 50;
-                }
+                that.$parent.hostMeans('mail','readed',count_readed);
+
+                that.mail_list = res.list;
+
+                that.pagingObj.total = res.totalrows;
                 if(that.mail_list.length==0){
                     that.no_have = true;
                 }else{
                     that.no_have = false;
                 }
+
             })
         },
         consult(index,value){
             if(value==true){
-                this.$parent.hostMeans('notice',this.mail_list[index].id);
+                this.$parent.hostMeans('mail',this.mail_list[index].id);
             }else{
                 if(this.mail_list[index].is_readed==true){
-                    this.$parent.hostMeans('notice',this.mail_list[index].id);
+                    this.$parent.hostMeans('mail',this.mail_list[index].id);
                 }
             }
         },
@@ -140,7 +102,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#notice{
+#mail{
     .varieties-content{
         width: 100%;
         height: 710px;

@@ -56,6 +56,7 @@ import VueCookies from 'vue-cookies';
 
 import BaiduMap from 'vue-baidu-map';
 
+
 rainbow
     .use(store)
     .use(router)

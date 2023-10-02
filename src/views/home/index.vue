@@ -105,14 +105,14 @@
 </template>
 
 <script>
-import recharge from '@/components/recharge.vue';
-import withdrawal from '@/components/withdrawal.vue';
-import manageBank from '@/components/manageBank.vue';
-import addBank from '@/components/addBank.vue';
-import manageAlipay from '@/components/manageAlipay.vue';
-import addAlipay from '@/components/addAlipay.vue';
-import know from '@/components/know.vue';
-import rechargeRecord from '@/components/rechargeRecord.vue';
+import recharge from '@/views/home/managementCenter/crux/components/recharge.vue';
+import withdrawal from '@/views/home/managementCenter/crux/components/withdrawal.vue';
+import manageBank from '@/views/home/managementCenter/crux/components/manageBank.vue';
+import addBank from '@/views/home/managementCenter/crux/components/addBank.vue';
+import manageAlipay from '@/views/home/managementCenter/crux/components/manageAlipay.vue';
+import addAlipay from '@/views/home/managementCenter/crux/components/addAlipay.vue';
+import know from '@/views/home/managementCenter/crux/components/know.vue';
+import rechargeRecord from '@/views/home/managementCenter/crux/components/rechargeRecord.vue';
 import { mapGetters } from 'vuex';
 export default {
     name: 'home',
@@ -156,7 +156,7 @@ export default {
                     title: '管理中心',
                     active: false,
                     exhibition: true,
-                    path: '/home/managementCenter/crux',
+                    path: '/home/managementCenter/crux/index',
                 },
             ],
             fixed_bar: [

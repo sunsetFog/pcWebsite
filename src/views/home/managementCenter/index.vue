@@ -23,7 +23,7 @@
                         <el-menu-item :index="item.key" v-if="item.children.length == 0" :key="item.key">
                             <div style="width: 100%;height: 100%;">
                                 <img class="icon-url-margin" src="@sky/static/picture/center/shezhi.png"/>
-                                管理中心
+                                设置
                             </div>
                         </el-menu-item>
                         <!-- el-submenu的index绑定是@open事件的参数 -->

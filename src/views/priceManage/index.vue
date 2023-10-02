@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import PriceMap from '@/components/baidumap/priceMap'
+import PriceMap from '@/components/baidumap/priceMap';
 import priceDetails from './priceDetails'
 import caliber from '@/components/baidumap/caliber'
 export default {

@@ -88,28 +88,28 @@
 </template>
 
 <script>
-import recharge from '@/components/recharge.vue';
-import withdrawal from '@/components/withdrawal.vue';
-import manageBank from '@/components/manageBank.vue';
-import addBank from '@/components/addBank.vue';
-import manageAlipay from '@/components/manageAlipay.vue';
-import addAlipay from '@/components/addAlipay.vue';
-import withdrawalPassword from '@/components/withdrawalPassword.vue';
-import know from '@/components/know.vue';
-import mail from '@/components/mail.vue';
-import notice from '@/components/notice.vue';
-import consult from '@/components/consult.vue';
-import loginPassword from '@/components/loginPassword.vue';
-import safeDeposit from '@/components/safeDeposit.vue';
-import portrait from '@/components/portrait.vue';
-import rechargeRecord from '@/components/rechargeRecord.vue';
-import pagination from '@/components/pagination.vue';
+import recharge from '@/views/home/managementCenter/crux/components/recharge.vue';
+import withdrawal from '@/views/home/managementCenter/crux/components/withdrawal.vue';
+import manageBank from '@/views/home/managementCenter/crux/components/manageBank.vue';
+import addBank from '@/views/home/managementCenter/crux/components/addBank.vue';
+import manageAlipay from '@/views/home/managementCenter/crux/components/manageAlipay.vue';
+import addAlipay from '@/views/home/managementCenter/crux/components/addAlipay.vue';
+import withdrawalPassword from '@/views/home/managementCenter/crux/components/withdrawalPassword.vue';
+import know from '@/views/home/managementCenter/crux/components/know.vue';
+import mail from '@/views/home/managementCenter/crux/components/mail.vue';
+import notice from '@/views/home/managementCenter/crux/components/notice.vue';
+import consult from '@/views/home/managementCenter/crux/components/consult.vue';
+import loginPassword from '@/views/home/managementCenter/crux/components/loginPassword.vue';
+import safeDeposit from '@/views/home/managementCenter/crux/components/safeDeposit.vue';
+import portrait from '@/views/home/managementCenter/crux/components/portrait.vue';
+import rechargeRecord from '@/views/home/managementCenter/crux/components/rechargeRecord.vue';
+
 
 import Clipboard from 'clipboard';
 import { mapGetters } from 'vuex';
 export default{
     name: 'crux',
-    components: { recharge, withdrawal, manageBank, addBank, manageAlipay, addAlipay, withdrawalPassword, know, mail, notice, consult, loginPassword, safeDeposit, portrait, rechargeRecord, pagination },
+    components: { recharge, withdrawal, manageBank, addBank, manageAlipay, addAlipay, withdrawalPassword, know, mail, notice, consult, loginPassword, safeDeposit, portrait, rechargeRecord },
     data(){
         return{
             nickname_state: false,
