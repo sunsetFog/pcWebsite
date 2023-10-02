@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import recharge from '@/views/home/managementCenter/crux/components/recharge.vue';
+import recharge from '@/views/home/managementCenter/crux/components/recharge/index.vue';
 import withdrawal from '@/views/home/managementCenter/crux/components/withdrawal.vue';
 import manageBank from '@/views/home/managementCenter/crux/components/manageBank.vue';
 import addBank from '@/views/home/managementCenter/crux/components/addBank.vue';
@@ -101,7 +101,7 @@ import notice from '@/views/home/managementCenter/crux/components/notice.vue';
 import consult from '@/views/home/managementCenter/crux/components/consult.vue';
 import loginPassword from '@/views/home/managementCenter/crux/components/loginPassword.vue';
 import safeDeposit from '@/views/home/managementCenter/crux/components/safeDeposit.vue';
-import portrait from '@/views/home/managementCenter/crux/components/portrait.vue';
+import portrait from '@/views/home/managementCenter/crux/components/portrait/index.vue';
 import rechargeRecord from '@/views/home/managementCenter/crux/components/rechargeRecord.vue';
 
 
@@ -114,28 +114,28 @@ export default{
         return{
             nickname_state: false,
             archives_list: [
-                {theme: '登陆密码',explain: '6-12个字符',modify: '修改登录密码',url: require('@sky/static/picture/center/denglu.png')},
-                // {theme: '绑定银行卡',explain: '最多可绑定5张银行卡',modify: '绑定银行卡',url: require('@sky/static/picture/center/yinhangka.png')},
-                {theme: '提款密码',explain: '6个数字密码',modify: '设置提款密码',url: require('@sky/static/picture/center/tikuanmima.png')},
-                {theme: '邮件',explain: '条未读',modify: '查看邮件',url: require('@sky/static/picture/center/zhanneixin.png')},
-                // {theme: '密保设定',explain: '用于找回密码',modify: '修改密保设定',url: require('@sky/static/picture/center/baomi.png')},
-                {theme: '公告',explain: '请随时关注最新公告',modify: '查看公告',url: require('@sky/static/picture/center/xinxi.png')},
-                {theme: '保险箱',explain: '用于存入和取出资金',modify: '查看保险箱',url: require('@sky/static/picture/center/baoxianxiang.png')}
+                {theme: '登陆密码',explain: '6-12个字符',modify: '修改登录密码',url: require('@/views/home/managementCenter/crux/img/denglu.png')},
+                // {theme: '绑定银行卡',explain: '最多可绑定5张银行卡',modify: '绑定银行卡',url: require('@/views/home/managementCenter/crux/img/yinhangka.png')},
+                {theme: '提款密码',explain: '6个数字密码',modify: '设置提款密码',url: require('@/views/home/managementCenter/crux/img/tikuanmima.png')},
+                {theme: '邮件',explain: '条未读',modify: '查看邮件',url: require('@/views/home/managementCenter/crux/img/zhanneixin.png')},
+                // {theme: '密保设定',explain: '用于找回密码',modify: '修改密保设定',url: require('@/views/home/managementCenter/crux/img/baomi.png')},
+                {theme: '公告',explain: '请随时关注最新公告',modify: '查看公告',url: require('@/views/home/managementCenter/crux/img/xinxi.png')},
+                {theme: '保险箱',explain: '用于存入和取出资金',modify: '查看保险箱',url: require('@/views/home/managementCenter/crux/img/baoxianxiang.png')}
             ],
             pet_name: '',
             number_count: [
-                {url: require('@sky/static/picture/center/0.png')},
-                {url: require('@sky/static/picture/center/1.png')},
-                {url: require('@sky/static/picture/center/2.png')},
-                {url: require('@sky/static/picture/center/3.png')},
-                {url: require('@sky/static/picture/center/4.png')},
-                {url: require('@sky/static/picture/center/5.png')},
-                {url: require('@sky/static/picture/center/6.png')},
-                {url: require('@sky/static/picture/center/7.png')},
-                {url: require('@sky/static/picture/center/8.png')},
-                {url: require('@sky/static/picture/center/9.png')},
-                {url: require('@sky/static/picture/center/dian.png')},
-                {url: require('@sky/static/picture/center/11.png')}
+                {url: require('@/views/home/managementCenter/crux/img/0.png')},
+                {url: require('@/views/home/managementCenter/crux/img/1.png')},
+                {url: require('@/views/home/managementCenter/crux/img/2.png')},
+                {url: require('@/views/home/managementCenter/crux/img/3.png')},
+                {url: require('@/views/home/managementCenter/crux/img/4.png')},
+                {url: require('@/views/home/managementCenter/crux/img/5.png')},
+                {url: require('@/views/home/managementCenter/crux/img/6.png')},
+                {url: require('@/views/home/managementCenter/crux/img/7.png')},
+                {url: require('@/views/home/managementCenter/crux/img/8.png')},
+                {url: require('@/views/home/managementCenter/crux/img/9.png')},
+                {url: require('@/views/home/managementCenter/crux/img/dian.png')},
+                {url: require('@/views/home/managementCenter/crux/img/11.png')}
             ],
             number_money: [],
             portrait: {head: '',frame: ''},
@@ -159,8 +159,8 @@ export default{
     },
     methods:{
         getJson(){
-                this.portrait.head = require('@sky/static/picture/portrait/ui_headImg_'+this.player.avatar+'.png');
-                this.portrait.frame = require('@sky/static/picture/portrait/ui_headBox_'+this.player.avatar_box+'.png');
+                this.portrait.head = require('@/views/home/managementCenter/crux/components/portrait/img/ui_headImg_'+this.player.avatar+'.png');
+                this.portrait.frame = require('@/views/home/managementCenter/crux/components/portrait/img/ui_headBox_'+this.player.avatar_box+'.png');
                 this.pet_name = this.player.nickname;
                 this.sex_value = this.player.sex;
 

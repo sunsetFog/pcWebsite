@@ -48,7 +48,7 @@
             </div>
             <div class="welcome">
               <span>欢迎你,{{player.nickname}}</span>
-              <img src="@sky/static/picture/home/zhanghu.png">
+              <img src="@/views/home/homeIndex/img/home/zhanghu.png">
             </div>
           </div>
         </div>
@@ -58,7 +58,7 @@
     <div class="navigation-bar">
       <div class="tabs-content">
         <div class="tabs-left">
-          <img src="@sky/static/picture/home/logo3.png">
+          <img src="@/views/home/homeIndex/img/home/logo3.png">
         </div>
         <div class="tabs-right">
           <ul>
@@ -105,7 +105,7 @@
 </template>
 
 <script>
-import recharge from '@/views/home/managementCenter/crux/components/recharge.vue';
+import recharge from '@/views/home/managementCenter/crux/components/recharge/index.vue';
 import withdrawal from '@/views/home/managementCenter/crux/components/withdrawal.vue';
 import manageBank from '@/views/home/managementCenter/crux/components/manageBank.vue';
 import addBank from '@/views/home/managementCenter/crux/components/addBank.vue';
@@ -160,9 +160,9 @@ export default {
                 },
             ],
             fixed_bar: [
-                { url: require('@sky/static/picture/home/jiangyuan-nomal.png') },
-                { url: require('@sky/static/picture/home/kefu_nomal.png') },
-                { url: require('@sky/static/picture/home/zhiding_nomal.png') },
+                { url: require('@/views/home/homeIndex/img/home/jiangyuan-nomal.png') },
+                { url: require('@/views/home/homeIndex/img/home/kefu_nomal.png') },
+                { url: require('@/views/home/homeIndex/img/home/zhiding_nomal.png') },
             ],
             fixed_state: true,
             safeActive: false,
@@ -375,20 +375,20 @@ export default {
         },
         fixedOver(index) {
             if (index == 0) {
-                this.fixed_bar[index].url = require('@sky/static/picture/home/jiangyuan-hover.png');
+                this.fixed_bar[index].url = require('@/views/home/homeIndex/img/home/jiangyuan-hover.png');
             } else if (index == 1) {
-                this.fixed_bar[index].url = require('@sky/static/picture/home/kefu_hover.png');
+                this.fixed_bar[index].url = require('@/views/home/homeIndex/img/home/kefu_hover.png');
             } else if (index == 2) {
-                this.fixed_bar[index].url = require('@sky/static/picture/home/zhiding_hover.png');
+                this.fixed_bar[index].url = require('@/views/home/homeIndex/img/home/zhiding_hover.png');
             }
         },
         fixedOut(index) {
             if (index == 0) {
-                this.fixed_bar[index].url = require('@sky/static/picture/home/jiangyuan-nomal.png');
+                this.fixed_bar[index].url = require('@/views/home/homeIndex/img/home/jiangyuan-nomal.png');
             } else if (index == 1) {
-                this.fixed_bar[index].url = require('@sky/static/picture/home/kefu_nomal.png');
+                this.fixed_bar[index].url = require('@/views/home/homeIndex/img/home/kefu_nomal.png');
             } else if (index == 2) {
-                this.fixed_bar[index].url = require('@sky/static/picture/home/zhiding_nomal.png');
+                this.fixed_bar[index].url = require('@/views/home/homeIndex/img/home/zhiding_nomal.png');
             }
         },
         safeExit() {
@@ -458,13 +458,13 @@ export default {
     }
     .tabs-active {
         color: #ffea00;
-        .mixin_image(url('~@sky/static/picture/home/tabs_active.png'));
+        .mixin_image(url('~@/views/home/homeIndex/img/home/tabs_active.png'));
         font-size: @font_size16;
     }
     .fixed-bar {
         width: 136px;
         height: 180px;
-        .mixin_image(url('~@sky/static/picture/home/xuanfuchuang.png'));
+        .mixin_image(url('~@/views/home/homeIndex/img/home/xuanfuchuang.png'));
         border-radius: 4px;
         position: fixed;
         right: 20px;
@@ -557,20 +557,20 @@ export default {
                     position: absolute;
                     right: 94px;
                     top: 8px;
-                    .mixin_image(url('~@sky/static/picture/home/dengru_nomal.png'));
+                    .mixin_image(url('~@/views/home/homeIndex/img/home/dengru_nomal.png'));
                 }
                 .sign-in:hover {
-                    .mixin_image(url('~@sky/static/picture/home/dengru_hover.png'));
+                    .mixin_image(url('~@/views/home/homeIndex/img/home/dengru_hover.png'));
                 }
                 .register {
                     .mixin_button(84px, 34px, none, auto);
                     position: absolute;
                     right: 0px;
                     top: 8px;
-                    .mixin_image(url('~@sky/static/picture/home/zhuce_nomal.png'));
+                    .mixin_image(url('~@/views/home/homeIndex/img/home/zhuce_nomal.png'));
                 }
                 .register:hover {
-                    .mixin_image(url('~@sky/static/picture/home/zhuce_hover.png'));
+                    .mixin_image(url('~@/views/home/homeIndex/img/home/zhuce_hover.png'));
                 }
             }
             .recharge-example {
@@ -613,10 +613,10 @@ export default {
                         float: right;
                         border-radius: 4px;
                         cursor: pointer;
-                        .mixin_image(url('~@sky/static/picture/home/chongzhiup_nomal.png'));
+                        .mixin_image(url('~@/views/home/homeIndex/img/home/chongzhiup_nomal.png'));
                     }
                     .recharge:hover {
-                        .mixin_image(url('~@sky/static/picture/home/chongzhiup_hover.png'));
+                        .mixin_image(url('~@/views/home/homeIndex/img/home/chongzhiup_hover.png'));
                     }
                     .drawing {
                         margin: 8px 0px 0px 10px;
@@ -624,10 +624,10 @@ export default {
                         float: right;
                         cursor: pointer;
                         border-radius: 4px;
-                        .mixin_image(url('~@sky/static/picture/home/tikuan_nomal.png'));
+                        .mixin_image(url('~@/views/home/homeIndex/img/home/tikuan_nomal.png'));
                     }
                     .drawing:hover {
-                        .mixin_image(url('~@sky/static/picture/home/tikuan_hover.png'));
+                        .mixin_image(url('~@/views/home/homeIndex/img/home/tikuan_hover.png'));
                     }
                 }
             }
@@ -637,7 +637,7 @@ export default {
     .navigation-bar {
         width: 100%;
         height: 95px;
-        .mixin_image(url('~@sky/static/picture/home/tab_image.png'));
+        .mixin_image(url('~@/views/home/homeIndex/img/home/tab_image.png'));
         .tabs-content {
             width: 1200px;
             height: 95px;
@@ -664,7 +664,7 @@ export default {
                     }
                     li:hover {
                         color: #ffea00;
-                        .mixin_image(url('~@sky/static/picture/home/tabs_active.png'));
+                        .mixin_image(url('~@/views/home/homeIndex/img/home/tabs_active.png'));
                     }
                 }
             }

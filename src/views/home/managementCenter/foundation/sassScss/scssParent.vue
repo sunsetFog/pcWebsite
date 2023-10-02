@@ -146,7 +146,7 @@ $num: 6;
     3,
     4 {
         .image-#{$member} {
-            background-image: url("~@sky/static/picture/portrait/ui_headBox_#{$member}.png");
+            background-image: url("~@/views/home/managementCenter/crux/components/portrait/img/ui_headBox_#{$member}.png");
         }
     }
 

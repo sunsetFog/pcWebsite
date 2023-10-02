@@ -151,10 +151,10 @@
         <div class="activity-list">
             <ul>
                 <li>
-                    <img src="@sky/static/picture/banner/6.jpg"/>
+                    <img src="@/views/home/homeIndex/img/banner/6.jpg"/>
                 </li>
                 <li>
-                    <img src="@sky/static/picture/banner/8.jpg"/>
+                    <img src="@/views/home/homeIndex/img/banner/8.jpg"/>
                 </li>
             </ul>
         </div>

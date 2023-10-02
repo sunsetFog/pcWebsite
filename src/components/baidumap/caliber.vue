@@ -11,7 +11,7 @@
                 <p>4、价格取值：<br>①本月均价：慧销售系统签约均价。<br>&nbsp;&nbsp;【如：住宅价格=当月住宅类业态总签约金额 / 签约面积，若当月该项目无签约则沿用上月销售均价）】<br>②经营方案版价格：经营计划书申报系统价格。<br>&nbsp;&nbsp;【如：住宅价格= （所有住宅类业态的价格 X 面积之和）/ 住宅类业态汇总面积】<br>③年度预算版价格：后台导入财务年度预算版审批数据<br>&nbsp;&nbsp;【如：住宅价格= 住宅类业态汇总签约金额 / 住宅类业态签约面积】</p>
             </div>
             <div slot="footer" class="dialog-footer">
-                <img src="@sky/static/picture/baidumap/tipfooter.png"/>
+                <img src="@/views/priceManage/img/tipfooter.png"/>
             </div>
         </el-dialog>
     </section>

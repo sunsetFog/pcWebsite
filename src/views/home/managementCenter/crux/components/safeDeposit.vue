@@ -196,7 +196,7 @@ export default {
             background: @color_tone20;
             font-size: @font_size20;
             .type-active{
-                .mixin_image(url('~@sky/static/picture/recharge/beijingkuang.png'));
+                .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/beijingkuang.png'));
             }
             ul{
                 li{
@@ -217,7 +217,7 @@ export default {
                         position: absolute;
                         right: -10px;
                         top: 0px;
-                        .mixin_image(url('~@sky/static/picture/recharge/zhizhen.png'));
+                        .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/zhizhen.png'));
                     }
                 }
             }

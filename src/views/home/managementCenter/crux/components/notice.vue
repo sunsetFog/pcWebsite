@@ -10,15 +10,15 @@
             <div class="mail-content">
                 <div class="mail-example" v-for="(item,index) in mail_list" @click="consult(index,false)">
                     <div class="picture-example">
-                        <img v-show="!item.is_readed" src="@sky/static/picture/recharge/weidu.png"/>
-                        <img v-show="item.is_readed" src="@sky/static/picture/recharge/yidu.png"/>
+                        <img v-show="!item.is_readed" src="@/views/home/managementCenter/crux/components/recharge/img/weidu.png"/>
+                        <img v-show="item.is_readed" src="@/views/home/managementCenter/crux/components/recharge/img/yidu.png"/>
                     </div>
                     <div class="information">
                         <span>{{item.title}}</span>
                         <span></span>
                         <span>{{item.created_at}}</span>
                         <button v-show="!item.is_readed" @click.stop="consult(index,true)">点击查阅</button>
-                        <img v-show="item.is_readed" src="@sky/static/picture/recharge/read.png"/>
+                        <img v-show="item.is_readed" src="@/views/home/managementCenter/crux/components/recharge/img/read.png"/>
                     </div>
                 </div>
                 <div class="no-time" v-show="no_have">暂无公告</div>

@@ -104,7 +104,7 @@
             .header {
                 width: 100%;
                 height: 545px;// 相对定位高度撑开545，所以用绝对定位
-                background: url('~./img/box_top.png');
+                background: url('./img/box_top.png');
                 background-size: 100% 490px;
                 background-repeat: no-repeat;
                 background-position: center bottom;
@@ -123,7 +123,7 @@
 
             .honey {
                 width: 100%;
-                background-image: url('~./img/box_body.png');
+                background-image: url('./img/box_body.png');
                 background-repeat: repeat-y;
                 background-position: center top;
                 background-size: 100% 65px;
@@ -139,7 +139,7 @@
             .footer {
                 width: 100%;
                 height: 250px;
-                background-image: url('~./img/box_bom.png');
+                background-image: url('./img/box_bom.png');
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
             }
@@ -148,7 +148,7 @@
         .lotus {
             width: 1743px;
             height: 760px;
-            background-image: url('~./img/img_mod_btm01.png');
+            background-image: url('./img/img_mod_btm01.png');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             position: absolute;

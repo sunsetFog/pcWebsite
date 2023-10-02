@@ -26,7 +26,7 @@ export default {
             mapExample: null,
             newMap: null,
             // locationIcon: {
-            //     url: require('@sky/static/picture/baidumap/geo.png'),
+            //     url: require('@/views/priceManage/img/geo.png'),
             //     size: {width: 40, height: 40},
             //     opts: {anchor: {width: 40, height: 40}}
             // },

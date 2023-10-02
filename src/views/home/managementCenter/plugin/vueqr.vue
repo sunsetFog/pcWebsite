@@ -15,7 +15,7 @@ export default {
         return{
             config: {
                 value: 'www.baidu.com',//显示的值、跳转的地址
-                logo: require('@sky/static/picture/center/caiwu.png')//中间logo的地址
+                logo: require('@/views/home/managementCenter/crux/img/caiwu.png')//中间logo的地址
             }
         }
     },

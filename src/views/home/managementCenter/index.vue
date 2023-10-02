@@ -1,7 +1,7 @@
 <template>
 <section id="management">
     <div class="example-frame">
-        <img class="big-fish" src="@sky/static/picture/login/fish.png"/>
+        <img class="big-fish" src="@sky/pcDesign/pages/login/img/fish.png"/>
         <div class="manage--content">
             <router-view v-if="!manage_state"></router-view>
             <div class="manage-content-left" v-if="manage_state">
@@ -22,7 +22,7 @@
                         <!-- el-menu-item的index绑定是@select事件的参数,也是:default-active的参数 -->
                         <el-menu-item :index="item.key" v-if="item.children.length == 0" :key="item.key">
                             <div style="width: 100%;height: 100%;">
-                                <img class="icon-url-margin" src="@sky/static/picture/center/shezhi.png"/>
+                                <img class="icon-url-margin" src="@/views/home/managementCenter/crux/img/shezhi.png"/>
                                 设置
                             </div>
                         </el-menu-item>
@@ -168,7 +168,7 @@ export default{
     .example-frame{
         width: 100%;
         height: 1200px;
-        .mixin_image(url('~@sky/static/picture/center/bg-guanli.jpg'));
+        .mixin_image(url('~@/views/home/managementCenter/crux/img/bg-guanli.jpg'));
         position: relative;
         .big-fish{
             .mixin_img(326px;387px);

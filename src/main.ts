@@ -18,6 +18,9 @@ import '@sky/database/index';
 
 
 const rainbow = createApp(App);
+// 全局注册组件
+import LineTextLine from '@sky/pcDesign/components/lineTextLine/index.vue';
+rainbow.component('LineTextLine', LineTextLine);
 
 // 全局注册图标组件
 import * as Icons from '@element-plus/icons-vue';
