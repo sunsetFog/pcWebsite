@@ -3,8 +3,7 @@
     <div class="example-frame">
         <img class="big-fish" src="@sky/pcDesign/pages/login/img/fish.png"/>
         <div class="manage--content">
-            <router-view v-if="!manage_state"></router-view>
-            <div class="manage-content-left" v-if="manage_state">
+            <div class="manage-content-left">
                 <el-scrollbar style="width:100%;height:100%;">
                     <el-menu
                     :default-active="menuValue"
@@ -64,7 +63,7 @@
                 </el-scrollbar>
 
             </div>
-            <div class="manage-content-right" v-if="manage_state">
+            <div class="manage-content-right">
 
 
                 <!--
@@ -91,9 +90,16 @@
 
                     测试：输入框改变内容，跳转组件，输入框内容不变就缓存ok了
                 -->
-                <keep-alive :include="['lifeCycle']">
+                <router-view v-slot="{ Component }">
+                    <keep-alive :include="['lifeCycle']">
+                        <component :is="Component" />
+                    </keep-alive>
+                </router-view>
+
+                <!-- <keep-alive :include="['lifeCycle']">
                     <router-view></router-view>
-                </keep-alive>
+                </keep-alive> -->
+
                 <!-- <router-view v-if="$route.meta.keepAlive"></router-view> -->
 
 
@@ -113,7 +119,7 @@ export default{
     components: {footers},
     data(){
         return{
-            manage_state: true,// 管理中心
+
         }
     },
     computed: {
