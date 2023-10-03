@@ -18,7 +18,7 @@
             <el-button-group>
               <el-button
                 type="primary"
-                size="mini"
+                size="small"
                 :disabled="picNum == 0 ? true : false"
                 @click="sunZhang('left')"
               >
@@ -26,7 +26,7 @@
               </el-button>
               <el-button
                 type="primary"
-                size="mini"
+                size="small"
                 :disabled="
                   picNum == saveSunContent.length - 1 ||
                   saveSunContent.length == 0

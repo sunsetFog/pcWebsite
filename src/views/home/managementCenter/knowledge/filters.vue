@@ -21,8 +21,8 @@
 				times: 98
 			}
 		},
-		filters:{
-			pain:function(val){
+		filters: {
+			pain:function(val) {
 				return val.flag == 'Y' ? '女' : '男';
 			},
 			/*

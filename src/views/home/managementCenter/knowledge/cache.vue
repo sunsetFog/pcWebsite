@@ -1,17 +1,17 @@
 <template>
     <section id="cache">
 <!-- 浏览器缓存 -->
-        <el-button type="text" @click="addData">添加数据</el-button>
+        <el-button link @click="addData">添加数据</el-button>
         <br>
-        <el-button type="text" @click="updateData">修改数据</el-button>
+        <el-button link @click="updateData">修改数据</el-button>
         <br>
-        <el-button type="text" @click="deleteData">删除数据</el-button>
+        <el-button link @click="deleteData">删除数据</el-button>
         <LineTextLine>原生cookie</LineTextLine>
-        <el-button type="text" @click="$means.setCookie('password', '12345678', 1, true)">添加cookie</el-button>
+        <el-button link @click="$means.setCookie('password', '12345678', 1, true)">添加cookie</el-button>
         <br/>
-        <el-button type="text" @click="getCookie">获取cookie</el-button>
+        <el-button link @click="getCookie">获取cookie</el-button>
         <br/>
-        <el-button type="text" @click="$means.deleteCookie('password')">删除cookie</el-button>
+        <el-button link @click="$means.deleteCookie('password')">删除cookie</el-button>
     </section>
 </template>
 
@@ -51,7 +51,7 @@ export default {
             // Vue.use(VueCookies)
 
             // this.$cookies.set("key", "value", "expireTimes", "path", "domain", "secure");
-            
+
             this.$cookies.set("test_cookies","GH1.1.1689020474.1484362313","2m");
             // this.$cookies.get("test_cookies");
             // this.$cookies.remove("test_cookies");

@@ -15,7 +15,7 @@
                 </div>
                 <div class="grid">
                 <div class="grid-cell" style="color: #0066CC;fontWeight:700">
-                    <span v-if="material_list.deal_PRICE">{{material_list.deal_PRICE|quantile}}元/㎡</span>
+                    <span v-if="material_list.deal_PRICE">{{quantile(material_list.deal_PRICE)}}元/㎡</span>
                     <span v-else>暂无</span>
                 </div>
                 <div class="grid-cell" style="fontWeight:700">
@@ -81,13 +81,11 @@ export default {
     created () {
         this.dateSort()
     },
-    filters: {
-    quantile (num) {
-        let dian = num.toFixed(0)
-        return Number(dian).toLocaleString()
-        }
-    },
     methods: {
+        quantile (num) {
+            let dian = num.toFixed(0)
+            return Number(dian).toLocaleString()
+        },
         dateSort () {
             let nowTime = new Date()
             let current = nowTime.getMonth() + 1
@@ -283,7 +281,7 @@ export default {
             font-weight: 700;
             position: absolute;
             left: 10px;
-            top: 5px; 
+            top: 5px;
         }
         div {
             width: 70%;

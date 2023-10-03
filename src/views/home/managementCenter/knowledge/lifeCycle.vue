@@ -134,9 +134,6 @@ export default {
     computed:{//计算属性-用于vuex的getter
 
     },
-    filters:{//过滤筛选
-
-    },
     watch: {//监听数据变化，如输入框，路由变化
 
     },

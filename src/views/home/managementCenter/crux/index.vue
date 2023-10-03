@@ -39,7 +39,7 @@
                             <i class="el-icon-edit" @click="sexEdit()"></i>
                         </div>
                         <div class="sex-select" v-else>
-                            <el-select v-model="sex_value" placeholder="请选择" size="mini">
+                            <el-select v-model="sex_value" placeholder="请选择" size="small">
                                 <el-option
                                 v-for="item in sex_options"
                                 :key="item.value"

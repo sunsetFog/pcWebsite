@@ -29,7 +29,7 @@
                 <div class="account-number" v-show="withdrawal_types[0].active">
                     <label>收取银行卡:</label>
                     <div class="user-account">
-                        <el-select v-model="bank_card" placeholder="请选择银行卡" size="mini">
+                        <el-select v-model="bank_card" placeholder="请选择银行卡" size="small">
                                 <el-option
                                 v-for="(item,index) in bank_list"
                                 :key="item.bank_id"
@@ -43,7 +43,7 @@
                 <!-- <div class="account-number" v-show="withdrawal_types[1].active">
                     <label>支付宝账号:</label>
                     <div class="user-account">
-                        <el-select v-model="alipay_card" placeholder="请选择支付宝" size="mini">
+                        <el-select v-model="alipay_card" placeholder="请选择支付宝" size="small">
                                 <el-option
                                 v-for="(item,index) in alipay_list"
                                 :key="item.bank_id"
