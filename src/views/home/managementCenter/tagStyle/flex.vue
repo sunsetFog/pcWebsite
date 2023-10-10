@@ -12,7 +12,7 @@
             <p></p>
         </div>
 
-        <LineTextLine>方式2: 文字垂直居中</LineTextLine>
+        <LineTextLine>方式2: 高拉伸未知，文字垂直居中</LineTextLine>
         <div class="height-percentage">
             <span>文字垂直居中</span>
         </div>
@@ -139,7 +139,7 @@ export default {
         border: 1px solid red;
         display: table;
         span {
-            display: table-cell; // 水平
+            display: table-cell; // 水平, 会使当前盒子宽高失效，宽高占100%，不用改，写好标签结构就行
             vertical-align: middle; // 垂直
         }
     }

@@ -24,6 +24,8 @@
             https://www.runoob.com/cssref/css-colors.html
          -->
         <LineTextLine>rgba()函数，颜色和透明度</LineTextLine>
+        <LineTextLine>fadeout()降低颜色透明度</LineTextLine>
+        <div class="cakes"></div>
     </section>
 </template>
 
@@ -43,12 +45,17 @@
             background: yellowgreen;
         }
         p:nth-of-type(2) {
-            width: calc(100% - 120px + 20px);// 100%不含padding
+            width: calc(100% - 120px + 20px);// 100%不含padding, 有格式要求，+ - * /前后要空格，要带px单位，运算顺序要括号()
             height: 100%;
             float: right;
             background: rebeccapurple;
             margin-right: -20px;// padding和margin的配合，不会挤下来的
         }
+    }
+    .cakes {
+        width: 100%;
+        height: 80px;
+        background: fadeout(#004590, 50%);
     }
 }
 

@@ -1,11 +1,25 @@
 <template>
     <section id="isLess">
-        <el-button class="is-variable">
-            isLess<span class="milk">---</span>
-        </el-button>
-        <button>apple</button>
-        <br/><br/><br/>
-        <div class="sanjiao">--哈喽--</div>
+        <LineTextLine>变量</LineTextLine>
+        <div class="cosplay">
+            角色
+        </div>
+        <LineTextLine>变量与字符串拼接</LineTextLine>
+        <div class="cartoon">
+            卡通<span class="invoices">人物</span>
+        </div>
+        <LineTextLine>运算，calc()函数less变量</LineTextLine>
+        <div class="cakes"></div>
+        <LineTextLine>函数</LineTextLine>
+        <div class="summer1">夏天</div>
+        <LineTextLine>混入Mixins</LineTextLine>
+        <div class="honey1">春天</div>
+        <LineTextLine>映射</LineTextLine>
+        <div class="fabulous">季节</div>
+        <LineTextLine>命名空间和访问符</LineTextLine>
+        <div class="dragonfly"><span class="milk">蜻蜓</span></div>
+        <LineTextLine>@if条件语句</LineTextLine>
+        <div class="butterfly">蝴蝶</div>
     </section>
 </template>
 
@@ -37,77 +51,116 @@
 
 
 
-    html中直接引入： link引入less样式   或   script 引入less.js
+    html文件引入： link引入less样式   或   script 引入less.js
 
     scoped 组件作用域，使组件样式互不影响
 */
 export default {
-    name: 'isLess'
+    name: 'isLess',
+    data() {
+        return {
+            rainbow: 'blue'
+        }
+    }
 }
 </script>
 
 <style lang="less" scoped>
 // 嵌套
-
-// 变量   变量与字符串拼接时： 用@{}  .fee@{text-color} {}
 @text-color: red;
 
+@mkcolor1: #6ec5ff;
+@bgColor: "mkcolor1";
+.cosplay {
+    width: 80px;
+    height: 80px;
+    color: @@bgColor;
+    border: 1px solid @mkcolor1;
+}
 
+@path: '~@sky/static/image1/';
+@bean: 'invoice';
+// 模板字符串语法(反引号``)在 less 中是无效的
+.cartoon {
+    width: 80px;
+    height: 80px;
+    // color: ~"@{text-color}";
+    // color: @@bgColor;
+    background-image: ~"url(@{path}@{bean}.png)";
+    // background-image: @"url(@{path}@{bean}.png)";
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    // 用不了
+    .@{bean}s {
+        color: brown !important;
+    }
+}
 
-/*
-    混合Mixins    .点是class方法, #是id方法
-*/
-.circle-1{
-    height: 70px;
+@div-width: 100px;
+.cakes {
+    width: 100%;
+    height: calc(@div-width - 20px);
+    border: 1px solid @text-color;
 }
 
 // 定义函数
-.circle-2(@size: 25px){
+.summer2(@size: 25px){
     font-size: @size;
 }
+.summer1 {
+    width: 80px;
+    height: 80px;
+    .summer2(22px);
+}
 
-// 运算 --- 围绕一个值计算的使用
-@div-width: 100px;
-
-// 函数
-// background: fadeout(#004590, 50%); 降低颜色透明度的函数
+/*
+    混入Mixins
+*/
+.honey2 {
+    height: 70px;
+}
+.honey1 {
+    width: 80px;
+    .honey2;
+}
 
 // 映射
 #colors-box() {
   primary: blue;
   secondary: green;
 }
+.fabulous {
+    color: #colors-box[primary];
+}
+
 // 命名空间和访问符
 #orange {
     .milk {
         color: brown;
     }
 }
-
-#isLess {
-    width: 100%;
-    height: 100%;
-    .is-variable {
-        color: @text-color;
-        .circle-1;
-        .circle-2(22px);
-        width: @div-width * 2;
-        color: #colors-box[primary];// 映射
-        background: fadeout(#004590, 50%);// 解释后为background: rgba(0, 69, 144, 0.5);
-        .milk {
-            #orange.milk();
-        }
+.dragonfly {
+    .milk {
+        #orange.milk();
     }
 }
 
-
-
-
-.sanjiao {
-    height: 60px;
-    .actionFb();
-    .hoverShadow();
+// if 条件语句 --- 用不了
+@condition: "condition";
+@show: true;
+.butterfly {
+    width: 80px;
+    height: 80px;
+    @if (@condition == 'condition') {
+        background: #00BCD4;
+    } @else if (@condition == 'condition6') {
+        background: yellowgreen;
+    } @else {
+        background: rebeccapurple;
+    }
+    // 三元条件表达式 --- 用不了
+    // color: @show ? 'red' : 'blue';
 }
+
+
 </style>
-
-

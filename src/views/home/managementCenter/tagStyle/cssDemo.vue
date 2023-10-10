@@ -44,6 +44,19 @@
             <div class="san"></div>
             <div class="si"></div>
         </div>
+        <LineTextLine>父高度拉伸未知，子绝对定位能等于父高度</LineTextLine>
+        <div class="scenery">
+            <div>
+                哈喽
+                <br/>
+                嘿嘿
+            </div>
+            <p></p>
+        </div>
+        <LineTextLine>带背景图的盒子拉伸，一个盒子三张背景图</LineTextLine>
+        <main class="cardItemView">
+
+        </main>
     </section>
 </template>
 
@@ -113,9 +126,11 @@ export default {
             width: 48%;
             height: 50px;
             border-radius: 5px;
-            margin-bottom: 6px;
             background: #FFFFFF;
             list-style: none;
+        }
+        li:nth-child(n + 3) {
+            margin-top: 6px;
         }
         li:nth-of-type(odd) { // 奇数行
             float: left;
@@ -167,6 +182,28 @@ export default {
             float: left;
             background: brown;
         }
+    }
+    .scenery {
+        width: 100%;
+        position: relative;
+        p {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 10px;
+            border: 1px solid royalblue;
+        }
+    }
+    @topheight: calc(54px * 2.5);
+    @bottomheight: calc(60px * 2.5);
+    .cardItemView {
+        width: 390px;
+        min-height: 500px;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-size: 100% @topheight, 100% calc(100% - @topheight - @bottomheight + 4px), 100% @bottomheight;
+        background-position: left top, left calc(@topheight - 2px), left bottom;
+        background-image: url('./img/title_bg_top.png'), url('./img/title_bg_main.png'), url('./img/title_bg_bottom.png');
     }
 }
 </style>

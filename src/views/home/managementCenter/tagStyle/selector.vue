@@ -25,14 +25,42 @@
         <LineTextLine>伪类选择器</LineTextLine>
         谷歌浏览器》Elements》Styles》点:hov》打勾:hover
         <br>
-        <button class="pseudo">
-            <em>鼠标悬停</em><span>哈喽</span>
-        </button>
-        <div class="water">
-            <p class="hage">111</p>
-            <p class="nana">222</p>
+        <div class="rainbow1">
+            <li>hover</li>
+            <li>focus</li>
+            <li>active</li>
+            <li>visitied</li>
+            <li>link</li>
+        </div>
+        <br>
+        <div class="rainbow2">
+            <p>111</p>
+            <p>222</p>
+            <p>333</p>
+            <p>444</p>
+        </div>
+        <br>
+        <div class="rainbow3">
+            <p>111</p>
+            <p>222</p>
+            <p>333</p>
+            <p>444</p>
+        </div>
+        <br>
+        <div class="rainbow4">
+            <p>111</p>
+            <p>222</p>
             <p>333</p>
         </div>
+        <br>
+        <div class="rainbow5">
+            <span>快哭了哭</span>
+        </div>
+        <br>
+        <div class="rainbow6">
+            空空旷旷
+        </div>
+
         <LineTextLine>伪元素选择器</LineTextLine>
         <p class="cartoon">苏里科夫的；是快疯了；发宽松大翻领宽松的；发了开始；发克里斯蒂；联发科</p>
         <LineTextLine>子代选择器，不包括孙子</LineTextLine>
@@ -74,40 +102,35 @@
         background: teal;
     }
     // ------------------------------伪类选择器------------------------------
-    // 鼠标悬停时
-    .pseudo:hover {
-        color: red;
-    }
-    .pseudo {
-        // & 嵌套样式回上一层
-        &:hover {// 等价于 .pseudo:hover { }
-            color: yellowgreen;
+    .rainbow1 {
+        li {
+            width: 100%;
+            height: 30px;
+            margin-bottom: 10px;
+            background: #ccc;
         }
-        & span {// 等价于 .pseudo span { }
+        // 鼠标悬停时
+        li:nth-of-type(1):hover {
+            color: red;
+        }
+        // 获得焦点时   点目标就获取焦点，点不是目标就失去焦点
+        li:nth-of-type(2):focus {
+            color: blue;
+        }
+        // 点击按住时
+        li:nth-of-type(3):active {
+            color: blueviolet;
+        }
+        // 已访问 ？？？
+        li:nth-of-type(4):visitied {
+            color: yellow;
+        }
+        // 未访问 ？？？
+        li:nth-of-type(5):link {
             color: tomato;
         }
     }
-    // 获得焦点时   点目标就获取焦点，点不是目标就失去焦点
-    // .pseudo:focus {
-    //     color: blue;
-    // }
-    // 点击按住时
-    // .pseudo:active {
-    //     color: blueviolet;
-    // }
-    // 已访问 ？？？
-    .pseudo:visitied {
-        color: red;
-    }
-    // 未访问 ？？？
-    .pseudo:link {
-        color: aquamarine;
-    }
-    // 元素之后插入内容
-    .pseudo:after {
-        content: '后来';
-    }
-    .water {
+    .rainbow2 {
         // 第一个子元素 ???
         p:first-child {
             color: royalblue;
@@ -116,13 +139,39 @@
         p:last-child {
             color: red;
         }
+        // 选择同类型的第 2 个子元素
+        p:nth-of-type(2) {
+            color: khaki;
+        }
+        // 选择第3个子元素
+        p:nth-child(3) {
+            color: yellowgreen;
+        }
     }
-    .water p:nth-of-type(2) {
-        color: khaki;
+    .rainbow3 {
+        // 使用 :nth-child() 的算式, 选择第3个以后的子元素
+        p:nth-child(n + 3) {
+            color: khaki;
+        }
     }
-    // 没有那个类名的样式
-    .water p:not(.nana) {
-        color: yellowgreen;
+    .rainbow4 {
+        // 未选中样式，好用，好用
+        p:not(:first-child) {
+            color: yellowgreen;
+        }
+    }
+    .rainbow5 {
+        // & 嵌套样式回上一层
+        &:hover {// 等价于 .rainbow1:hover { }
+            color: yellowgreen;
+        }
+        & span {// 等价于 .rainbow1 span { }
+            color: tomato;
+        }
+    }
+    // 元素之后插入内容
+    .rainbow6:after {
+        content: '后来';
     }
     // ------------------------------伪元素选择器------------------------------
     .cartoon {
