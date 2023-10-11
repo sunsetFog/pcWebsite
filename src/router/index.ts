@@ -1,3 +1,5 @@
+// @ts-nocheck
+'use sloppy'
 // import { emit } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router';
 // import HomeView from '../views/HomeView.vue'
@@ -30,25 +32,23 @@ import 'nprogress/nprogress.css';
 // 使用vue-cookies
 import VueCookies from 'vue-cookies';
 import store from '@/store';
-// @ts-ignore
 console.log('--VueCookies.get--', VueCookies.get(process.env.VUE_APP_TOKEN_KEY));
 // 路由拦截
 router.beforeEach((to, from, next) => {
     NProgress.start(); // 开始动画
     if (from.path == '/' && to.path != '/login') {
-        // @ts-ignore
-        // if (VueCookies.get(process.env.VUE_APP_TOKEN_KEY)) {
-        //     store.dispatch('routerApple').then(function (value) {
-        //         for (let i = 0; i < value.length; i++) {
-        //             const item = value[i];
-        //             router.addRoute(item);
-        //         }
-        //         console.log('--then结束-2-', router.getRoutes());
-        //         next();
-        //     });
-        // } else {
+        if (VueCookies.get(process.env.VUE_APP_TOKEN_KEY)) {
+            store.dispatch('routerApple').then(function (value) {
+                for (let i = 0; i < value.length; i++) {
+                    const item = value[i];
+                    router.addRoute(item);
+                }
+                console.log('--then结束-2-', router.getRoutes());
+                next();
+            });
+        } else {
             next({ path: '/login' });
-        // }
+        }
     } else {
         next();
     }

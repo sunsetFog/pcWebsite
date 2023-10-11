@@ -32,7 +32,7 @@ import CodeEditor from '@/components/printEditor/index.vue';
 import * as schemaTypes from './playground/schemaTypes';
 export default {
     name: 'vueForm',
-    components: { VueForm, CodeEditor },
+    components: { CodeEditor },
     data() {
         return {
             formData: {},

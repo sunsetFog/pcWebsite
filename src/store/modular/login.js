@@ -1,4 +1,5 @@
-/* eslint-disable */
+// @ts-nocheck
+'use sloppy'
 import apiHttp from '@sky/axios/request2/http.js';
 import lodash from 'lodash'
 import finalRouter from '@/router/modules/finalRouter.ts'
