@@ -96,15 +96,16 @@ export default {
             }
             //事件捕获：事件从父元素传递到子元素(从外向内传递)（前提父子元素都绑定了事件）
             // 事件监听
-            //1.不兼容IE浏览器
+            //1.不兼容老版本的IE浏览器, 参数1不带on
             box.addEventListener('click',function(event){//参数1：事件类型(去掉on)  参数2：回调函数  参数3：用来指定该事件为事件冒泡还是事件捕获,默认false事件冒泡，true事件捕获
                 var ev = event||window.event;
                 console.log('添加监听');
             },false);
+            // box.addEventListener('remove', 函数) // 移除addEventListener事件监听
 
-            // 2.兼容IE浏览器
-            // attachEvent();//添加监听
-            // detachEvent(参数1,参数2)//移除事件监听
+            // 2.兼容老版本的IE浏览器, 参数1要带on
+            // box.attachEvent('onclick', 函数);//添加监听
+            // box.detachEvent('onclick', 函数)//移除attachEvent事件监听
 
             //事件委托：利用事件冒泡的原理，将子元素的事件委托给父元素或者祖先元素来执行
             // 事件源：触发事件的当前对象，需要通过父元素查找该事件源
