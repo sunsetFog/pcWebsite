@@ -45,14 +45,6 @@
         },
         mounted(){
             var that = this;
-            that.$means.overallHeight('home-game');
-            window.onresize = function temp3(){
-                let overallApp = document.getElementById('home-game');
-                if(overallApp!=null){
-                    that.$means.overallHeight('home-game');
-                    that.enlargeDisable();
-                }
-            }
             that.overflowBody(true);
         },
         beforeDestroy(){

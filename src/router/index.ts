@@ -31,21 +31,14 @@ import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 // 使用vue-cookies
 import VueCookies from 'vue-cookies';
-import store from '@/store';
 console.log('--VueCookies.get--', VueCookies.get(process.env.VUE_APP_TOKEN_KEY));
 // 路由拦截
 router.beforeEach((to, from, next) => {
     NProgress.start(); // 开始动画
-    if (from.path == '/' && to.path != '/login') {
+    if (from.path == '/' && !to.meta.noRefresh) {
         if (VueCookies.get(process.env.VUE_APP_TOKEN_KEY)) {
-            store.dispatch('routerApple').then(function (value) {
-                for (let i = 0; i < value.length; i++) {
-                    const item = value[i];
-                    router.addRoute(item);
-                }
-                console.log('--then结束-2-', router.getRoutes());
-                next();
-            });
+            sessionStorage.setItem('save_path', to.path);
+            next({ path: '/loadingUnit/index' });
         } else {
             next({ path: '/login' });
         }
