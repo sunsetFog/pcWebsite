@@ -20,10 +20,16 @@
         8.onmouseup：鼠标抬起事件
         9.onclick：鼠标点击完毕事件
         10.ondblclick：双击事件
+
         移动端事件
         ontouchstart
         ontouchmove
         ontouchend
+
+        窗口关闭之前执行的逻辑
+        window.onbeforeunload = function (e) {
+        监听窗口大小变化
+        window.onresize = function () {
 
         在某情况会去掉on，或用@代替on
 */
