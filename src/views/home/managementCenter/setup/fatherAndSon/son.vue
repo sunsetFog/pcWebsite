@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, nextTick, ref, shallowRef, watch, withDefaults, defineEmits, useSlots, useAttrs, reactive } from 'vue';
+import { computed, nextTick, ref, shallowRef, watch, withDefaults, useSlots, useAttrs, reactive } from 'vue';
 import type { Ref } from 'vue'
 
 
@@ -47,5 +47,5 @@ function emitWay() {
 }
 
 </script>
-  
+
 <style scoped></style>

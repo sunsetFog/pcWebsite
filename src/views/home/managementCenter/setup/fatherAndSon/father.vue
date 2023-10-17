@@ -16,15 +16,15 @@
           </button>
         </template>
 
-        
+
       </son>
     </section>
 </template>
-<!-- 
+<!--
     script加上setup无需向模板返回任何组件、变量或函数
  -->
 <script lang="ts" setup>
-import { computed, nextTick, ref, shallowRef, watch, withDefaults, defineEmits, useSlots, useAttrs, reactive } from 'vue';
+import { computed, nextTick, ref, shallowRef, watch, withDefaults, useSlots, useAttrs, reactive } from 'vue';
 import type { Ref } from 'vue'
 
 import Son from './son.vue'
@@ -37,5 +37,5 @@ function waterWay(value) {
 }
 
 </script>
-  
+
 <style scoped></style>
