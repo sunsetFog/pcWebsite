@@ -4,8 +4,8 @@
         v-model="rechargeActive"
         width="781px"
         top="240"
-        center>
-        <div slot="title">添加银行卡</div>
+        center
+        title="添加银行卡">
         <div class="varieties-content">
             <div class="account-name">
                 <label>开户姓名:</label>
@@ -24,9 +24,7 @@
                 <button @click="sureAdd()">确认添加</button>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

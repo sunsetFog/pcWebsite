@@ -4,8 +4,8 @@
         v-model="rechargeActive"
         width="781px"
         top="190px"
-        center>
-        <div slot="title">重置提款密码</div>
+        center
+        title="重置提款密码">
         <div class="varieties-content">
             <div class="no-regist-tel" v-if="!regist_tel">
                 <label>旧密码:</label>
@@ -26,9 +26,7 @@
                 <button @click="sureModify()">确认修改</button>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

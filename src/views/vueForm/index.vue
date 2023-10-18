@@ -1,9 +1,12 @@
 <template>
 <section id="VueForm">
     <el-card>
-        <div slot="header" class="clearfix">
-            <span>活动素材</span>
-        </div>
+        <template #header>
+            <div class="clearfix">
+                <span>活动素材</span>
+            </div>
+        </template>
+
 
         <!-- <VueForm
             v-model="formData"

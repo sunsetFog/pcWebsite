@@ -1,9 +1,12 @@
 <template>
 <section id="CodeEditor">
     <el-card>
-        <div slot="header" class="clearfix">
-            <span>{{ isTitle }}</span>
-        </div>
+        <template #header>
+            <div class="clearfix">
+                <span>{{ isTitle }}</span>
+            </div>
+        </template>
+
 
         <div
             ref="monacoEditor"

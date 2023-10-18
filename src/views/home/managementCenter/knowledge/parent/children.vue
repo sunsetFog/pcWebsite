@@ -51,7 +51,7 @@
 				console.log('调用父组件方法---',value);
 			},
 			bean() {
-				this.$eventBus.$emit('airWater',  666);
+				// this.$eventBus.$emit('airWater',  666);
 			}
 		}
 	}

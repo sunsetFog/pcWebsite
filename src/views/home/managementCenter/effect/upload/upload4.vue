@@ -25,20 +25,21 @@
         v-model="dialogVisible"
         width="420px"
         :close-on-click-modal="false"
-        :show-close="false">
-        <div slot="title" style="color: black;text-align: left;font-size: 15px;height: 26px;line-height: 16px;">
-            <i class="el-icon-warning" style="font-size: 22px;color: #e6a23c;vertical-align: middle;"></i>
-            <span style="vertical-align: middle;">{{title_message}}</span>
-        </div>
+        :show-close="false"
+        :title="title_message">
+
         <div style="color: #909399;text-align: left;">
             {{body_message}}
             <br>
             具体详情请
             <a :href="txt_url" :download="txt_name" style="color: #1890ff;">点击下载</a>
         </div>
-        <span slot="footer" class="dialog-footer">
+        <template #footer>
+            <span class="dialog-footer">
             <el-button type="primary" @click="sureWay">确 定</el-button>
         </span>
+        </template>
+
     </el-dialog>
   </section>
 </template>

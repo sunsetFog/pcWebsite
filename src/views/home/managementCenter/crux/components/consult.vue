@@ -4,17 +4,15 @@
         v-model="rechargeActive"
         width="781px"
         top="190px"
-        center>
-        <div slot="title">{{consult_data.title}}</div>
+        center
+        :title="consult_data.title">
         <div class="varieties-content">
             <div class="look-content" v-html="consult_data.content"></div>
             <div class="delete-info">
                 <button @click="deleteMeans">删除</button>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

@@ -4,16 +4,20 @@
             <div class="container-right">
                 <price-map @mapEmit="mapEmit" ref="map" :take_list="take_list"></price-map>
                 <el-input placeholder="请输入全国任意项目名称" v-model="search_value" maxlength="20" class="input-with-select" @input="inputEvent">
-                    <div class="city-value" slot="prepend"><i class="el-icon-location"></i>{{city_name}}
-                        <el-cascader
-                            :show-all-levels="false"
-                            v-model="city_value"
-                            placeholder="请选择城市"
-                            :options="areaList"
-                            @change="handleChange">
-                        </el-cascader>
-                    </div>
-                    <div class="search-btn" slot="append" @click="vagueQuery()">搜索</div>
+                    <template #prepend>
+                        <div class="city-value"><i class="el-icon-location"></i>{{city_name}}
+                            <el-cascader
+                                :show-all-levels="false"
+                                v-model="city_value"
+                                placeholder="请选择城市"
+                                :options="areaList"
+                                @change="handleChange">
+                            </el-cascader>
+                        </div>
+                    </template>
+                    <template #append>
+                        <div class="search-btn" @click="vagueQuery()">搜索</div>
+                    </template>
                 </el-input>
                 <div class="fold-box" @click="foldBox">
                     {{list_word}}<span style="fontSize: 14px;fontWeight: 700;margin: 0 5px;">{{prompt_data.length}}</span>个

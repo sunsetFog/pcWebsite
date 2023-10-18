@@ -4,8 +4,8 @@
         v-model="rechargeActive"
         width="781px"
         top="240px"
-        center>
-        <div slot="title">绑定支付宝</div>
+        center
+        title="绑定支付宝">
         <div class="varieties-content">
             <div class="account-name">
                 <label>支付宝账号:</label>
@@ -20,9 +20,7 @@
                 <button @click="sureAdd()">确认添加</button>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

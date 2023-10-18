@@ -123,9 +123,12 @@
             :key="nocache"
           >
             <el-card class="box-card">
-              <div slot="header" class="clearfix">
-                <span>Information</span>
-              </div>
+                <template #header>
+                    <div class="clearfix">
+                        <span>Information</span>
+                    </div>
+                </template>
+
 
               <template v-for="(item, index) in dynamicList">
                 <el-row type="flex" v-if="item.columnType == 'VARCHAR'">

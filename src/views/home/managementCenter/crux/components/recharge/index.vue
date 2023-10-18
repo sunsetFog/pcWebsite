@@ -4,8 +4,9 @@
         v-model="rechargeActive"
         width="1100px"
         top="153px"
-        center>
-        <div slot="title">充值</div>
+        center
+        title="充值"
+        >
         <div class="varieties-content">
             <div class="fashion-way">
                 <div class="payment-type">
@@ -47,9 +48,7 @@
                 </div>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

@@ -4,8 +4,8 @@
         v-model="rechargeActive"
         width="535px"
         top="280px"
-        center>
-        <div slot="title"></div>
+        center
+        title="">
         <div class="varieties-content">
             <div class="already-submit">您的提款申请已提交</div>
             <div class="withdrawal-money">提款金额为<span>{{money}}</span>金币</div>
@@ -14,9 +14,7 @@
                 <button @click="sureMeans()">知道了</button>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

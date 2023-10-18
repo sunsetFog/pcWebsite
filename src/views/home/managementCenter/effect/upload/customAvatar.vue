@@ -38,11 +38,13 @@
                         </el-button>
                     </div>
                 </div>
-
-                <div slot="footer" class="dialog-footer">
+                <template #footer>
+                    <div class="dialog-footer">
                     <el-button @click="dialogPortrait = false">取 消</el-button>
                     <el-button type="primary" @click="isSure">确 定</el-button>
                 </div>
+                </template>
+
         </el-dialog>
 
 

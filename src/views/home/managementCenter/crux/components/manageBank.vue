@@ -4,8 +4,8 @@
         v-model="rechargeActive"
         width="781px"
         top="240px"
-        center>
-        <div slot="title">管理银行卡</div>
+        center
+        title="管理银行卡">
         <div class="varieties-content">
             <div class="account-example">
                 <div class="account-list" v-for="(item,index) in bank_list">
@@ -19,9 +19,7 @@
                 <button @click="sureAdd()">添加银行卡</button>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

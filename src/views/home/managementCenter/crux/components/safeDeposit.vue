@@ -4,8 +4,8 @@
         v-model="rechargeActive"
         width="1100px"
         top="101px"
-        center>
-        <div slot="title">保险箱</div>
+        center
+        title="保险箱">
         <div class="varieties-content">
             <div class="service-type">
                 <ul>
@@ -33,9 +33,7 @@
                 </div>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

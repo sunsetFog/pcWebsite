@@ -4,8 +4,8 @@
         v-model="rechargeActive"
         width="1215px"
         top="101px"
-        center>
-        <div slot="title">邮件</div>
+        center
+        title="邮件">
         <div class="varieties-content">
             <div class="mail-content">
                 <div class="mail-example" v-for="(item,index) in mail_list.slice((pagingObj.pageNum-1)*pagingObj.pageSize,pagingObj.pageNum*pagingObj.pageSize)" @click="consult(index,false)">
@@ -27,9 +27,7 @@
                 <pagination :pagingObj="pagingObj" @emitWay="getJson"></pagination>
              </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

@@ -4,8 +4,8 @@
         v-model="rechargeActive"
         width="781px"
         top="240px"
-        center>
-        <div slot="title">管理支付宝</div>
+        center
+        title="管理支付宝">
         <div class="varieties-content">
             <div class="account-example">
                 <div class="account-list" v-for="(item,index) in alipay_list">
@@ -19,9 +19,7 @@
                 <button @click="sureAdd()">绑定支付宝</button>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>

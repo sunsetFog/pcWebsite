@@ -4,8 +4,8 @@
         v-model="rechargeActive"
         width="781px"
         top="190px"
-        center>
-        <div slot="title">重置登陆密码</div>
+        center
+        title="重置登陆密码">
         <div class="varieties-content">
             <div class="account-name">
                 <label>账号:</label>
@@ -30,9 +30,7 @@
                 <button @click="sureModify()">确认修改</button>
             </div>
         </div>
-        <div slot="footer" class="example-footer">
-
-        </div>
+        <template #footer></template>
         </el-dialog>
     </section>
 </template>
