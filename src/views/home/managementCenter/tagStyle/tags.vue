@@ -44,6 +44,7 @@
             alt="哎呀，图片加载失败"  当图片加载失败的时候，显示的文字
             align="top" 图片的对齐方式  vertical-align、top、center、bottom
             @error="imgDefault" 图片加载错误时显示默认图片
+            自闭合标签，写法 <img> 或 <img/>
          -->
         <img :src="imgUrl ? imgUrl : '111'" title="这是图片" alt="哎呀，图片加载失败" @error="imgDefault" />
         <br/>

@@ -17,7 +17,7 @@
 					:file-list="imgArr"
 					:on-exceed="limitWay"
 				>
-                    <i class="el-icon-plus"></i>
+                    <el-icon><Plus/></el-icon>
 					<!-- 遮罩层: 达限制上传数量用 -->
                     <div class="atmosphere" @click.stop="limitWay()" v-if="upNum >= limitNum"></div>
 				</el-upload>

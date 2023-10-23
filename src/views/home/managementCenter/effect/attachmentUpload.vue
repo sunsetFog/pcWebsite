@@ -9,11 +9,11 @@
         <el-col :span="16">
           <div class="zoom">
             <span class="pen-in" @click="magnify" title="zoom-in">
-              <i class="el-icon-zoom-in"></i>
+              <el-icon><ZoomIn/></el-icon>
               <span class="icon-name"></span>
             </span>
             <span class="pen-out" @click="shrink" title="zoom-out">
-              <i class="el-icon-zoom-out"></i>
+              <el-icon><ZoomOut/></el-icon>
             </span>
             <el-button-group>
               <el-button
@@ -22,7 +22,7 @@
                 :disabled="picNum == 0 ? true : false"
                 @click="sunZhang('left')"
               >
-                <i class="el-icon-arrow-left"></i>
+                <el-icon><ArrowLeft/></el-icon>
               </el-button>
               <el-button
                 type="primary"
@@ -35,7 +35,7 @@
                 "
                 @click="sunZhang('right')"
               >
-                <i class="el-icon-arrow-right"></i>
+                <el-icon><ArrowRight/></el-icon>
               </el-button>
             </el-button-group>
           </div>
@@ -106,7 +106,7 @@
               :show-file-list="false"
               :file-list="fileList"
             >
-              <i class="el-icon-upload"></i>
+              <el-icon><Upload/></el-icon>
               <div class="el-upload__text">
                 将文件拖到此处，或
                 <em>点击上传</em>

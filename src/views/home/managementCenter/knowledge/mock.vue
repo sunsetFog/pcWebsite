@@ -71,7 +71,7 @@ export default {
                             <span class="compare-month">比上月</span>
                             <div class="percentage-i">
                             <span>${self.markers[i].mom_rate}%</span>
-                            <i class="el-icon-caret-top" style="color: #D0021B;"></i>
+                            <el-icon><CaretTop style="color: #D0021B;"/></el-icon>
                             </div>
                         </div>
                         `
@@ -83,7 +83,7 @@ export default {
                             <span class="compare-month">比上月</span>
                             <div class="percentage-i">
                             <span>${self.markers[i].mom_rate}%</span>
-                            <i class="el-icon-caret-bottom" style="color: #6BCB04;"></i>
+                            <el-icon><CaretBottom style="color: #6BCB04;"/></el-icon>
                             </div>
                         </div>
                         `

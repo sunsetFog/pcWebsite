@@ -5,7 +5,9 @@
                 <price-map @mapEmit="mapEmit" ref="map" :take_list="take_list"></price-map>
                 <el-input placeholder="请输入全国任意项目名称" v-model="search_value" maxlength="20" class="input-with-select" @input="inputEvent">
                     <template #prepend>
-                        <div class="city-value"><i class="el-icon-location"></i>{{city_name}}
+                        <div class="city-value">
+                            <el-icon><Location/></el-icon>
+                            {{city_name}}
                             <el-cascader
                                 :show-all-levels="false"
                                 v-model="city_value"
@@ -21,13 +23,15 @@
                 </el-input>
                 <div class="fold-box" @click="foldBox">
                     {{list_word}}<span style="fontSize: 14px;fontWeight: 700;margin: 0 5px;">{{prompt_data.length}}</span>个
-                    <i class="el-icon-arrow-down" v-if="!prompt_active"></i>
-                    <i class="el-icon-arrow-up" v-else></i>
+                    <el-icon v-if="!prompt_active"><ArrowDown/></el-icon>
+                    <el-icon v-else><ArrowUp/></el-icon>
                 </div>
                 <div class="exhibition" v-show="prompt_active" :style="{height: (prompt_data.length+1)*30<375?(prompt_data.length+1)*30+'px':375+'px'}">
                     <el-scrollbar style="height:100%">
                         <ul>
-                            <li v-for="(item,index) in prompt_data" :key="index" :class="{'tip-active': item.active}" @click="tipChoice(item, index)"><i class="el-icon-location-information"></i>{{item.project_name}}</li>
+                            <li v-for="(item,index) in prompt_data" :key="index" :class="{'tip-active': item.active}" @click="tipChoice(item, index)">
+                                <el-icon><LocationInformation/></el-icon>
+                                {{item.project_name}}</li>
                         </ul>
                     </el-scrollbar>
                 </div>

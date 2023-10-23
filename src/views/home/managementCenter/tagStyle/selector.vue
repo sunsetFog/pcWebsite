@@ -155,7 +155,7 @@
         }
     }
     .rainbow4 {
-        // 未选中样式，好用，好用
+        // 未选中样式列表，写法:not( *, *, *, *, )，好用，好用
         p:not(:first-child) {
             color: yellowgreen;
         }

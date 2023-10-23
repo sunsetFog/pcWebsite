@@ -57,6 +57,12 @@
         <main class="cardItemView">
 
         </main>
+        <LineTextLine>清空当前选择器的所有样式</LineTextLine>
+        <button class="reset">重置样式</button>
+        <LineTextLine>禁用鼠标事件</LineTextLine>
+        <div class="rainbow">
+            <button>哈喽哇</button>
+        </div>
     </section>
 </template>
 
@@ -204,6 +210,22 @@ export default {
         background-size: 100% @topheight, 100% calc(100% - @topheight - @bottomheight + 4px), 100% @bottomheight;
         background-position: left top, left calc(@topheight - 2px), left bottom;
         background-image: url('./img/title_bg_top.png'), url('./img/title_bg_main.png'), url('./img/title_bg_bottom.png');
+    }
+    .reset {
+        all: unset;// 单项重置: color: unset;
+    }
+    .rainbow {
+        width: 100%;
+        height: 45px;
+        background: #586B8D;
+        pointer-events: none;// 禁用鼠标事件
+        cursor: pointer;// 鼠标选择手掌
+        button {
+            float: right;
+            padding: 4px 10px;
+            cursor: pointer;// 鼠标选择手掌
+            pointer-events: auto;// 开启鼠标事件
+        }
     }
 }
 </style>

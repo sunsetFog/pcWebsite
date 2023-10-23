@@ -23,7 +23,7 @@
                         <label>昵称:</label>
                         <div class="edit-name" v-if="!nickname_state">
                             <span>{{player.nickname}}</span>
-                            <i class="el-icon-edit" @click="nicknameEdit()"></i>
+                            <el-icon><Edit @click="nicknameEdit()"/></el-icon>
                         </div>
                         <div class="nickname-select" v-else>
                             <input type="text" placeholder="请输入昵称" v-model.trim="pet_name" ref="pet_name" @input="changeValue"/>
@@ -36,7 +36,7 @@
                         <div class="edit-sex" v-if="sex_state==false">
                             <span v-if="player.sex==1">男</span>
                             <span v-if="player.sex==2">女</span>
-                            <i class="el-icon-edit" @click="sexEdit()"></i>
+                            <el-icon><Edit @click="sexEdit()"/></el-icon>
                         </div>
                         <div class="sex-select" v-else>
                             <el-select v-model="sex_value" placeholder="请选择" size="small">

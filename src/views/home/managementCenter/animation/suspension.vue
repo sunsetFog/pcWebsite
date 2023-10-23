@@ -134,7 +134,7 @@
                 <img src="@sky/static/image1/invoice.png"/>
             </div>
             <div class="tangerine2">
-                <i class="el-icon-plus"></i>
+                <el-icon><Plus/></el-icon>
             </div>
         </div>
 
