@@ -2,8 +2,9 @@
     <section id="css-demo">
         <LineTextLine>三角框框</LineTextLine>
         <div class="container">
-            <div class="triangle"></div>
-            <div class="luminescence"></div>
+            <div class="luminescence">
+                <div class="triangle"></div>
+            </div>
         </div>
         <LineTextLine>好看的滚动条</LineTextLine>
         <div class="scroll-box">
@@ -77,29 +78,30 @@ export default {
     color: #fff;
     .container {
         width: 400px;
-        margin-top: 20px;
         position: relative;
-        .triangle {
-            width: 10px;
-            height: 10px;
-            border-left: 1px solid #C9CACB;
-            border-top: 1px solid #bbbbbb;
-            background: #586B8D;
-            -webkit-transform: rotate(45deg); // 旋转角度
-            -moz-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            position: absolute;
-            left: 22px;
-            top: -5px;
-            z-index: 2;
-        }
         .luminescence {
             width: 400px;
             height: 100px;
             border: 1px solid #C9CACB;
             box-shadow: 1px 1px 10px 0 #C9CACB; // 阴影
             background: #586B8D;
+            position: relative;
+            .triangle {
+                width: 10px;
+                height: 10px;
+                border-left: 1px solid #C9CACB;
+                border-top: 1px solid #bbbbbb;
+                background: #586B8D;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg); // 旋转角度
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                position: absolute;
+                left: 22px;
+                top: -5px;
+                z-index: 2;
+            }
         }
     }
 

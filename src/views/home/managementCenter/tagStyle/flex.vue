@@ -17,6 +17,12 @@
             <span>文字垂直居中</span>
         </div>
 
+        <LineTextLine>图片与文字水平对齐，垂直居中</LineTextLine>
+        <button class="dragonfly">
+            <img :src="require('./img/icon_edit.png')">
+            编辑
+        </button>
+
         <LineTextLine>行和列，前提是固定宽或高</LineTextLine>
         <div class="atmosphere1">
             <div class="list-cell02"></div>
@@ -142,6 +148,23 @@ export default {
             display: table-cell; // 水平, 会使当前盒子宽高失效，宽高占100%，不用改，写好标签结构就行
             vertical-align: middle; // 垂直
         }
+    }
+    .dragonfly {
+        width: 72px;
+        height: 28px;
+        border-radius: 100px;
+        background: #333845;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 12px;
+            height: 12px;
+            margin-right: 4px;
+        }
+        font-size: 12px;
+        border: 1px solid #7B90FF;
+        color: #7B90FF;
     }
     // ------------------------------行和列，前提是固定宽或高------------------------------
     .atmosphere1 {

@@ -110,6 +110,8 @@
             disabled 不可以用，值不能修改，值不能提交
 
             name="***" 很重要,服务端通过name获取输入的值
+
+            可以通过ref修改值
          -->
          <form action="server.html" method="post" enctype="multipart/form-data" target="_blank">
             <label>用户名：</label>
