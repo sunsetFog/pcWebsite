@@ -1,6 +1,7 @@
 <template>
     <section>
         <button @click="handleSubmit">提交调用接口</button>
+
     </section>
 </template>
 
@@ -58,7 +59,7 @@ export default defineComponent({
 
         this.dragonfly({ tile: '看看' });
 
-        console.log("--环境变量--", process.env)
+        console.log("--环境变量--", process.env);
         // 函数类型
         let water: Function = () => {
 

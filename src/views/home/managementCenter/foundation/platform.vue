@@ -8,7 +8,7 @@
 export default {
     name: 'platformUnit',
     created() {
-        console.log("--root_platform--", root_platform);
+        console.log("--全局变量--平台变量--", root_platform);
     }
 }
 </script>

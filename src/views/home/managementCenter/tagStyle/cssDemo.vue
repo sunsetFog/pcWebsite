@@ -64,6 +64,12 @@
         <div class="rainbow">
             <button>哈喽哇</button>
         </div>
+        <LineTextLine>display: inline-block;底部占据了一点高度，因为默认对齐方式是基线对齐</LineTextLine>
+        <p class="cabbage">
+            <span>
+                display: inline-block;底部占据了一点高度
+            </span>
+        </p>
     </section>
 </template>
 
@@ -227,6 +233,15 @@ export default {
             padding: 4px 10px;
             cursor: pointer;// 鼠标选择手掌
             pointer-events: auto;// 开启鼠标事件
+        }
+    }
+    .cabbage {
+        width: 100%;
+        background: #586B8D;
+        span {
+            display: inline-block;// 现在问题不出现了？？
+            vertical-align: top;// 垂直对齐方式
+            background: yellowgreen;
         }
     }
 }

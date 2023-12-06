@@ -72,14 +72,25 @@
             <div class="flowing-cell06"></div>
         </div>
         <!--
-            flex: 1; 划分剩余空间, 给两个兄弟就是两人均匀分剩余空间
+            flex: 1; 平均分配剩余空间
             flex: 1;  flex: 2; flex: 3;按照倍数划分
 
+            flex: 1;等同于flex-grow: 1; flex-shrink: 1; flex-basis: 0%;
+
+            flex: 0 0 200px; 固定宽   等同于max-width和min-width同时设置
+
             剩余空间分配相关属性
-            flex 属性包括了 flex-basis、 flex-grow、flex-shrink
-            flex-basis 默认宽或高（高需要设置flex-direction）----flex-basis: 80px;
-            flex-grow 多余空间时，分配比率，默认值为0
-            flex-shrink 空间不够时，子元素的缩小比例，默认为1，0不压缩
+            flex 属性包括了 flex-grow、flex-shrink、flex-basis
+
+            flex-grow 多余空间时，分配比率
+                默认值为0，不伸展
+                值1时，平均分配剩余空间
+            flex-shrink 空间不够时，子元素的缩小比例
+                默认为1
+                值为0，不压缩
+            flex-basis 初始尺寸，根据初始值来占剩余空间   宽需要设置flex-direction: row;     高需要设置flex-direction: column;
+                默认值auto
+                单位：px，em，百分比
          -->
          <LineTextLine>高划分剩余空间，前提是父盒子固定高</LineTextLine>
         <div class="surplus01">
@@ -248,7 +259,7 @@ export default {
     }
     .saturn2 {
         display: flex;
-        justify-content: space-between;// 间隔margin
+        justify-content: space-between;// 间隔margin, 父用flex，子不能用float，所以提供这个
         background: white;
         .format-cell05 {
             flex: 0 0 26%;

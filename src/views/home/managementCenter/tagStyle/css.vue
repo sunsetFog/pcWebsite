@@ -82,6 +82,7 @@ export default {
         // }
 
 		// width: 800px;//宽
+        // width: fit-content;// 设置子元素的宽度不自动继承父元素
         // height: 200px;//高
 
         // //使元素脱离文档流
