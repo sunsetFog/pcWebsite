@@ -15,8 +15,19 @@ import {
 import { saveOrUpdateDemo } from "./services"
 
 import { useRoute } from 'vue-router';
-// const basketRef = useRef<any>('basket');
-// const basketRef = useRef('basket') as any;
+
+const basketRef1 = ref<HTMLInputElement>(null);
+const basketRef2 = ref('basket') as any;
+/*
+
+basketRef1.current.value时，value属性未知？？所以需要ref<HTMLInputElement>指定标签
+
+list: Array<any>;
+fishList: any[];
+
+children: React.ReactNode
+
+*/
 
 interface Book {
     readonly title: string | number // 只读属性，创建的值不能修改    可以字符串或数字类型
@@ -24,6 +35,7 @@ interface Book {
     list: number[] // 表示由此类型元素组成的一个数组    方式二：数组泛型 Array<number>
     grass(source: string, subString: string): boolean // 函数类型   返回值是boolean类型
     phoneWay: (option: boolean) => void // 函数类型
+    pumpkin?: Function,
     [random: string]: any // key随机字符串，value是任意类型
 }
 

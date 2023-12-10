@@ -17,56 +17,7 @@
             <img src="@sky/static/picture/breezy/logo.png" srcset="@sky/static/picture/breezy/logo_2x.png 2x,@sky/static/picture/breezy/logo_3x.png 3x" />
             <!-- <img src="~@sky/static/reportForms/luckDraw/choujiang_bg.png" srcset="~@sky/static/reportForms/luckDraw/choujiang_bg.png 2x,~@sky/static/reportForms/luckDraw/choujiang_bg.png 3x"/> -->
         </div>
-        <LineTextLine>渐变</LineTextLine>
-        <!--
-            线性渐变
-            参数1：角度，顺时针旋转
-                0deg 从下到上
-                45deg 从左下角到右上角
-                90deg 从左到右
-                180deg 从上到下---默认
-                270deg 从右到左
-                或to top | to right | to left
-            参数2：颜色 百分比
-            参数3：颜色 百分比
 
-            多块
-            background-image: linear-gradient(),linear-gradient(),linear-gradient();
-
-            径向渐变--有兼容性
-            background-image: radial-gradient(shape size at position, color 百分比, ..., );
-                shape确定圆的类型:
-                    ellipse (默认): 指定椭圆形的径向渐变
-                    circle ：指定圆形的径向渐变
-                size渐变的大小
-                    farthest-corner (默认) : 指定径向渐变的半径长度为从圆心到离圆心最远的角
-                    closest-side ：指定径向渐变的半径长度为从圆心到离圆心最近的边
-                    closest-corner ： 指定径向渐变的半径长度为从圆心到离圆心最近的角
-                    farthest-side ：指定径向渐变的半径长度为从圆心到离圆心最远的边
-                position渐变的位置
-                    center（默认）：设置中间为径向渐变圆心的纵坐标值。
-                    top：设置顶部为径向渐变圆心的纵坐标值。
-                    bottom：设置底部为径向渐变圆心的纵坐标值。
-                    或值60% 55%
-            background-image: radial-gradient(circle farthest-side at 60% 55%, red 10%, yellow 60%, green 100%);
-         -->
-        <div class="monkey">
-
-        </div>
-        <LineTextLine>阴影</LineTextLine>
-        <!--
-            参数1：x轴 必需的   正数是右侧，负数是左侧
-            参数2: y轴 必需的   正数是下方，负数是上方
-            参数3: 模糊距离 可选
-            参数4: 阴影的大小 可选 前提要有模糊距离  正数扩大，负数缩小
-            参数5: 颜色 可选
-            参数6：投影方式  默认外阴影，inset内阴影，inset放前面也能识别
-
-            可逗号重复6个参数
-         -->
-        <div class="lover">
-
-        </div>
     </section>
 </template>
 
@@ -106,16 +57,6 @@
             width: 100%;
             height: 100%;
         }
-    }
-    .monkey {
-        width: 320px;
-        height: 180px;
-        background-image: linear-gradient(45deg,#87f 60%,#f78 60%);
-    }
-    .lover {
-        width: 320px;
-        height: 180px;
-        box-shadow: 0 4px 10px rgba(125,168,207,.35), inset 0 -2px 0 #93b6d3, inset 0 -3px 2px #aecce4, inset 0 1px 1px #fff;
     }
 }
 </style>

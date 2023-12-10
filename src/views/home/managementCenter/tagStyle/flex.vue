@@ -88,7 +88,8 @@
             flex-shrink 空间不够时，子元素的缩小比例
                 默认为1
                 值为0，不压缩
-            flex-basis 初始尺寸，根据初始值来占剩余空间   宽需要设置flex-direction: row;     高需要设置flex-direction: column;
+            flex-basis 初始尺寸，根据初始值来占剩余空间
+                宽初始尺寸需要设置flex-direction: row;     高初始尺寸需要设置flex-direction: column;
                 默认值auto
                 单位：px，em，百分比
          -->
