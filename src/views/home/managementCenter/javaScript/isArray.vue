@@ -13,25 +13,25 @@ export default {
         }
     },
     created() {
-        this.demo2();
+        this.demo6();
     },
     methods: {
-        demo1(){
+        demo1() {
             //数组概念：用来存储一系列数据的集合,下标从0开始，下标最大值为length-1
             // 定义数组   一维数组
             var arr1 = new Array(5);//构造方法
-            var arr2 = new Array(1,'哈哈',3);
-            var arr3 = [1,2,3];
+            var arr2 = new Array(1, '哈哈', 3);
+            var arr3 = [1, 2, 3];
             console.log('数组的长度', arr3.length);
             // 二维数组
-            var arr4 = [[1,2,3,4],[5,6,7,8],[9,10,11,12]];
+            var arr4 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]];
 
             // arguments伪数组   调用this.demo2(8,9);   记得调用带参数，方法内不写参数
-            console.log('arguments',arguments,Array.isArray(arguments));//arguments不是数组,是函数里的内置对象,方法里没有写参数却传入了参数,用arguments可以取
-            console.log('arguments特性',arguments[0],arguments.length);//可以用下标，可以用长度，也能for循环，但不能用数组中的常用方法，比如push()...
-            console.log('把arguments转换成真正的数组',Array.prototype.slice.call(arguments));
+            console.log('arguments', arguments, Array.isArray(arguments));//arguments不是数组,是函数里的内置对象,方法里没有写参数却传入了参数,用arguments可以取
+            console.log('arguments特性', arguments[0], arguments.length);//可以用下标，可以用长度，也能for循环，但不能用数组中的常用方法，比如push()...
+            console.log('把arguments转换成真正的数组', Array.prototype.slice.call(arguments));
         },
-        demo2(){
+        demo2() {
             /*
                 数组中的常用方法 (注意返回内容，不能赋值)
                 1  数组.join("")      将数组中的值拼接为字符串显示  参数1:拼接内容
@@ -55,21 +55,21 @@ export default {
                 13 Array.isArray(数组)  是否为数组，返回true或false
             */
 
-            var arr=[10,6,-2,1];
+            var arr = [10, 6, -2, 1];
 
             console.log('判断数组是否有该值', arr.indexOf(-2));
-            console.log('数组拼接',arr.join(",")); // 10,6,-2,1
-            console.log('数组后添加',arr.push(9));
-            console.log('元素是否存在',arr.includes(9));
-			arr.sort(function(a,b){
-//				return a-b;//从小到大排
-				return b-a//从大到小排
+            console.log('数组拼接', arr.join(",")); // 10,6,-2,1
+            console.log('数组后添加', arr.push(9));
+            console.log('元素是否存在', arr.includes(9));
+            arr.sort(function (a, b) {
+                //				return a-b;//从小到大排
+                return b - a//从大到小排
             })
-            console.log('数组排序',arr);
+            console.log('数组排序', arr);
 
 
             arr = [];// 清空数组
-            if(arr.length == 0) {
+            if (arr.length == 0) {
                 console.log("判断是否空数组");
             }
 
@@ -84,30 +84,32 @@ export default {
             let huaArr = [1, 2, 3, 4, 5, 6, 7];
             for (let i = 0; i < huaArr.length; i++) {
                 console.log("i停留在2", i, JSON.parse(JSON.stringify(huaArr)), huaArr[i]);
-                if(i == 2) {
+                if (i == 2) {
                     huaArr.splice(i, 1);
                     i--;// 没这个huaArr[i]少了4
                 }
                 // console.log("--i--", i);
             }
         },
-        demo3(){
+        demo3() {
             //遍历数组
             // for与forEach的区别:
             // forEach不能使用break,continue,不能用arr.splice(),索引index不会被重置,相反for可以
-            let arr = [1,2,3];
-            for(let i=0;i<arr.length;i++){
+            let arr = [1, 2, 3];
+            for (let i = 0; i < arr.length; i++) {
                 let item = arr[i]
-                if(arr[i] == 2){
+                if (arr[i] == 2) {
                     break;//直接终止循环
                 }
-                if(arr[i] == 3){
+                if (arr[i] == 3) {
                     continue;//终止本次循环，进行下一次
                 }
             }
-
-            let obj = {aaa: 102};
+        },
+        demo4() {
+            let obj = { aaa: 102 };
             let that = this;
+            let arr = [1, 2, 3];
             /*
                 数组.forEach(
                     方法(数组项, 数组下标, 数组本身){
@@ -117,11 +119,12 @@ export default {
                 )
                 err问题: forEach的this指向改变了
             */
-            arr.forEach(function(item,index,arr){
-                console.log('this',this.aaa, this.num);
-                console.log('that',that);
-            },this);// this指向obj
-
+            arr.forEach(function (item, index, arr) {
+                console.log('--this--', this.aaa, this.num);
+                console.log('--that--', that);
+            }, this);// this指向obj
+        },
+        demo5() {
             /*
                 返回新的数组: 必用return，返回新数组的每一项
                 let newArr = 数组.map(
@@ -130,8 +133,8 @@ export default {
                     }
                 )
              */
-            let lyArr = [{title: '嘿嘿'},{title: '阚凯力'}]
-            let newArr = lyArr.map(function(item){
+            let lyArr = [{ title: '嘿嘿' }, { title: '阚凯力' }]
+            let newArr = lyArr.map(function (item) {
                 item.title = 'hk-' + item.title;// 修改
                 item.active = false;// 新增
                 return item;
@@ -141,8 +144,9 @@ export default {
                 //     active: false
                 // }
             })
-            console.log('新数组',newArr);
-
+            console.log('新数组', newArr);
+        },
+        demo6() {
             /*
                 返回每项符合条件的新数组
                 let newArr = 数组.filter(
@@ -151,10 +155,25 @@ export default {
                     }
                 )
              */
-            let newArr2 = arr.filter(function(item){
-                return item>1&&item<3;
+             let arr = [
+                { title: '粉丝福利', path: '/member' },
+                { title: '礼物记录', path: '/gameRecord' },
+                { title: '主播充值', path: '/recharge' },
+            ];
+            let newArr2 = arr.filter(function (item) {
+                if (item.title == '粉丝福利') {
+                    return 1 == 1;
+                }
+                if (item.title == '礼物记录') {
+                    return false;
+                }
+                if (item.title == '主播充值') {
+                    return false;
+                }
             })
-            console.log('filter=',newArr2);
+            console.log('filter=', newArr2);
+        },
+        demo7() {
             /*
                 检测数组中的元素是否满足指定条件,返回true,false
                 let isTrue = 数组.some(
@@ -163,10 +182,13 @@ export default {
                     }
                 )
              */
-            let active = arr.some(function(item,index,arr){
+            let arr = [1, 2, 3];
+            let active = arr.some(function (item, index, arr) {
                 return item == 1;
             })
-            console.log('some=',active);
+            console.log('some=', active);
+        },
+        demo8() {
             /*
                 查找符合条件的元素，则返回第一个元素
                 let firstItem = 数组.find(
@@ -175,24 +197,83 @@ export default {
                     }
                 )
              */
-            let content = arr.find(function(item){
-                return item>0;
+            let arr = [
+                { title: '粉丝福利', path: '/member' },
+                { title: '礼物记录', path: '/gameRecord' },
+                { title: '主播充值', path: '/recharge' },
+            ];
+            let content = arr.find(function (item) {
+                return item.title == '礼物记录';
             })
-            console.log('find=',content);
+            console.log('find=', content);
+        },
+        demo9() {
             /*
                 符合条件，返回下标
              */
-            let is_index = arr.findIndex(function(item){
+            let arr = [1, 2, 3];
+            let is_index = arr.findIndex(function (item) {
                 return item == 2;
             });
             console.log('findIndex=', is_index);
         },
+        demo10() {
+            const PLATFORM_MAP = {
+                bd: {
+                    dev: {
+
+                    },
+                    // 预发环境
+                    release: {
+                    },
+                    // 生产环境
+                    prod: {
+
+                    },
+                },
+                // 天博
+                tb: {
+                    // 各个环境公用的变量
+                    common: {
+
+                    },
+                    // 测试环境
+                    dev: {
+
+                    },
+                    // 预发环境
+                    release: {
+
+                    },
+                    // 生产环境
+                    prod: {
+
+                    },
+                },
+                nth: {
+
+                },
+                ky: {
+
+                }
+            };
+            let arrList = Object.keys(PLATFORM_MAP);
+            console.log("--arrList--", arrList);// ['bd', 'tb', 'nth', 'ky']
+            /*
+                reduce第二个参数就是prev初始值，默认为数组的第一个元素
+                最终返回一个单一的值
+            */
+            let water = arrList.reduce((prev, curr) => {
+                console.log("row", prev, curr);// {} bd、{} tb、{} nth、{} ky
+                prev[`server:dev:${curr}`] = curr
+                return prev;
+            }, {});
+            console.log("--water--", water);// {}
+        }
     }
 }
 </script>
 
-<style lang="less" scoped>
-
-</style>
+<style lang="less" scoped></style>
 
 

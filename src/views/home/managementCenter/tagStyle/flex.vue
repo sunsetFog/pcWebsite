@@ -3,8 +3,10 @@
         <!-- 问题：高为百分比时，文字垂直居中？     line-height: 100%;和字体大小一样大，不能用 -->
         <LineTextLine>方式1: flex，盒子垂直居中，文字垂直居中</LineTextLine>
         <div class="vertical-center">
-            文字垂直居中
-            <!-- <p></p> -->
+            高拉伸未知，文字垂直居中
+            <p>
+                盒子垂直居中
+            </p>
         </div>
 
         <LineTextLine>方式2: 定位，盒子垂直居中</LineTextLine>
@@ -131,7 +133,8 @@ export default {
         p {
             width: 100px;
             height: 50px;
-            background: blue;
+            color: #fff;
+            background-color: rgba(63, 80, 117, 0.7);
         }
     }
     // ------------------------------方式2: 定位，盒子垂直居中------------------------------
