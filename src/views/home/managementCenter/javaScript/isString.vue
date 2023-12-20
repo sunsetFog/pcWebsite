@@ -13,7 +13,7 @@ export default {
         }
     },
     created() {
-        this.demo1();
+        this.demo3();
     },
     methods: {
         demo1() {
@@ -21,11 +21,12 @@ export default {
             let imgName = "flower";
             let src = "../img/" + imgName + ".png";
             console.log('方式1: 变量与字符串拼接', src);
+            // ``（反引号）是模板字符串（Template Strings）的标识符
             let src2 = `../img/${imgName}.png`;
             console.log('方式2: 变量与字符串拼接', src2);
             console.log('换行\n哇卡卡卡')
         },
-        demo6() {
+        demo2() {
             /*
                 字符串常见方法：
                    字符串.charAt(下标)    返回指定下标的字符
@@ -109,6 +110,30 @@ export default {
             insert = insert.replace('积极', '积极响应');
             console.log('js在字符串中插入某个新符号', insert);
         },
+        demo3() {
+            // 表示不可见的字符或特殊的格式
+            let arrList = [
+                { label: '换行符', value: '\n' },
+                { label: '制表符', value: '\t' },
+                { label: '回车符', value: '\r' },
+                { label: '反斜杠', value: '\\' },
+                { label: '双引号', value: '\"' },
+                { label: '单引号', value: '\'' },
+                { label: '退格符', value: '\b' },
+                { label: '换页符', value: '\f' },
+                { label: '垂直制表符', value: '\v' },
+            ]
+            for (let i = 0; i < arrList.length; i++) {
+                let item = arrList[i];
+                if (item.label == '制表符') {
+                    console.log("制表符\t制表符666888888\t制表符");
+                    console.log("制表符\t制表符666\t制表符");
+                } else {
+                    console.log(`${item.label}${item.value}${item.label}`);
+                }
+            }
+            console.log(`模版字符串能解析单双引号  "666''`);
+        }
     }
 }
 </script>

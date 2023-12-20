@@ -16,7 +16,7 @@ export default {
         }
     },
     mounted(){
-        this.demo10();
+        this.demo12();
     },
     methods: {
         demo1(){
@@ -120,30 +120,10 @@ export default {
         demo10 (params = []) {
             console.log('方法默认值', params);
 
-
-            let key = null;
-            let sky = key || [];
-            // ?? 效果等于 ||
-            // let sky = key ?? [];
-            console.log('前面false才执行后面代码---定义默认值', sky);
-
-            // ?? 和 ? 是typescript语法
-            // let obj={a:{b:1}}
-            // console.log(obj?.a?.b)
-            // console.log(obj?.a?.c)
-
-
-
-            let flag = true, bean = '土豆';// 定义多个变量
-            flag && (bean = '香蕉');
-            console.log("前面true才执行后面代码", bean)
-
-
             let purpose = '?id=128';
             console.log('括号连续拼写', (purpose.split('id='))[1]);
 
-
-
+            let bean = '土豆';
             if(true) console.log('--bean-2-', bean),bean = '苹果';
             /*
                 等价于  if(true) {
@@ -179,7 +159,7 @@ export default {
             const [ aaa, bbb, ccc = '噢' ] = listArr
             console.log("--数组的解构赋值--", aaa, "---", bbb, "---", ccc)
 
-            
+
         },
         demo11 () {
             let ly = 867;
@@ -189,6 +169,28 @@ export default {
             }catch(err){
                 console.log('在此处理错误',err);
             }
+        },
+        demo12 () {
+            /*
+                ?? 和 ? 是typescript语法
+                ?? 只有null、undefined才取后面值
+                && 只有1、true才取后面值
+                !转布尔值
+                !!转了两次布尔值
+            */
+            let arrBox = [0, false, 1, true, '', null, undefined, [], {}];
+            for (let i = 0; i < arrBox.length; i++) {
+                let item = arrBox[i];
+
+                console.log(`${JSON.stringify(item)} || ${item || '默认值'}     ?? ${item ?? '默认值'}     && ${item && '默认值'}     ! ${!item}     !! ${!!item}`);
+            }
+
+            let obj={a:{b:()=>{return 666}}}
+            console.log('对象没有该key往下取值会报错，用了?就能不报错', obj?.a?.b(), '---', obj?.at?.b());
+
+            let flag = true, bean = '土豆';// 定义多个变量
+            flag && (bean = '香蕉');
+            console.log("&&", bean);
         }
     }
 }
