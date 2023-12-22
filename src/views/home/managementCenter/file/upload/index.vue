@@ -1,33 +1,28 @@
 
 <template>
     <section id="upload-unit">
-        <h1>单个上传图片</h1>
+        <LineTextLine>单个上传图片</LineTextLine>
 		<upload1 yuming="http://localhost:8062/sky/shop/upload"></upload1>
 
-		<br><br>
-		<h1>上传图片列表</h1>
+        <LineTextLine>上传图片列表</LineTextLine>
 		<upload2></upload2>
 
-		<br><br>
-		<h1>原生js上传图片</h1>
+        <LineTextLine>原生js上传图片</LineTextLine>
 		<upload3></upload3>
 
-		<br><br>
-		<h1>头像上传裁切</h1>
+        <LineTextLine>头像上传裁切</LineTextLine>
 		<customAvatar></customAvatar>
 
-		<br><br>
-		<h1>阿里云对象存储OSS</h1>
+        <LineTextLine>阿里云对象存储OSS</LineTextLine>
 		<upload1 yuming="http://localhost:8069/sky/sys/oss/file/upload"></upload1>
 
-        <br><br>
-		<h1>Minio对象存储</h1>
+        <LineTextLine>Minio对象存储</LineTextLine>
 		<upload1 yuming="http://localhost:8069/sky/sys/upload/uploadMinio"></upload1>
     </section>
 </template>
 
 <script>
-import upload1 from '@/views/home/managementCenter/effect/upload/upload1.vue';
+import upload1 from '@/views/home/managementCenter/file/upload/upload1.vue';
 import upload2 from './upload2.vue';
 import upload3 from './upload3.vue';
 import customAvatar from './customAvatar.vue';

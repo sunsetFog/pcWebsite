@@ -181,12 +181,16 @@ export default {
             let arrBox = [0, false, 1, true, '', null, undefined, [], {}];
             for (let i = 0; i < arrBox.length; i++) {
                 let item = arrBox[i];
+                let flag = false;
+                if (item) {
+                    flag = true;
+                }
 
-                console.log(`${JSON.stringify(item)} || ${item || '默认值'}     ?? ${item ?? '默认值'}     && ${item && '默认值'}     ! ${!item}     !! ${!!item}`);
+                console.log(`${JSON.stringify(item)}     判断 ${flag}    || ${item || '默认值'}     ?? ${item ?? '默认值'}     && ${item && '默认值'}     ! ${!item}     !! ${!!item}`);
             }
 
-            let obj={a:{b:()=>{return 666}}}
-            console.log('对象没有该key往下取值会报错，用了?就能不报错', obj?.a?.b(), '---', obj?.at?.b());
+            let obj1={a:{b:()=>{return 666}}}
+            console.log('?遇到undefined不往下面取值，就不报错了', obj1?.a?.b(), '---', obj1?.at?.b());
 
             let flag = true, bean = '土豆';// 定义多个变量
             flag && (bean = '香蕉');

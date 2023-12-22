@@ -124,7 +124,7 @@ export default {
             }
 
             axios({
-                url: 'http://localhost:8060/sky/downloadFile2',
+                url: 'http://localhost:8062/sky/downloadFile2',
                 method: 'get',
                 params: params,
                 responseType: 'blob',// 表明返回服务器返回的数据类型
