@@ -1,16 +1,20 @@
 <template>
     <section id="vueqr">
-        <vue-qr  :logoSrc="config.logo" :text="config.value" :size="200" :margin="0"></vue-qr>
+        <!-- <vue-qr :logoSrc="config.logo" :text="config.value" :size="200" :margin="0"></vue-qr> -->
         <el-button @click="downloadImg()">下载二维码</el-button>
     </section>
 </template>
 
 <script>
-// npm install vue-qr --save
-// http://www.fly63.com/article/detial/1086
-import VueQr from 'vue-qr'
+/*
+    vue-qr是vue2的，没vue3，报错就注释了
+    npm install vue-qr --save
+    http://www.fly63.com/article/detial/1086
+*/
+
+// import VueQr from 'vue-qr'
 export default {
-    components:{VueQr},
+    // components:{VueQr},
     data(){
         return{
             config: {

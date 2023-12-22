@@ -1,10 +1,11 @@
 <template>
     <section>
-        <!-- 
+        <LineTextLine>url、base64、blob相互转换</LineTextLine>
+        <!--
             url、base64、blob相互转换方法
             https://zhuanlan.zhihu.com/p/57700185
 
-            file互转base64图片 和 file转blob图片：在这项目的上传图片里
+            上传图片实现了：file互转base64图片 和 file转blob图片
          -->
     </section>
 </template>
@@ -23,18 +24,17 @@ export default {
     },
     created() {
         this.urlToBase64(this.urlImg).then(function(base64) {
-            console.log("--base64--"+base64);
+            console.log("--base64--", base64);
         })
 
         let base64 = this.base64Img.split(',')[1];
         this.base64ToBlob({b64data: base64, contentType: 'image/png'}).then(res => {
             // 转后后的blob对象
-            console.log('blob', res)
-        })
-
-        this.blobToBase64(this.blobImg).then(res => {
-            // 转化后的base64
-            console.log('++base64++', res)
+            console.log('--blob--', res)
+            this.blobToBase64(res).then(res => {
+                // 转化后的base64
+                console.log('++base64++', res);
+            })
         })
     },
     methods: {
