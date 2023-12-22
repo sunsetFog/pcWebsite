@@ -7,9 +7,6 @@
         <LineTextLine>上传图片列表</LineTextLine>
 		<upload2></upload2>
 
-        <LineTextLine>原生js上传图片</LineTextLine>
-		<upload3></upload3>
-
         <LineTextLine>头像上传裁切</LineTextLine>
 		<customAvatar></customAvatar>
 
@@ -24,11 +21,10 @@
 <script>
 import upload1 from '@/views/home/managementCenter/file/upload/upload1.vue';
 import upload2 from './upload2.vue';
-import upload3 from './upload3.vue';
 import customAvatar from './customAvatar.vue';
 export default {
 	name: "uploadUnit",
-	components: { upload1, upload2, upload3, customAvatar },
+	components: { upload1, upload2, customAvatar },
     data(){
         return{
 

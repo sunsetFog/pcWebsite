@@ -57,6 +57,13 @@ export default {
                     name: params.filename,
                     suffix: '.xlsx',
                     blobOptions: { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }
+                    // 3种文件类型
+                    // blobOptions: { type: '.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel' }
+                }
+                let file03 = {
+                    name: params.filename,
+                    suffix: '.csv',
+                    blobOptions: { type: 'text/csv' }
                 }
                 file01.title = file01.name + file01.suffix;
 

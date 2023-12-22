@@ -1,7 +1,7 @@
 <template>
     <section id="upload3">
         <div class="file">
-            <input accept="image/*" type="file" @change="btnUploadFile"/>
+            <input accept="image/*" type="file" @change="handleFileUpload"/>
         </div>
     </section>
 </template>
@@ -15,10 +15,10 @@ export default {
         }
     },
     methods: {
-        btnUploadFile(e) {
-            console.log('--btnUploadFile--', e);
+        handleFileUpload(event) {
+            console.log('--handleFileUpload--', event);
             let that = this;
-            var imgFile = e.target.files[0]; // 获取图片文件
+            var imgFile = event.target.files[0]; // 获取图片文件
             var formData = new FormData(); // 创建form对象
             formData.append('file', imgFile);  // 通过append向form对象添加数据
             formData.append('id', 1);
@@ -28,13 +28,10 @@ export default {
                 method: 'post',
                 data: formData,
                 headers: {
-                    // 'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data'
                 }
             }).then((res) => {
-                console.log('--btnUploadFile--', res);
-                if(res.code == "200") {
-
-                }
+                console.log('--handleFileUpload--', res);
             }).catch((err)=>{
                 console.log('error',err);
             })
