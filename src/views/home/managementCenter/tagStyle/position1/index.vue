@@ -74,7 +74,7 @@
                 <div class="footer"></div>
             </div>
             <div class="lotus"></div>
-            <div class="regular"></div>
+
         </main>
     </section>
 </template>
@@ -90,30 +90,30 @@
     main {
         width: 1485px;
         min-width: 1485px;
-        position: relative;// lotus要绝对定位，所以加相对定位
+        position: relative; // lotus要绝对定位，所以加相对定位
 
         .mercury {
             width: 100%;
-            padding: 419px 0 0 0;// 上用padding，然后上用绝对定位
+            padding: 419px 0 0 0; // 上用padding，然后上用绝对定位
             box-sizing: border-box;
             position: relative;
             left: 0px;
             top: 0px;
-            z-index: 2;// 要比lotus层次大，所以加相对定位
+            z-index: 2; // 要比lotus层次大，所以加相对定位
 
             .header {
                 width: 100%;
-                height: 545px;// 相对定位高度撑开545，所以用绝对定位
+                height: 545px; // 相对定位高度撑开545，所以用绝对定位
                 background: url('./img/box_top.png');
                 background-size: 100% 490px;
                 background-repeat: no-repeat;
                 background-position: center bottom;
                 display: flex;
                 justify-content: center;
-                position: absolute;// 绝对定位  以父元素为参考，脱离文档（不能撑开父盒子高度）  默认以左上角为起点
+                position: absolute;
                 left: 0px;
                 top: 0px;
-                z-index: 1;// 层次关系
+                z-index: 1; // 层次关系
 
                 img {
                     width: 862px;
@@ -133,7 +133,7 @@
                 position: relative;
                 left: 0px;
                 top: 0px;
-                z-index: 2;// 要比header层次大，所以加相对定位
+                z-index: 2; // 要比header层次大，所以加相对定位
             }
 
             .footer {
@@ -157,23 +157,24 @@
             z-index: 1;
         }
     }
-/*
+
+    /*
     position: relative;
     相对定位  以自身为参考，不脱脱离文档（能撑开父盒子高度）
     因此table高度等于honey高度
     相对定位、绝对定位、固定定位都能用关键字：top、bottom、left、right、z-index
     注意：父元素设置相对定位、绝对定位、固定定位，子元素设置绝对定位，都是以父元素为参考
 
+    绝对定位  以父元素为参考，脱离文档（不能撑开父盒子高度）  默认以左上角为起点
+
     float半脱离: 脱离了文档流，不脱离文本流---清除浮动才能撑开父盒子高度
     绝对定位、固定定位全脱离---不需要撑开父盒子高度，高度写死
 
     position: static;静态定位/常规定位/自然定位  作用：使元素定位于常规流/自然流中   忽视top、bottom、left、right、z-index，是这些关键字作用失效
-    position: fixed;固定定位  以浏览器窗口为参考，脱离文档
 
-    inset: 0px; 等价于 top: 0; right: 0; bottom: 0; left: 0;
-    inset: 1px 2px 3px; 等价于 top: 1px; right: 2px; bottom: 3px; left: 2px;
+    补充：父盒子和子盒子都用position: absolute;时，父盒子不需要加position: relative;
 
-    span靠字体撑开高度时，用定位会向上偏移一些，要加高度的定位才精准，不是rem偏差导致的
+    补充：span靠字体撑开高度时，用定位会向上偏移一些，要加高度的定位才精准，不是rem偏差导致的
 */
     table {
         width: 100%;
@@ -218,15 +219,7 @@
             }
         }
     }
-    // 宽高覆盖整个浏览器
-    .regular {
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(121, 132, 158, 0.3);
-    }
+
 
 }
 </style>
