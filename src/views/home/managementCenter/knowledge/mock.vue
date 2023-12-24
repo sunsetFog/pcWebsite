@@ -1,25 +1,24 @@
 <template>
     <section id="mock">
-        <!--mock本地模拟数据-->
-        <h1>四种渲染方式</h1>
-
-        <h2>1.基础content渲染</h2>
+        <LineTextLine>基础content渲染</LineTextLine>
         <div v-for="(item, index) in markers" :key="index" v-html="item.content"></div>
 
-        <!-- 在template上使用for循环
-        template的作用是模板占位符，可帮助我们包裹元素，但在循环过程当中，template不会被渲染到页面上 -->
-        <h2>2.template模板渲染</h2>
+        <LineTextLine>template模板渲染</LineTextLine>
+
         <template v-for="item,index in 2">
             <p>{{index}}===={{item}}</p>
         </template>
+        <LineTextLine>slot插槽渲染</LineTextLine>
 
-        <h2>3.slot插槽渲染</h2>
-
-
-        <h2>4.render渲染</h2>
+        <LineTextLine>render渲染</LineTextLine>
     </section>
 </template>
-
+<!--
+    mock本地模拟数据
+    四种渲染方式
+    在template上使用for循环
+        template的作用是模板占位符，可帮助我们包裹元素，但在循环过程当中，template不会被渲染到页面上
+ -->
 <script>
 //npm install mockjs --save
 export default {

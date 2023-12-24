@@ -3,7 +3,7 @@
     <div class="example-frame">
         <img class="big-fish" src="@sky/pcDesign/pages/login/img/fish.png"/>
         <div class="manage--content">
-            <div class="manage-content-left">
+            <aside class="manage-content-left">
                 <el-scrollbar style="width:100%;height:100%;">
                     <el-menu
                     :default-active="menuValue"
@@ -62,8 +62,8 @@
 
                 </el-scrollbar>
 
-            </div>
-            <div class="manage-content-right">
+            </aside>
+            <article class="manage-content-right">
 
 
                 <!--
@@ -103,7 +103,7 @@
                 <!-- <router-view v-if="$route.meta.keepAlive"></router-view> -->
 
 
-            </div>
+            </article>
         </div>
     </div>
     <footers :vip_foot="false"></footers>

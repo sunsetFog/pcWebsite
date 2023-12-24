@@ -93,6 +93,7 @@ export default {
     created() {
         console.log("--created--");
         /*
+            vue3改版：已删除$set
             改值了，在控制台能打印出来，却没有更新到视图上时用$set解决:
             target：要更改的数据源(可以是对象或者数组)
             key：要更改的具体数据---数组是下标，对象是key值
@@ -100,12 +101,12 @@ export default {
             Vue.set( target, key, value );不好用，不能触发视图更新
             this.$set( target, key, value );能触发视图更新
         */
-        this.$set( this, 'title', '生命周期' );
-        this.$set( this.list, 1, { id: 2, name: '锦锦' } );// created里添加才行
-        console.log('$set数组', this.list);
-        this.$set( this.overnight, 'charm', '气质' );// 修改
-        this.$set( this.overnight, 'Dijah', '迪迦' );// created里添加才行
-        console.log('$set对象', this.overnight);
+        // this.$set( this, 'title', '生命周期' );
+        // this.$set( this.list, 1, { id: 2, name: '锦锦' } );// created里添加才行
+        // console.log('$set数组', this.list);
+        // this.$set( this.overnight, 'charm', '气质' );// 修改
+        // this.$set( this.overnight, 'Dijah', '迪迦' );// created里添加才行
+        // console.log('$set对象', this.overnight);
 
         // 应用情景一
         this.$nextTick(function(){// 异步将回调延迟到下次 DOM 更新后执行

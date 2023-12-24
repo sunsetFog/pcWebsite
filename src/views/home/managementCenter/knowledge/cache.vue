@@ -1,6 +1,6 @@
 <template>
     <section id="cache">
-<!-- 浏览器缓存 -->
+        <LineTextLine>indexDb缓存(本地数据库)</LineTextLine>
         <el-button link @click="addData">添加数据</el-button>
         <br>
         <el-button link @click="updateData">修改数据</el-button>

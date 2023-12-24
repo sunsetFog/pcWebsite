@@ -6,7 +6,7 @@
       v-show="cover_active"
       @click="judgeToken()"
     ></div>
-    <div class="header-info">
+    <header class="header-info">
       <div class="head-content">
         <div class="reserve">
           <ul>
@@ -53,7 +53,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </header>
 
     <div class="navigation-bar">
       <div class="tabs-content">
@@ -72,13 +72,13 @@
         </div>
       </div>
     </div>
-    <main>
+    <article>
         <!--
             study: 路由视图
             测试：用路由跳转，显示在<router-view>里，测试ok
          -->
       <router-view></router-view>
-    </main>
+    </article>
 
     <div class="fixed-bar" v-show="fixed_state">
       <ul>

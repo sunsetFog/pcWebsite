@@ -6,9 +6,12 @@
 		从而修改了state数据，getters监听到了state修改，最后computed也监听到state修改，
 		dom渲染，完成
 	-->
+    <LineTextLine>使用getters</LineTextLine>
 	<el-button type="info">mapGetters:{{money}}---{{seed}}</el-button>
+    <LineTextLine>调用mutations方法</LineTextLine>
 	<el-button type="success" @click="playerInfo({title: 'money',params: 9966666888})">...mapMutations</el-button>
 	<el-button type="error" @click="submit_mutation">调用_mutation</el-button>
+    <LineTextLine>调用actions方法</LineTextLine>
 	<el-button type="warning" @click="getPlayerInfo(player_info)">...mapActions</el-button>
 	<el-button type="error" @click="submit_action">调用_action</el-button>
 </div>

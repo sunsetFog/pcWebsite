@@ -378,9 +378,8 @@ export default {
         value = Number(value);
         console.log("name-o-", value);
       }
-      this.$set(this.ocrFormData, id, value);
       // console.log('list==43=',this.ocrFormData)
-      // this.ocrFormData[id] = value
+      this.ocrFormData[id] = value
     },
 
     sunZhang(value) {
@@ -728,7 +727,7 @@ export default {
 
           columns.map((item, index) => {
             // 添加字段
-            this.$set(this.ocrFormData, item.columnName, undefined);
+            this.ocrFormData[item.columnName] = undefined;
             if (item.required == "1") {
               // 添加正则
               this.rules[item.columnName] = [

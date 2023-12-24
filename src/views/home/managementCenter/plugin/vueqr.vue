@@ -7,7 +7,7 @@
 
 <script>
 /*
-    vue-qr是vue2的，没vue3，报错就注释了
+    vue3改版：vue-qr是vue2插件，不支持vue3
     npm install vue-qr --save
     http://www.fly63.com/article/detial/1086
 */

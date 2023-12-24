@@ -1,13 +1,10 @@
 <template>
 <section id="refs">
-			<div class='rainbow' id="880" ref="stars">ref减少dom操作</div>
-			<el-button type="primary" @click="light">Primary</el-button>
-			<!-- 
-				子组件refs
-				能调用子组件data和方法
-			 -->
-			<el-button type="warning" @click="gift">ref调用子组件数据和方法</el-button>
-			<moon ref="play"></moon>
+    <LineTextLine>ref操作DOM</LineTextLine>
+    <button @click="light" class='rainbow' id="880" ref="stars">获取我</button>
+    <LineTextLine>ref调用子组件data和方法</LineTextLine>
+    <button type="warning" @click="gift">ref调用子组件数据和方法</button>
+    <moon ref="play"></moon>
 </section>
 </template>
 
@@ -24,10 +21,10 @@ import moon from './parent/children';
 			light(){
 				alert(this.$refs.stars.id);//获取属性值,标志位置
 				//方法一:
-				// var frames = document.getElementsByClassName('rainbow')[0];
+				// var peach = document.getElementsByClassName('rainbow')[0];
 				//相当于方法二:
-				var frames = this.$refs.stars;
-				console.log(frames);
+				var peach = this.$refs.stars;
+				console.log(peach);
 				this.$refs.stars.innerHTML = 'hello';
 			},
 			gift(){
@@ -38,7 +35,7 @@ import moon from './parent/children';
 				console.log('$nextTick是DOM的异步更新');
 			},
 			initial(value){
-				
+
 			}
 		},
 	}
