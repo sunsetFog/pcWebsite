@@ -57,15 +57,17 @@ import 'element-plus/dist/index.css';
 
 import VueCookies from 'vue-cookies';
 
-import BaiduMap from 'vue-baidu-map';
+// vue3改版：vue-baidu-map是vue2插件，不支持vue3
+// import BaiduMap from 'vue-baidu-map';
+import BaiduMap from 'vue-baidu-map-3x';
 
 rainbow
     .use(store)
     .use(router)
     .use(ElementUI, { size: 'small', zIndex: 3000 })
     .use(VueCookies)
-    // .use(BaiduMap, {
-    //     // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
-    //     ak: 'CFFiHT5dejkMz0DEVwGZCac1heaxOwUV'
-    // })
+    .use(BaiduMap, {
+        // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
+        ak: 'CFFiHT5dejkMz0DEVwGZCac1heaxOwUV',
+    })
     .mount('#app');
