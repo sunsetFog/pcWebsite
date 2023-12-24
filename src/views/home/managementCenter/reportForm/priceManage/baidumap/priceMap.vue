@@ -77,7 +77,7 @@ export default {
             let self = this;
             let json = {}
             self.$apihttp({
-                url: '/role/selectDefaultCity',
+                url: process.env.VUE_APP_MOCK_URL + '/role/selectDefaultCity',
                 method: 'post',
                 data: json
             }).then((res) => {
@@ -148,7 +148,7 @@ export default {
             let self = this;
             let json = {}
             self.$apihttp({
-                url: '/priceAnalysis/allCityPriceAnalysis',
+                url: process.env.VUE_APP_MOCK_URL + '/priceAnalysis/allCityPriceAnalysis',
                 method: 'post',
                 data: json
             }).then((res) => {

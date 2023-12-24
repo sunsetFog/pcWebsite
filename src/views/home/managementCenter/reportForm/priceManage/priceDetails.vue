@@ -162,7 +162,7 @@ export default {
                 'priceType': 'ACT_AVG'
             }
             self.$apihttp({
-                url: '/priceAnalysis/priceAnalysisList',
+                url: process.env.VUE_APP_MOCK_URL + '/priceAnalysis/priceAnalysisList',
                 method: 'post',
                 data: params
             }).then((res) => {
@@ -181,7 +181,7 @@ export default {
                 'projectId': projectId
             }
             self.$apihttp({
-                url: '/priceAnalysis/priceAnalysisTrendData',
+                url: process.env.VUE_APP_MOCK_URL + '/priceAnalysis/priceAnalysisTrendData',
                 method: 'post',
                 data: params
             }).then((res) => {

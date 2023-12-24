@@ -1,4 +1,3 @@
-
 import { createApp } from 'vue';
 import App from './App.vue';
 import './registerServiceWorker';
@@ -16,11 +15,12 @@ import 'font-awesome/css/font-awesome.min.css';
 // mock
 import '@sky/database/index';
 
-
 const rainbow = createApp(App);
 // 全局注册组件
 import LineTextLine from '@sky/pcDesign/components/lineTextLine/index.vue';
+import CloudEchart from '@sky/pcDesign/components/echarts/cloudEchart.vue';
 rainbow.component('LineTextLine', LineTextLine);
+rainbow.component('CloudEchart', CloudEchart);
 
 // 全局注册图标组件
 import * as Icons from '@element-plus/icons-vue';
@@ -58,7 +58,6 @@ import 'element-plus/dist/index.css';
 import VueCookies from 'vue-cookies';
 
 import BaiduMap from 'vue-baidu-map';
-
 
 rainbow
     .use(store)

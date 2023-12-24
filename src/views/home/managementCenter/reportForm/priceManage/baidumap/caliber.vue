@@ -12,7 +12,7 @@
             </div>
             <template #footer>
                 <div class="dialog-footer">
-                <img src="@/views/priceManage/img/tipfooter.png"/>
+                <img src="../img/tipfooter.png"/>
             </div>
         </template>
 

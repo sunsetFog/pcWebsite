@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import PriceMap from '@/components/baidumap/priceMap';
+import PriceMap from './baidumap/priceMap';
 import priceDetails from './priceDetails'
-import caliber from '@/components/baidumap/caliber'
+import caliber from './baidumap/caliber'
 export default {
     name: 'PriceManage',
     data () {
@@ -79,7 +79,7 @@ export default {
             let self = this;
             let json = {}
             self.$apihttp({
-                url: '/role/selectDefaultCity',
+                url: process.env.VUE_APP_MOCK_URL + '/role/selectDefaultCity',
                 method: 'post',
                 data: json
             }).then((res) => {
@@ -139,7 +139,7 @@ export default {
             let self = this;
             let json = {}
             self.$apihttp({
-                url: '/mktinformationoperativemenu/orgCityListFull',
+                url: process.env.VUE_APP_MOCK_URL + '/mktinformationoperativemenu/orgCityListFull',
                 method: 'post',
                 data: json
             }).then((res) => {
@@ -172,7 +172,7 @@ export default {
                 projectName: self.search_value
             }
             self.$apihttp({
-                url: '/priceAnalysis/selectProjectByProjectName',
+                url: process.env.VUE_APP_MOCK_URL + '/priceAnalysis/selectProjectByProjectName',
                 method: 'post',
                 data: json
             }).then((res) => {
@@ -200,7 +200,7 @@ export default {
                 cityId: self.city_id
             }
             self.$apihttp({
-                url: '/priceAnalysis/selectProjectByCity',
+                url: process.env.VUE_APP_MOCK_URL + '/priceAnalysis/selectProjectByCity',
                 method: 'post',
                 data: json
             }).then((res) => {

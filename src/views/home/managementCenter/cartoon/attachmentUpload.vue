@@ -474,7 +474,7 @@ export default {
       this.loadingStatus = "getResult";
       let param = { batchId: this.batchId };
       this.$apihttp({
-        url: "/ifin-expense/ocr/getRegInvoiceResult",
+        url: process.env.VUE_APP_MOCK_URL + "/ifin-expense/ocr/getRegInvoiceResult",
         data: param,
         method: "post",
       }).then((data) => {
@@ -630,7 +630,7 @@ export default {
             console.log("保存传的参数", params);
             if (!this.ocrFormData.recordId) {
               // this.$apihttp({
-              //     url: '/ifin-expense/oieOcr/saveInvoice',
+              //     url: process.env.VUE_APP_MOCK_URL + '/ifin-expense/oieOcr/saveInvoice',
               //     data: params,
               //     method: 'post'
               // }).then(data => {
@@ -651,7 +651,7 @@ export default {
               this.loadingStatus = null;
             } else {
               // this.$apihttp({
-              //     url: '/ifin-expense/oieOcr/updateInvoice',
+              //     url: process.env.VUE_APP_MOCK_URL + '/ifin-expense/oieOcr/updateInvoice',
               //     data: params,
               //     method: 'post'
               // }).then(data => {
@@ -715,7 +715,7 @@ export default {
         tableName: this.getRequestsOCR.tableName,
       };
       this.$apihttp({
-        url: "/ifin-expense/ocrTemplates/getOCRTemplate",
+        url: process.env.VUE_APP_MOCK_URL + "/ifin-expense/ocrTemplates/getOCRTemplate",
         data: params,
         method: "post",
       })

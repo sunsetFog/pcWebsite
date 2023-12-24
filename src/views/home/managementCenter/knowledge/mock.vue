@@ -35,7 +35,7 @@ export default {
         getJson () {
             let self = this;
             self.$apihttp({
-                url: '/store/price-list',
+                url: process.env.VUE_APP_MOCK_URL + '/store/price-list',
                 method: 'post',
                 data: {}
             }).then((res) => {
@@ -105,11 +105,11 @@ export default {
         demo () {
             let self = this;
             self.$apihttp({
-                url: '/store/goods-list',
+                url: process.env.VUE_APP_MOCK_URL + '/store/goods-list',
                 method: 'post',
                 data: { store_id: 12, current_page: 3, page_size: 10 }
             }).then((res) => {
-                console.log('后台返回数据---', res)
+                console.log('---后台返回数据---', res)
             }).catch((err) => {
                 console.log('error',err);
             })
