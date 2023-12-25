@@ -310,7 +310,9 @@ export default{
         width: 100%;
         height: 100%;
         .information-left{
-            .mixin_float(36.9%,100%,left);
+            width: 36.9%;
+            height: 100%;
+            float: left;
             .user-title{
                 border-top: 7px solid @color_blueviolet;
                 .mixin_div(100%,70px,@color_darkgray,@color_gray,left);
@@ -325,7 +327,8 @@ export default{
                     .mixin_div(100%,205px,none,@color_white,left);
                     position: relative;
                     img:nth-of-type(1){
-                        .mixin_img(80px,80px);
+                        width: 80px;
+                        height: 80px;
                         position: absolute;
                         left: 50%;
                         top: 45px;
@@ -334,7 +337,8 @@ export default{
                         cursor: pointer;
                     }
                     img:nth-of-type(2){
-                        .mixin_img(138px,138px);
+                        width: 138px;
+                        height: 138px;
                         position: absolute;
                         left: 50%;
                         top: 15px;
@@ -365,7 +369,8 @@ export default{
                         padding-top: 5px;
                         float: left;
                         img{
-                            .mixin_img(15px,20px);
+                            width: 15px;
+                            height: 20px;
                             float: left;
                         }
                     }
@@ -406,7 +411,9 @@ export default{
                         }
                     }
                     .nickname-select{
-                        .mixin_float(80%,30px,right);
+                        width: 80%;
+                        height: 30px;
+                        float: right;
                         input{
                             .mixin_input(100px,28px);
                             border: 1px solid @color_blueviolet;
@@ -417,7 +424,9 @@ export default{
                         }
                     }
                     .sex-select{
-                        .mixin_float(80%,30px,right);
+                        width: 80%;
+                        height: 30px;
+                        float: right;
                     }
                     .nickname-select,.sex-select{
                         button:nth-of-type(1){
@@ -447,7 +456,9 @@ export default{
 
         }
         .information-right{
-            .mixin_float(63.1%,100%,right);
+            width: 63.1%;
+            height: 100%;
+            float: right;
             padding: 0px 0px 0px 20px;
             .archives-list{
                 .mixin_div(100%,145px,none,auto,left);
@@ -461,7 +472,8 @@ export default{
                     .mixin_div(100%,95px,@color_purple,@color_white,left);
                     position: relative;
                     img{
-                        .mixin_img(55px,55px);
+                        width: 55px;
+                        height: 55px;
                         position: absolute;
                         left: 20px;
                         top: 18px;

@@ -190,7 +190,9 @@ export default {
         width: 100%;
         height: 620px;
         .service-type{
-            .mixin_float(155px,620px,left);
+            width: 155px;
+            height: 620px;
+            float: left;
             background: @color_tone20;
             font-size: @font_size20;
             .type-active{
@@ -221,7 +223,9 @@ export default {
             }
         }
         .safe-content{
-            .mixin_float(84%,620px,right);
+            width: 84%;
+            height: 620px;
+            float: right;
             padding: 75px 40px 0px 40px;
             .account-balance,.amount-deposited,.input-deposit{
                 width: 100%;

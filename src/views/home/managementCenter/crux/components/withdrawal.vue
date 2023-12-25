@@ -188,7 +188,9 @@ export default {
         width: 100%;
         height: 620px;
         .payment-type{
-            .mixin_float(155px,620px,left);
+            width: 155px;
+            height: 620px;
+            float: left;
             background: @color_tone20;
             font-size: @font_size20;
             .type-active{
@@ -219,7 +221,9 @@ export default {
             }
         }
         .payment-content{
-            .mixin_float(84%,620px,right);
+            width: 84%;
+            height: 620px;
+            float: right;
             padding: 75px 45px 0px 45px;
             .current-balance,.withdrawal-amount-s,.account-number{
                 width: 100%;
@@ -251,7 +255,8 @@ export default {
                     cursor: pointer;
                 }
                 img:nth-of-type(1){
-                    .mixin_img(42px,38px);
+                    width: 42px;
+                    height: 38px;
                     float: left;
                     margin: 2px 14px 0px 0px;
                 }
@@ -266,7 +271,8 @@ export default {
                     text-align: center;
                 }
                 img:nth-of-type(2){
-                    .mixin_img(42px,38px);
+                    width: 42px;
+                    height: 38px;
                     float: left;
                     margin: 2px 0px 0px 14px;
                     cursor: pointer;
@@ -275,7 +281,9 @@ export default {
             .account-number{
                 margin-top: 50px;
                 .user-account{
-                    .mixin_float(280px,45px,left);
+                    width: 280px;
+                    height: 45px;
+                    float: left;
                 }
                 .admin-account{
                     .mixin_button(122px,34px,@color_white2,@color_blueviolet);

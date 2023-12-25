@@ -427,7 +427,8 @@ export default {
                 padding: 5px 25px;
 
                 img {
-                    .mixin_img(100%, 100%);
+                    width: 100%;
+                    height: 100%;
                     float: left;
                 }
             }
@@ -436,7 +437,8 @@ export default {
                 height: 53px;
 
                 img {
-                    .mixin_img(100%, 100%);
+                    width: 100%;
+                    height: 100%;
                     float: left;
                 }
             }
@@ -445,7 +447,8 @@ export default {
                 height: 53px;
 
                 img {
-                    .mixin_img(100%, 100%);
+                    width: 100%;
+                    height: 100%;
                     float: left;
                 }
             }
@@ -466,7 +469,9 @@ export default {
             overflow: hidden;
 
             .reserve {
-                .mixin_float(auto, 100%, left);
+                width: auto;
+                height: 100%;
+                float: left;
                 padding: 17px 0px 0px 0px;
 
                 .reserve-border {
@@ -493,7 +498,9 @@ export default {
             }
 
             .scenery-login {
-                .mixin_float(10px, 50px, right);
+                width: 10px;
+                height: 50px;
+                float: right;
                 position: relative;
 
                 .nickname,
@@ -541,7 +548,9 @@ export default {
             }
 
             .recharge-example {
-                .mixin_float(260px, 50px, right);
+                width: 260px;
+                height: 50px;
+                float: right;
                 position: relative;
 
                 .example-contain {
@@ -553,11 +562,14 @@ export default {
                     overflow: hidden;
 
                     .welcome {
-                        .mixin_float(auto, 100%, right);
+                        width: auto;
+                        height: 100%;
+                        float: right;
                         margin-right: 15px;
 
                         img {
-                            .mixin_img(14px, 14px);
+                            width: 14px;
+                            height: 14px;
                             margin: 17px 8px 0px 0px;
                             float: right;
                         }
@@ -622,11 +634,14 @@ export default {
             margin: 0 auto;
 
             .tabs-left {
-                .mixin_float(200px, 100%, left);
+                width: 200px;
+                height: 100%;
+                float: left;
                 position: relative;
 
                 img {
-                    .mixin_img(250px, 70px);
+                    width: 250px;
+                    height: 70px;
                     position: absolute;
                     top: 11px;
                     left: -46px;
@@ -634,7 +649,9 @@ export default {
             }
 
             .tabs-right {
-                .mixin_float(1000px, 100%, right);
+                width: 1000px;
+                height: 100%;
+                float: right;
 
                 ul {
                     color: @color_white;

@@ -168,7 +168,9 @@ export default {
         width: 100%;
         height: 620px;
         .service-type{
-            .mixin_float(155px,620px,left);
+            width: 155px;
+            height: 620px;
+            float: left;
             background: @color_tone20;
             font-size: @font_size20;
             padding: 40px 0px 0px 0px;
@@ -177,7 +179,8 @@ export default {
                 position: relative;
                 cursor: pointer;
                 img:nth-of-type(1){
-                    .mixin_img(80px,80px);
+                    width: 80px;
+                    height: 80px;
                     position: absolute;
                     left: 50%;
                     top: 15px;
@@ -185,7 +188,8 @@ export default {
                     z-index: 3;
                 }
                 img:nth-of-type(2){
-                    .mixin_img(138px,138px);
+                    width: 138px;
+                    height: 138px;
                     position: absolute;
                     left: 50%;
                     top: -15px;
@@ -221,7 +225,9 @@ export default {
             }
         }
         .picture-content{
-            .mixin_float(84%,620px,right);
+            width: 84%;
+            height: 620px;
+            float: right;
             padding: 30px 120px 0px 150px;
             .head-example{
                 width: 100%;
@@ -233,13 +239,15 @@ export default {
                         position: relative;
                         cursor: pointer;
                         img:nth-of-type(1){
-                            .mixin_img(80px,80px);
+                            width: 80px;
+                            height: 80px;
                             position: absolute;
                             left: 29px;
                             top: 29px;
                         }
                         img:nth-of-type(2){
-                            .mixin_img(20px,20px);
+                            width: 20px;
+                            height: 20px;
                             position: absolute;
                             right: 30px;
                             bottom: 30px;
@@ -257,13 +265,15 @@ export default {
                         position: relative;
                         cursor: pointer;
                         img:nth-of-type(1){
-                            .mixin_img(100%,100%);
+                            width: 100%;
+                            height: 100%;
                             position: absolute;
                             left: 0px;
                             top: 0px;
                         }
                         img:nth-of-type(2){
-                            .mixin_img(20px,20px);
+                            width: 20px;
+                            height: 20px;
                             position: absolute;
                             right: 30px;
                             bottom: 30px;

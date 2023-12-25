@@ -150,7 +150,8 @@ export default defineComponent({
             height: 500px;
 
             img {
-                .mixin_img(100%, 500px);
+                width: 100%;
+                height: 500px;
             }
         }
     }
@@ -162,7 +163,8 @@ export default defineComponent({
         position: relative;
 
         .big-fish {
-            .mixin_img(326px; 387px);
+            width: 326px;
+            height: 387px;
             position: absolute;
             left: 0px;
             bottom: 0px;

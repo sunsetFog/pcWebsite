@@ -120,7 +120,9 @@ export default {
         width: 100%;
         height: 620px;
         .record-left{
-            .mixin_float(155px,620px,left);
+            width: 155px;
+            height: 620px;
+            float: left;
             background: @color_tone20;
             font-size: @font_size20;
             .type-active{
@@ -151,7 +153,9 @@ export default {
             }
         }
         .record-right{
-            .mixin_float(84%,620px,right);
+            width: 84%;
+            height: 620px;
+            float: right;
             padding: 30px 75px 0px 85px;
             .record-example{
                 width: 100%;

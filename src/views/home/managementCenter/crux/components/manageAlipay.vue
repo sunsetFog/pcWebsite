@@ -107,7 +107,8 @@ export default {
                     }
                 }
                 img{
-                    .mixin_img(30px,28px);
+                    width: 30px;
+                    height: 28px;
                     float: left;
                     margin: 8px 0px 0px 20px;
                     cursor: pointer;

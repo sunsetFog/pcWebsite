@@ -174,7 +174,8 @@ export default{
         .mixin_image(url('~@/views/home/managementCenter/crux/img/bg-guanli.jpg'));
         position: relative;
         .big-fish{
-            .mixin_img(326px;387px);
+            width: 326px;
+            height: 387px;
             position: absolute;
             left: 0px;
             bottom: 0px;
@@ -191,13 +192,16 @@ export default{
             margin-left: -600px;
             padding: 45px 43px 0px 43px;
             .manage-content-left{
-                .mixin_float(230px,auto,left);
+                width: 230px;
+                height: auto;
+                float: left;
                 background: #513663;
                 margin-right: 40px;
                 height: 1130px;
                 text-align: left;
                 .icon-url-margin{
-                    .mixin_img(20px,20px);
+                    width: 20px;
+                    height: 20px;
                     margin-right: 11px;
                     margin-top: -5px;
                 }
@@ -206,7 +210,9 @@ export default{
                 }
             }
             .manage-content-right{
-                .mixin_float(840px,1130px,right);
+                width: 840px;
+                height: 1130px;
+                float: right;
                 overflow-x: hidden;
                 color: #fff;
             }

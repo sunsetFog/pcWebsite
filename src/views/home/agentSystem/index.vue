@@ -67,7 +67,8 @@ export default{
         .mixin_image(url('~@/views/home/managementCenter/crux/img/bg-guanli.jpg'));
         position: relative;
         .big-fish{
-            .mixin_img(326px;387px);
+            width: 326px;
+            height: 387px;
             position: absolute;
             left: 0px;
             bottom: 0px;

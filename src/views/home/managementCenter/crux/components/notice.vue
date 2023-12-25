@@ -15,8 +15,6 @@
                     </div>
                     <div class="information">
                         <span>{{item.title}}</span>
-                        <span></span>
-                        <span>{{item.created_at}}</span>
                         <button v-show="!item.is_readed" @click.stop="consult(index,true)">点击查阅</button>
                         <img v-show="item.is_readed" src="@/views/home/managementCenter/crux/components/recharge/img/read.png"/>
                     </div>
@@ -152,12 +150,15 @@ export default {
                 height: 105px;
                 margin-bottom: 25px;
                 .picture-example{
-                    .mixin_float(13%,100%,left);
+                    width: 13%;
+                    height: 100%;
+                    float: left;
                     background: #420f4a;
                     border-top-left-radius: 4px;
                     border-bottom-left-radius: 4px;
                     img{
-                        .mixin_img(75px,60px);
+                        width: 75px;
+                        height: 60px;
                         float: left;
                         margin: 20px 0px 0px 40px;
                     }
@@ -173,20 +174,6 @@ export default {
                         left: 35px;
                         top: 15px;
                     }
-                    span:nth-of-type(2){
-                        .mixin_span(auto,35px,none,@color_white,left);
-                        font-size: @font_size16;
-                        position: absolute;
-                        left: 35px;
-                        top: 58px;
-                    }
-                    span:nth-of-type(3){
-                        .mixin_span(auto,35px,none,@color_white,left);
-                        font-size: @font_size16;
-                        position: absolute;
-                        left: 460px;
-                        bottom: 15px;
-                    }
                     button{
                         .mixin_button(125px,34px,@color_white2,@color_blueviolet);
                         border: 1px solid @color_blueviolet;
@@ -198,7 +185,8 @@ export default {
                         background: @color_white2_hover;
                     }
                     img{
-                        .mixin_img(80px,80px);
+                        width: 80px;
+                        height: 80px;
                         position: absolute;
                         right: 58px;
                         top: 12px;

@@ -202,7 +202,9 @@ export default {
         width: 100%;
         height: 620px;
         .fashion-way{
-            .mixin_float(190px,620px,left);
+            width: 190px;
+            height: 620px;
+            float: left;
             overflow: auto;
             .payment-type{
                 width: 155px;
@@ -242,7 +244,9 @@ export default {
             }
         }
         .payment-content{
-            .mixin_float(82%,620px,right);
+            width: 82%;
+            height: 620px;
+            float: right;
             padding: 0px 35px 0px 25px;
             .payment-methods{
                 width: 100%;
@@ -288,7 +292,8 @@ export default {
                     top: 0px;
                 }
                 img{
-                    .mixin_img(40px,40px);
+                    width: 40px;
+                    height: 40px;
                     cursor: pointer;
                     position: absolute;
                     left: 605px;
@@ -314,7 +319,8 @@ export default {
                             .mixin_span(100%,100%,none,@color_white,left);
                             .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/money.png'));
                             img{
-                                .mixin_img(53.5%,60%);
+                                width: 53.5%;
+                                height: 60%;
                                 float: left;
                                 margin: 7% 0 0 21.4%;
                             }

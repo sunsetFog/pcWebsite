@@ -84,7 +84,8 @@ export default {
                 margin-top: 20px;
                 label{
                     .mixin_span(70px,45px,none,@color_white,right);
-                    float: left;
+                    // width: 70px;
+                    // float: left;
                     margin-right: 15px;
                     font-size: @font_size18;
                 }
@@ -106,7 +107,8 @@ export default {
                     }
                 }
                 img{
-                    .mixin_img(30px,28px);
+                    width: 30px;
+                    height: 28px;
                     float: left;
                     margin: 8px 0px 0px 20px;
                     cursor: pointer;
