@@ -19,8 +19,10 @@ const rainbow = createApp(App);
 // 全局注册组件
 import LineTextLine from '@sky/pcDesign/components/lineTextLine/index.vue';
 import CloudEchart from '@sky/pcDesign/components/echarts/cloudEchart.vue';
+import Layout1 from '@sky/pcDesign/components/layout1/index.vue';
 rainbow.component('LineTextLine', LineTextLine);
 rainbow.component('CloudEchart', CloudEchart);
+rainbow.component('Layout1', Layout1);
 
 // 全局注册图标组件
 import * as Icons from '@element-plus/icons-vue';

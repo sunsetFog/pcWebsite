@@ -106,17 +106,14 @@
             </article>
         </div>
     </div>
-    <footers :vip_foot="false"></footers>
 </section>
 </template>
 
 <script>
-import footers from '@sky/pcDesign/components/footer/index.vue';
 import lodash from 'lodash'
 import {mapMutations,mapGetters,mapActions} from 'vuex';
 export default{
     name: 'management',
-    components: {footers},
     data(){
         return{
 

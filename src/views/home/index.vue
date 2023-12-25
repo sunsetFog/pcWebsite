@@ -1,110 +1,82 @@
 <template>
-  <section id="home">
-    <div
-      class="cover-up"
-      :style="{height: cover_height}"
-      v-show="cover_active"
-      @click="judgeToken()"
-    ></div>
-    <header class="header-info">
-      <div class="head-content">
-        <div class="reserve">
-          <ul>
-            <li
-              v-for="(item,index) in header_list"
-              :class="{'reserve-border':index!=2}"
-              @click="lineMeans(index)"
-            >{{item.title}}</li>
-          </ul>
-        </div>
-        <div class="scenery-login" v-if="safeActive">
-          <input
-            class="nickname"
-            v-model.trim="account_number"
-            type="text"
-            placeholder="账号"
-            maxlength="20"
-          >
-          <input
-            class="password"
-            type="password"
-            v-model.trim="password_number"
-            placeholder="密码"
-            maxlength="12"
-            autocomplete="new-password"
-            @keyup.enter="signIn"
-          >
-          <button class="sign-in" @click="signIn"></button>
-          <button class="register" @click="registerMeans"></button>
-        </div>
-        <div class="recharge-example" v-if="!safeActive">
-          <div class="example-contain">
-            <button class="drawing" @click="rechargeMeans(2)"></button>
-            <button class="recharge" @click="rechargeMeans(1)"></button>
-            <span class="exit-login" @click="safeExit()">安全退出</span>
-            <div class="balance">
-              <span>余额&nbsp;:</span>
-              <span>￥{{player.money}}</span>
+    <section id="home">
+        <header class="header-info">
+            <div class="head-content">
+                <div class="reserve">
+                    <ul>
+                        <li v-for="(item, index) in header_list" :class="{ 'reserve-border': index != 2 }"
+                            @click="lineMeans(index)">{{ item.title }}</li>
+                    </ul>
+                </div>
+                <div class="scenery-login" v-if="safeActive">
+                    <input class="nickname" v-model.trim="account_number" type="text" placeholder="账号" maxlength="20">
+                    <input class="password" type="password" v-model.trim="password_number" placeholder="密码" maxlength="12"
+                        autocomplete="new-password" @keyup.enter="signIn">
+                    <button class="sign-in" @click="signIn"></button>
+                    <button class="register" @click="registerMeans"></button>
+                </div>
+                <div class="recharge-example" v-if="!safeActive">
+                    <div class="example-contain">
+                        <button class="drawing" @click="rechargeMeans(2)"></button>
+                        <button class="recharge" @click="rechargeMeans(1)"></button>
+                        <span class="exit-login" @click="safeExit()">安全退出</span>
+                        <div class="balance">
+                            <span>余额&nbsp;:</span>
+                            <span>￥{{ player.money }}</span>
+                        </div>
+                        <div class="welcome">
+                            <span>欢迎你,{{ player.nickname }}</span>
+                            <img src="@/views/home/homeIndex/img/home/zhanghu.png">
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="welcome">
-              <span>欢迎你,{{player.nickname}}</span>
-              <img src="@/views/home/homeIndex/img/home/zhanghu.png">
+        </header>
+
+        <div class="navigation-bar">
+            <div class="tabs-content">
+                <div class="tabs-left">
+                    <img src="@/views/home/homeIndex/img/home/logo3.png">
+                </div>
+                <div class="tabs-right">
+                    <ul>
+                        <li style="width: 14.28%;" v-for="(item, index) in tabs_bar" :class="{ 'tabs-active': item.active }"
+                            @click="tabBarChange(index, item.exhibition, item.path)">{{ item.title }}</li>
+                    </ul>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </header>
+        <article id="rainbow">
+            <!--
+                study: 路由视图
+                测试：用路由跳转，显示在<router-view>里，测试ok
+            -->
+            <router-view></router-view>
+            <footers></footers>
+        </article>
 
-    <div class="navigation-bar">
-      <div class="tabs-content">
-        <div class="tabs-left">
-          <img src="@/views/home/homeIndex/img/home/logo3.png">
+        <div class="fixed-bar" v-show="fixed_state">
+            <ul>
+                <li v-for="(item, index) in fixed_bar" @click="fixedMeans(index)" @mouseover="fixedOver(index)"
+                    @mouseout="fixedOut(index)">
+                    <img :src="item.url">
+                </li>
+            </ul>
         </div>
-        <div class="tabs-right">
-          <ul>
-            <li
-              style="width: 14.28%;"
-              v-for="(item,index) in tabs_bar"
-              :class="{'tabs-active':item.active}"
-              @click="tabBarChange(index,item.exhibition,item.path)"
-            >{{item.title}}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <article>
-        <!--
-            study: 路由视图
-            测试：用路由跳转，显示在<router-view>里，测试ok
-         -->
-      <router-view></router-view>
-    </article>
 
-    <div class="fixed-bar" v-show="fixed_state">
-      <ul>
-        <li
-          v-for="(item,index) in fixed_bar"
-          @click="fixedMeans(index)"
-          @mouseover="fixedOver(index)"
-          @mouseout="fixedOut(index)"
-        >
-          <img :src="item.url">
-        </li>
-      </ul>
-    </div>
-
-    <recharge ref="recharge"></recharge>
-    <withdrawal ref="withdrawal"></withdrawal>
-    <manage-bank ref="manageBank"></manage-bank>
-    <add-bank ref="addBank"></add-bank>
-    <manage-alipay ref="manageAlipay"></manage-alipay>
-    <add-alipay ref="addAlipay"></add-alipay>
-    <know ref="know"></know>
-    <recharge-record ref="rechargeRecord"></recharge-record>
-  </section>
+        <recharge ref="recharge"></recharge>
+        <withdrawal ref="withdrawal"></withdrawal>
+        <manage-bank ref="manageBank"></manage-bank>
+        <add-bank ref="addBank"></add-bank>
+        <manage-alipay ref="manageAlipay"></manage-alipay>
+        <add-alipay ref="addAlipay"></add-alipay>
+        <know ref="know"></know>
+        <recharge-record ref="rechargeRecord"></recharge-record>
+    </section>
 </template>
 
 <script>
+import footers from '@sky/pcDesign/components/footer/index.vue';
 import recharge from '@/views/home/managementCenter/crux/components/recharge/index.vue';
 import withdrawal from '@/views/home/managementCenter/crux/components/withdrawal.vue';
 import manageBank from '@/views/home/managementCenter/crux/components/manageBank.vue';
@@ -116,7 +88,7 @@ import rechargeRecord from '@/views/home/managementCenter/crux/components/rechar
 import { mapGetters } from 'vuex';
 export default {
     name: 'home',
-    components: { recharge, withdrawal, manageBank, addBank, manageAlipay, addAlipay, know, rechargeRecord },
+    components: { footers, recharge, withdrawal, manageBank, addBank, manageAlipay, addAlipay, know, rechargeRecord },
     data() {
         return {
             header_list: [{ title: '优惠活动大厅' }, { title: '下载中心' }, { title: '线路检测' }],
@@ -168,8 +140,6 @@ export default {
             safeActive: false,
             account_number: '', //登陆账号
             password_number: '', //登陆密码
-            cover_height: '0px',
-            cover_active: false,
         };
     },
     created() {
@@ -177,19 +147,10 @@ export default {
         for (let index = 0; index < this.tabs_bar.length; index++) {
             let item = this.tabs_bar[index];
             item.active = false;
-            if(this.$route.path == item.path) {
+            if (this.$route.path == item.path) {
                 item.active = true;
             }
         }
-    },
-    mounted() {
-        var that = this;
-        window.onresize = function temp5() {
-            let overallApp = document.getElementById('home');
-            if (overallApp != null && that.cover_active == true) {
-                that.coverMeans();
-            }
-        };
     },
     computed: {
         ...mapGetters(['player']),
@@ -216,16 +177,6 @@ export default {
                 this.tabs_bar[i].active = false;
             }
             this.tabs_bar[index].active = true;
-        },
-        coverMeans() {
-            let cover = document.body.clientHeight - 50;
-            this.cover_height = cover + 'px';
-        },
-        judgeToken() {
-            if(!this.$cookies.get("tokenPcClient")){
-                this.$message.error('请先登录');
-                return false;
-            }
         },
         hostMeans(value, response, count) {
             if (value == 'managebank') {
@@ -285,21 +236,15 @@ export default {
         },
         //返回顶部
         backTop() {
-            let scrollHight =
-                document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
-            console.log(
-                '滚动条高度=',
-                document.documentElement.scrollTop,
-                document.body.scrollTop,
-                window.pageYOffset,
-            );
-            if (scrollHight > 50) {
-                document.documentElement.scrollTop = document.body.scrollTop = scrollHight - 100;
+            // let scrollHight = document.documentElement || document.body
+            let scrollHight = document.getElementById('rainbow');
+            if (scrollHight.scrollTop > 50) {
+                scrollHight.scrollTop = scrollHight.scrollTop - 100;
                 setTimeout(() => {
                     this.backTop();
                 }, 2);
             } else {
-                document.documentElement.scrollTop = document.body.scrollTop = 0;
+                scrollHight.scrollTop = 0;
             }
         },
         //固定定位
@@ -329,16 +274,16 @@ export default {
                 json.hashCode = this.$md5(
                     encodeURIComponent(
                         json.enterurl +
-                            json.userId +
-                            json.loginname +
-                            json.grade +
-                            json.name +
-                            json.gender +
-                            json.mobileNo +
-                            json.memo +
-                            json.hashCode +
-                            json.timestamp +
-                            json.key,
+                        json.userId +
+                        json.loginname +
+                        json.grade +
+                        json.name +
+                        json.gender +
+                        json.mobileNo +
+                        json.memo +
+                        json.hashCode +
+                        json.timestamp +
+                        json.key,
                     ).toUpperCase(),
                 ).toUpperCase();
                 //encode()
@@ -366,7 +311,7 @@ export default {
                     json.key;
                 window.open(
                     'https://nine.mdihi.com/chat/chatClient/chatbox.jsp?companyID=365033539&configID=2306&jid=4095904748&s=1&enterurl=&codeType=custom&info=' +
-                        encodeURIComponent(infoValue),
+                    encodeURIComponent(infoValue),
                 );
                 // window.open("https://chat32.live800.com/live800/chatClient/chatbox.jsp?companyID=12698&enterurl=&codeType=custom&info=userId%3D440297033%26loginname%3Dtest28%26name%3DtestN28%26timestamp%3D1563358352994%26key%3Dlive800Key&s=1");
             } else if (index == 2) {
@@ -393,13 +338,11 @@ export default {
         },
         safeExit() {
             var that = this;
-            that.$means.amateur_exit(function() {
+            that.$means.amateur_exit(function () {
                 that.account_number = '';
                 that.password_number = '';
                 that.safeActive = true;
                 that.$cookies.remove("tokenPcClient");
-                that.cover_active = true;
-                that.coverMeans();
             });
         },
         registerMeans() {
@@ -421,7 +364,7 @@ export default {
                 that.account_number,
                 that.password_number,
                 window.location.host,
-                function() {
+                function () {
                     that.$store.dispatch('getPlayerInfo', that.$means.amateur_getPlayer());
                     if (that.$cookies.get('account')) {
                         that.$cookies.set('account', that.account_number, '1m');
@@ -430,7 +373,6 @@ export default {
                     sessionStorage.setItem('account_number', that.account_number);
                     sessionStorage.setItem('password_number', that.password_number);
                     that.safeActive = false;
-                    that.cover_active = false;
                 },
             );
         },
@@ -448,19 +390,21 @@ export default {
 <style lang="less" scoped>
 #home {
     width: 100%;
+    height: 100%;
     overflow-x: hidden;
-    .cover-up {
+
+    #rainbow {
         width: 100%;
-        position: fixed;
-        top: 50px;
-        left: 0px;
-        z-index: 999;
+        height: calc(100% - 50px - 95px);
+        overflow: auto;
     }
+
     .tabs-active {
         color: #ffea00;
         .mixin_image(url('~@/views/home/homeIndex/img/home/tabs_active.png'));
         font-size: @font_size16;
     }
+
     .fixed-bar {
         width: 136px;
         height: 180px;
@@ -469,30 +413,37 @@ export default {
         position: fixed;
         right: 20px;
         top: 400px;
-        z-index: 10;
+        z-index: 999;
+
         ul {
             li {
                 .mixin_li(135px, 53px);
                 cursor: pointer;
                 padding: 15px 33px;
             }
+
             li:nth-of-type(1) {
                 height: 73px;
                 padding: 5px 25px;
+
                 img {
                     .mixin_img(100%, 100%);
                     float: left;
                 }
             }
+
             li:nth-of-type(2) {
                 height: 53px;
+
                 img {
                     .mixin_img(100%, 100%);
                     float: left;
                 }
             }
+
             li:nth-of-type(3) {
                 height: 53px;
+
                 img {
                     .mixin_img(100%, 100%);
                     float: left;
@@ -505,6 +456,7 @@ export default {
         width: 100%;
         height: 50px;
         background: #210723;
+
         .head-content {
             width: 1200px;
             height: 50px;
@@ -512,30 +464,38 @@ export default {
             color: @color_tone1;
             line-height: 50px;
             overflow: hidden;
+
             .reserve {
                 .mixin_float(auto, 100%, left);
                 padding: 17px 0px 0px 0px;
+
                 .reserve-border {
                     border-right: 1px solid @color_tone1;
                 }
+
                 ul {
                     height: 15px;
+
                     li {
                         .mixin_li(auto, 15px);
                         padding: 0px 12px;
                         cursor: pointer;
                     }
+
                     li:nth-of-type(1) {
                         padding: 0px 12px 0px 0px;
                     }
+
                     li:hover {
                         color: #eb2020;
                     }
                 }
             }
+
             .scenery-login {
                 .mixin_float(10px, 50px, right);
                 position: relative;
+
                 .nickname,
                 .password {
                     position: absolute;
@@ -546,12 +506,15 @@ export default {
                     color: #ac24df;
                     border: 1px solid #913cc9;
                 }
+
                 .nickname {
                     right: 378px;
                 }
+
                 .password {
                     right: 188px;
                 }
+
                 .sign-in {
                     .mixin_button(84px, 34px, none, auto);
                     position: absolute;
@@ -559,9 +522,11 @@ export default {
                     top: 8px;
                     .mixin_image(url('~@/views/home/homeIndex/img/home/dengru_nomal.png'));
                 }
+
                 .sign-in:hover {
                     .mixin_image(url('~@/views/home/homeIndex/img/home/dengru_hover.png'));
                 }
+
                 .register {
                     .mixin_button(84px, 34px, none, auto);
                     position: absolute;
@@ -569,13 +534,16 @@ export default {
                     top: 8px;
                     .mixin_image(url('~@/views/home/homeIndex/img/home/zhuce_nomal.png'));
                 }
+
                 .register:hover {
                     .mixin_image(url('~@/views/home/homeIndex/img/home/zhuce_hover.png'));
                 }
             }
+
             .recharge-example {
                 .mixin_float(260px, 50px, right);
                 position: relative;
+
                 .example-contain {
                     width: 800px;
                     height: 50px;
@@ -583,23 +551,28 @@ export default {
                     top: 0px;
                     left: -541px;
                     overflow: hidden;
+
                     .welcome {
                         .mixin_float(auto, 100%, right);
                         margin-right: 15px;
+
                         img {
                             .mixin_img(14px, 14px);
                             margin: 17px 8px 0px 0px;
                             float: right;
                         }
+
                         span {
                             .mixin_span(auto, 50px, none, @color_tone1, left);
                             float: right;
                         }
                     }
+
                     .balance {
                         .mixin_div(auto, 50px, none, #732c94, left);
                         float: right;
                     }
+
                     .exit-login {
                         .mixin_span(auto, 50px, none, #eb2020, left);
                         text-decoration: underline;
@@ -607,6 +580,7 @@ export default {
                         margin-left: 15px;
                         cursor: pointer;
                     }
+
                     .recharge {
                         margin: 8px 0px 0px 15px;
                         .mixin_button(84px, 34px, none, @color_white);
@@ -615,9 +589,11 @@ export default {
                         cursor: pointer;
                         .mixin_image(url('~@/views/home/homeIndex/img/home/chongzhiup_nomal.png'));
                     }
+
                     .recharge:hover {
                         .mixin_image(url('~@/views/home/homeIndex/img/home/chongzhiup_hover.png'));
                     }
+
                     .drawing {
                         margin: 8px 0px 0px 10px;
                         .mixin_button(84px, 34px, none, @color_white);
@@ -626,6 +602,7 @@ export default {
                         border-radius: 4px;
                         .mixin_image(url('~@/views/home/homeIndex/img/home/tikuan_nomal.png'));
                     }
+
                     .drawing:hover {
                         .mixin_image(url('~@/views/home/homeIndex/img/home/tikuan_hover.png'));
                     }
@@ -638,13 +615,16 @@ export default {
         width: 100%;
         height: 95px;
         .mixin_image(url('~@/views/home/homeIndex/img/home/tab_image.png'));
+
         .tabs-content {
             width: 1200px;
             height: 95px;
             margin: 0 auto;
+
             .tabs-left {
                 .mixin_float(200px, 100%, left);
                 position: relative;
+
                 img {
                     .mixin_img(250px, 70px);
                     position: absolute;
@@ -652,16 +632,20 @@ export default {
                     left: -46px;
                 }
             }
+
             .tabs-right {
                 .mixin_float(1000px, 100%, right);
+
                 ul {
                     color: @color_white;
+
                     li {
                         .mixin_li(14.28%, 95px);
                         cursor: pointer;
                         font-size: @font_size16;
                         overflow: hidden;
                     }
+
                     li:hover {
                         color: #ffea00;
                         .mixin_image(url('~@/views/home/homeIndex/img/home/tabs_active.png'));
@@ -670,5 +654,4 @@ export default {
             }
         }
     }
-}
-</style>
+}</style>
