@@ -402,7 +402,7 @@ export default {
     .tabs-active {
         color: #ffea00;
         .mixin_image(url('~@/views/home/homeIndex/img/home/tabs_active.png'));
-        font-size: @font_size16;
+        font-size: 16px;
     }
 
     .fixed-bar {
@@ -464,7 +464,7 @@ export default {
             width: 1200px;
             height: 50px;
             margin: 0 auto;
-            color: @color_tone1;
+            color: #f5d276;
             line-height: 50px;
             overflow: hidden;
 
@@ -475,7 +475,7 @@ export default {
                 padding: 17px 0px 0px 0px;
 
                 .reserve-border {
-                    border-right: 1px solid @color_tone1;
+                    border-right: 1px solid #f5d276;
                 }
 
                 ul {
@@ -575,7 +575,7 @@ export default {
                         }
 
                         span {
-                            .mixin_span(auto, 50px, none, @color_tone1, left);
+                            .mixin_span(auto, 50px, none, #f5d276, left);
                             float: right;
                         }
                     }
@@ -595,7 +595,7 @@ export default {
 
                     .recharge {
                         margin: 8px 0px 0px 15px;
-                        .mixin_button(84px, 34px, none, @color_white);
+                        .mixin_button(84px, 34px, none, #ffffff);
                         float: right;
                         border-radius: 4px;
                         cursor: pointer;
@@ -608,7 +608,7 @@ export default {
 
                     .drawing {
                         margin: 8px 0px 0px 10px;
-                        .mixin_button(84px, 34px, none, @color_white);
+                        .mixin_button(84px, 34px, none, #ffffff);
                         float: right;
                         cursor: pointer;
                         border-radius: 4px;
@@ -654,12 +654,12 @@ export default {
                 float: right;
 
                 ul {
-                    color: @color_white;
+                    color: #ffffff;
 
                     li {
                         .mixin_li(14.28%, 95px);
                         cursor: pointer;
-                        font-size: @font_size16;
+                        font-size: 16px;
                         overflow: hidden;
                     }
 

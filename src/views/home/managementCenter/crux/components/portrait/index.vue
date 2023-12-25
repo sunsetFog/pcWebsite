@@ -171,11 +171,11 @@ export default {
             width: 155px;
             height: 620px;
             float: left;
-            background: @color_tone20;
-            font-size: @font_size20;
+            background: #291037;
+            font-size: 20px;
             padding: 40px 0px 0px 0px;
             .user-info{
-                .mixin_div(100%,140px,none,@color_white,left);
+                .mixin_div(100%,140px,none,#ffffff,left);
                 position: relative;
                 cursor: pointer;
                 img:nth-of-type(1){
@@ -204,18 +204,18 @@ export default {
                 li{
                     .mixin_li(155px,65px);
                     margin-bottom: 50px;
-                    color: @color_white;
-                    background: @color_darkgray;
+                    color: #ffffff;
+                    background: #513663;
                     cursor: pointer;
                     position: relative;
                     span:nth-of-type(1){
-                        .mixin_span(100%,65px,none,@color_white,center);
+                        .mixin_span(100%,65px,none,#ffffff,center);
                         position: absolute;
                         left: 0px;
                         top: 0px;
                     }
                     span:nth-of-type(2){
-                        .mixin_span(10px,65px,none,@color_white,center);
+                        .mixin_span(10px,65px,none,#ffffff,center);
                         position: absolute;
                         right: -10px;
                         top: 0px;
@@ -286,12 +286,12 @@ export default {
                 height: 36px;
                 margin-top: 50px;
                 button{
-                    .mixin_button(155px,34px,@color_white2,@color_blueviolet);
+                    .mixin_button(155px,34px,#d4c3b2,#b00cb3);
                     margin-left: 240px;
-                    border: 1px solid @color_blueviolet;
+                    border: 1px solid #b00cb3;
                 }
                 button:hover{
-                    background: @color_white2_hover;
+                    background: #eceacc;
                 }
             }
         }

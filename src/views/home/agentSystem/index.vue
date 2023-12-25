@@ -77,8 +77,8 @@ export default{
             width: 1200px;
             height: 1200px;
             background: rgba(88,51,82,0.6);
-            border-left: 1px solid @color_blueviolet;
-            border-right: 1px solid @color_blueviolet;
+            border-left: 1px solid #b00cb3;
+            border-right: 1px solid #b00cb3;
             position: absolute;
             left: 50%;
             top: 0px;

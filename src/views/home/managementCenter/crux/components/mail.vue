@@ -128,39 +128,39 @@ export default {
                     }
                 }
                 .information{
-                    .mixin_div(87%,105px,@color_indigo,@color_white,left);
+                    .mixin_div(87%,105px,#1b041d,#ffffff,left);
                     float: left;
                     position: relative;
                     span:nth-of-type(1){
-                        .mixin_span(auto,35px,none,@color_white,left);
-                        font-size: @font_size24;
+                        .mixin_span(auto,35px,none,#ffffff,left);
+                        font-size: 24px;
                         position: absolute;
                         left: 35px;
                         top: 15px;
                     }
                     span:nth-of-type(2){
-                        .mixin_span(auto,35px,none,@color_white,left);
-                        font-size: @font_size16;
+                        .mixin_span(auto,35px,none,#ffffff,left);
+                        font-size: 16px;
                         position: absolute;
                         left: 35px;
                         top: 58px;
                     }
                     span:nth-of-type(3){
-                        .mixin_span(auto,35px,none,@color_white,left);
-                        font-size: @font_size16;
+                        .mixin_span(auto,35px,none,#ffffff,left);
+                        font-size: 16px;
                         position: absolute;
                         left: 460px;
                         bottom: 15px;
                     }
                     button{
-                        .mixin_button(125px,34px,@color_white2,@color_blueviolet);
-                        border: 1px solid @color_blueviolet;
+                        .mixin_button(125px,34px,#d4c3b2,#b00cb3);
+                        border: 1px solid #b00cb3;
                         position: absolute;
                         right: 35px;
                         top: 35px;
                     }
                     button:hover{
-                        background: @color_white2_hover;
+                        background: #eceacc;
                     }
                     img{
                         width: 80px;
@@ -172,8 +172,8 @@ export default {
                 }
             }
             .no-time{
-                .mixin_div(100%,80px,none,@color_dimgray,center);
-                font-size: @font_size20;
+                .mixin_div(100%,80px,none,#735885,center);
+                font-size: 20px;
             }
 
         }

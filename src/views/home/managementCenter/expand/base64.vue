@@ -36,7 +36,7 @@ export default {
     ul{
         li{
             .mixin_li(100%,50px);
-            color: @color_blueviolet;
+            color: #b00cb3;
         }
     }
 }

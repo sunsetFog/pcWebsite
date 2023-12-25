@@ -156,7 +156,7 @@ export default {
 #lifeCycle{
     color: #b00cb3;
     .cucumber {
-        .mixin_div(100%,50px,none,@color_blueviolet,center);
+        .mixin_div(100%,50px,none,#b00cb3,center);
     }
 }
 </style>

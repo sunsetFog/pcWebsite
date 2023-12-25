@@ -84,8 +84,8 @@ export default {
         .look-content{
             width: 100%;
             height: 320px;
-            font-size: @font_size18;
-            color: @color_white;
+            font-size: 18px;
+            color: #ffffff;
             overflow-y: auto;
         }
         .delete-info{
@@ -94,11 +94,11 @@ export default {
             margin-top: 15px;
             padding-left: 270px;
             button{
-                .mixin_button(155px,34px,@color_white2,@color_blueviolet);
-                border: 1px solid @color_blueviolet;
+                .mixin_button(155px,34px,#d4c3b2,#b00cb3);
+                border: 1px solid #b00cb3;
             }
             button:hover{
-                background: @color_white2_hover;
+                background: #eceacc;
             }
         }
     }

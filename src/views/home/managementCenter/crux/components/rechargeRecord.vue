@@ -123,8 +123,8 @@ export default {
             width: 155px;
             height: 620px;
             float: left;
-            background: @color_tone20;
-            font-size: @font_size20;
+            background: #291037;
+            font-size: 20px;
             .type-active{
                 .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/beijingkuang.png'));
             }
@@ -132,18 +132,18 @@ export default {
                 li{
                     .mixin_li(155px,65px);
                     margin-top: 50px;
-                    color: @color_white;
-                    background: @color_darkgray;
+                    color: #ffffff;
+                    background: #513663;
                     cursor: pointer;
                     position: relative;
                     span:nth-of-type(1){
-                        .mixin_span(100%,65px,none,@color_white,center);
+                        .mixin_span(100%,65px,none,#ffffff,center);
                         position: absolute;
                         left: 0px;
                         top: 0px;
                     }
                     span:nth-of-type(2){
-                        .mixin_span(10px,65px,none,@color_white,center);
+                        .mixin_span(10px,65px,none,#ffffff,center);
                         position: absolute;
                         right: -10px;
                         top: 0px;
@@ -163,43 +163,43 @@ export default {
                 overflow-y: auto;
                 padding-right: 10px;
                 .record-content{
-                    .mixin_div(100%,120px,@color_white,@color_blueviolet,left);
+                    .mixin_div(100%,120px,#ffffff,#b00cb3,left);
                     margin-bottom: 15px;
                     ul{
                         li{
                             .mixin_li(100%,30px);
                             label{
-                                .mixin_span(250px,30px,none,@color_blueviolet,right);
+                                .mixin_span(250px,30px,none,#b00cb3,right);
                                 float: left;
-                                font-size: @font_size16;
+                                font-size: 16px;
                             }
                             span:nth-of-type(1){
                                 .mixin_span(auto,30px,none,black,right);
                                 float: left;
                                 margin-left: 30px;
-                                font-size: @font_size16;
+                                font-size: 16px;
                             }
                             span:nth-of-type(2){
                                 .mixin_span(auto,30px,none,orange,right);
                                 float: left;
                                 margin-left: 30px;
-                                font-size: @font_size16;
+                                font-size: 16px;
                             }
                             button{
-                                .mixin_button(50px,28px,@color_white2,@color_blueviolet);
+                                .mixin_button(50px,28px,#d4c3b2,#b00cb3);
                                 float: left;
-                                border: 1px solid @color_blueviolet;
+                                border: 1px solid #b00cb3;
                                 margin: 1px 0px 0px 30px;
                             }
                             button:hover{
-                                background: @color_white2_hover;
+                                background: #eceacc;
                             }
                         }
                     }
                 }
                 .no-time{
-                    .mixin_div(100%,80px,none,@color_dimgray,center);
-                    font-size: @font_size20;
+                    .mixin_div(100%,80px,none,#735885,center);
+                    font-size: 20px;
                 }
             }
         }

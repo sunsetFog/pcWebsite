@@ -210,8 +210,8 @@ export default {
                 width: 155px;
                 min-height: 620px;
                 float: left;
-                background: @color_tone20;
-                font-size: @font_size20;
+                background: #291037;
+                font-size: 20px;
                 padding-bottom: 115px;
                 .type-active{
                     .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/beijingkuang.png'));
@@ -222,18 +222,18 @@ export default {
                     li{
                         .mixin_li(155px,65px);
                         margin-top: 50px;
-                        color: @color_white;
-                        background: @color_darkgray;
+                        color: #ffffff;
+                        background: #513663;
                         cursor: pointer;
                         position: relative;
                         span:nth-of-type(1){
-                            .mixin_span(100%,65px,none,@color_white,center);
+                            .mixin_span(100%,65px,none,#ffffff,center);
                             position: absolute;
                             left: 0px;
                             top: 0px;
                         }
                         span:nth-of-type(2){
-                            .mixin_span(10px,65px,none,@color_white,center);
+                            .mixin_span(10px,65px,none,#ffffff,center);
                             position: absolute;
                             right: -10px;
                             top: 0px;
@@ -252,7 +252,7 @@ export default {
                 width: 100%;
                 height: 210px;
                 padding: 30px 0px 0px 0px;
-                font-size: @font_size20;
+                font-size: 20px;
                 .mode-active{
                     .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/kuangkuang.png'));
                 }
@@ -262,13 +262,13 @@ export default {
                         padding: 0px 20px 0px 20px;
                         margin: 25px 0px 0px 40px;
                         .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/zhifufangshi.png'));
-                        color: @color_white;
+                        color: #ffffff;
                         cursor: pointer;
                     }
                 }
                 .no-time{
-                    .mixin_div(100%,80px,none,@color_dimgray,center);
-                    font-size: @font_size20;
+                    .mixin_div(100%,80px,none,#735885,center);
+                    font-size: 20px;
                 }
             }
             .recharge-money{
@@ -276,8 +276,8 @@ export default {
                 height: 50px;
                 position: relative;
                 span{
-                    .mixin_span(245px,50px,none,@color_white,right);
-                    font-size: @font_size24;
+                    .mixin_span(245px,50px,none,#ffffff,right);
+                    font-size: 24px;
                     position: absolute;
                     left: 0px;
                     top: 0px;
@@ -285,7 +285,7 @@ export default {
                 input{
                     .mixin_input(385px,48px);
                     color: #402887;
-                    font-size: @font_size21;
+                    font-size: 21px;
                     border-radius: 4px;
                     position: absolute;
                     left: 265px;
@@ -301,22 +301,22 @@ export default {
                 }
             }
             .recharge-range{
-                .mixin_div(100%,50px,none,@color_blueviolet,center);
+                .mixin_div(100%,50px,none,#b00cb3,center);
                 padding-right: 120px;
-                font-size: @font_size16;
+                font-size: 16px;
             }
             .money-example{
                 width: 100%;
                 height: 180px;
                 padding-left: 90px;
-                border-bottom: 1px solid @color_blueviolet;
+                border-bottom: 1px solid #b00cb3;
                 ul{
                     li{
                         .mixin_li(112px,50px);
                         margin: 20px 0px 0px 30px;
                         cursor: pointer;
                         span{
-                            .mixin_span(100%,100%,none,@color_white,left);
+                            .mixin_span(100%,100%,none,#ffffff,left);
                             .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/money.png'));
                             img{
                                 width: 53.5%;
@@ -333,12 +333,12 @@ export default {
                 height: 36px;
                 margin-top: 50px;
                 button{
-                    .mixin_button(155px,34px,@color_white2,@color_blueviolet);
+                    .mixin_button(155px,34px,#d4c3b2,#b00cb3);
                     margin-left: 320px;
-                    border: 1px solid @color_blueviolet;
+                    border: 1px solid #b00cb3;
                 }
                 button:hover{
-                    background: @color_white2_hover;
+                    background: #eceacc;
                 }
             }
             .position-record{
@@ -346,13 +346,13 @@ export default {
                 height: 30px;
                 position: relative;
                 span{
-                    .mixin_span(155px,20px,@color_tone20,@color_white,left);
+                    .mixin_span(155px,20px,#291037,#ffffff,left);
                     position: absolute;
                     left: -222px;
                     top: -41px;
                 }
                 button{
-                    .mixin_button(155px,65px,@color_darkgray,@color_white);
+                    .mixin_button(155px,65px,#513663,#ffffff);
                     position: absolute;
                     left: -222px;
                     top: -21px;

@@ -314,17 +314,17 @@ export default{
             height: 100%;
             float: left;
             .user-title{
-                border-top: 7px solid @color_blueviolet;
-                .mixin_div(100%,70px,@color_darkgray,@color_gray,left);
+                border-top: 7px solid #b00cb3;
+                .mixin_div(100%,70px,#513663,#dbcbb7,left);
                 text-indent: 20px;
-                font-size: @font_size20;
+                font-size: 20px;
                 line-height: 60px;
             }
             .user-contain{
-                .mixin_div(100%,731px,@color_purple,@color_white,left);
+                .mixin_div(100%,731px,#2e163d,#ffffff,left);
                 padding: 0px 20px;
                 .user-info{
-                    .mixin_div(100%,205px,none,@color_white,left);
+                    .mixin_div(100%,205px,none,#ffffff,left);
                     position: relative;
                     img:nth-of-type(1){
                         width: 80px;
@@ -346,26 +346,26 @@ export default{
                         z-index: 2;
                     }
                     span{
-                        .mixin_span(100%,30px,none,@color_white,center);
+                        .mixin_span(100%,30px,none,#ffffff,center);
                         position: absolute;
                         top: 150px;
                         font-weight: 600;
-                        font-size: @font_size18;
+                        font-size: 18px;
                     }
                 }
                 .account-balance,.nickname,.sex-example,.user-id{
-                    .mixin_div(100%,30px,none,@color_white,left);
+                    .mixin_div(100%,30px,none,#ffffff,left);
                     margin-bottom: 10px;
-                    font-size: @font_size16;
+                    font-size: 16px;
                     label{
-                        .mixin_span(auto,30px,none,@color_gray,center);
+                        .mixin_span(auto,30px,none,#dbcbb7,center);
                         margin-right: 10px;
                         float: left;
                     }
                 }
                 .account-balance{
                     span:nth-of-type(1){
-                        .mixin_span(auto,30px,none,@color_white,center);
+                        .mixin_span(auto,30px,none,#ffffff,center);
                         padding-top: 5px;
                         float: left;
                         img{
@@ -375,7 +375,7 @@ export default{
                         }
                     }
                     span:nth-of-type(2){
-                        .mixin_span(auto,30px,none,@color_gray,center);
+                        .mixin_span(auto,30px,none,#dbcbb7,center);
                         float: right;
                         text-decoration: underline;
                         cursor: pointer;
@@ -383,28 +383,28 @@ export default{
                 }
                 .user-id{
                     span{
-                        .mixin_span(150px,30px,none,@color_white,left);
+                        .mixin_span(150px,30px,none,#ffffff,left);
                         float: left;
                     }
                     button{
-                        .mixin_button(auto,28px,@color_white2,@color_blueviolet);
+                        .mixin_button(auto,28px,#d4c3b2,#b00cb3);
                         float: right;
-                        font-size: @font_size12;
-                        border: 1px solid @color_blueviolet;
+                        font-size: 12px;
+                        border: 1px solid #b00cb3;
                         padding: 0px 5px 0px 5px;
                     }
                     button:hover{
-                        background: @color_white2_hover;
+                        background: #eceacc;
                     }
                 }
                 .nickname,.sex-example{
                     .edit-sex,.edit-name{
                         span:nth-of-type(1){
-                            .mixin_span(auto,30px,none,@color_gray,center);
+                            .mixin_span(auto,30px,none,#dbcbb7,center);
                             float: left;
                         }
                         i{
-                            color: @color_white;
+                            color: #ffffff;
                             margin: 7px 0px 0px 30px;
                             cursor: pointer;
                             float: left;
@@ -416,9 +416,9 @@ export default{
                         float: right;
                         input{
                             .mixin_input(100px,28px);
-                            border: 1px solid @color_blueviolet;
-                            background: @color_indigo;
-                            color: @color_blueviolet;
+                            border: 1px solid #b00cb3;
+                            background: #1b041d;
+                            color: #b00cb3;
                             vertical-align: middle;
                             float: left;
                         }
@@ -430,25 +430,25 @@ export default{
                     }
                     .nickname-select,.sex-select{
                         button:nth-of-type(1){
-                            .mixin_button(auto,28px,@color_white2,@color_blueviolet);
-                            border: 1px solid @color_blueviolet;
+                            .mixin_button(auto,28px,#d4c3b2,#b00cb3);
+                            border: 1px solid #b00cb3;
                             font-size: 12px;
                             float: right;
                             margin-left: 5px;
                             padding: 0px 5px 0px 5px;
                         }
                         button:nth-of-type(1):hover{
-                            background: @color_white2_hover;
+                            background: #eceacc;
                         }
                         button:nth-of-type(2){
-                            .mixin_button(auto,28px,@color_indigo,@color_blueviolet);
-                            border: 1px solid @color_blueviolet;
+                            .mixin_button(auto,28px,#1b041d,#b00cb3);
+                            border: 1px solid #b00cb3;
                             font-size: 12px;
                             float: right;
                             padding: 0px 5px 0px 5px;
                         }
                         button:nth-of-type(2):hover{
-                            background: @color_indigo_hover;
+                            background: #2d0730;
                         }
                     }
                 }
@@ -465,11 +465,11 @@ export default{
                 float: left;
                 margin-bottom: 20px;
                 .archives-header{
-                    .mixin_div(100%,45px,@color_darkgray,@color_white,left);
-                    border-top: 7px solid @color_blueviolet;
+                    .mixin_div(100%,45px,#513663,#ffffff,left);
+                    border-top: 7px solid #b00cb3;
                 }
                 .archives-contain{
-                    .mixin_div(100%,95px,@color_purple,@color_white,left);
+                    .mixin_div(100%,95px,#2e163d,#ffffff,left);
                     position: relative;
                     img{
                         width: 55px;
@@ -479,22 +479,22 @@ export default{
                         top: 18px;
                     }
                     span:nth-of-type(1){
-                        .mixin_span(auto,25px,none,@color_white,left);
-                        font-size: @font_size20;
+                        .mixin_span(auto,25px,none,#ffffff,left);
+                        font-size: 20px;
                         position: absolute;
                         left: 100px;
                         top: 20px;
                     }
                     span:nth-of-type(2){
-                        .mixin_span(auto,25px,none,@color_dimgray,left);
-                        font-size: @font_size16;
+                        .mixin_span(auto,25px,none,#735885,left);
+                        font-size: 16px;
                         position: absolute;
                         left: 100px;
                         top: 50px;
                     }
                     span:nth-of-type(3){
-                        .mixin_span(auto,25px,none,@color_blueviolet,right);
-                        font-size: @font_size16;
+                        .mixin_span(auto,25px,none,#b00cb3,right);
+                        font-size: 16px;
                         position: absolute;
                         right: 20px;
                         top: 20px;

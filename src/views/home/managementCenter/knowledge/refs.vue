@@ -44,7 +44,7 @@ import moon from './parent/children';
 <style lang="less" scoped>
 #refs{
 	.rainbow{
-		.mixin_div(100%,50px,none,@color_blueviolet,center);
+		.mixin_div(100%,50px,none,#b00cb3,center);
 	}
 }
 </style>

@@ -47,31 +47,31 @@ export default {
         height: 295px;
         padding: 35px 35px 0px 35px;
         .already-submit{
-            .mixin_div(100%,45px,none,@color_white,center);
-            font-size: @font_size24;
+            .mixin_div(100%,45px,none,#ffffff,center);
+            font-size: 24px;
         }
         .withdrawal-money{
-            .mixin_div(100%,45px,none,@color_white,center);
-            font-size: @font_size22;
+            .mixin_div(100%,45px,none,#ffffff,center);
+            font-size: 22px;
             margin-top: 10px;
             span{
-                color: @color_blueviolet;
+                color: #b00cb3;
             }
         }
         .attention{
-            .mixin_div(100%,45px,none,@color_blueviolet,center);
+            .mixin_div(100%,45px,none,#b00cb3,center);
             margin-top: 10px;
         }
         .sure-btn{
-            .mixin_div(100%,45px,none,@color_white,left);
+            .mixin_div(100%,45px,none,#ffffff,left);
             padding-left: 180px;
             margin-top: 25px;
             button{
-                .mixin_button(112px,34px,@color_white2,@color_blueviolet);
-                border: 1px solid @color_blueviolet;
+                .mixin_button(112px,34px,#d4c3b2,#b00cb3);
+                border: 1px solid #b00cb3;
             }
             button:hover{
-                background: @color_white2_hover;
+                background: #eceacc;
             }
         }
     }

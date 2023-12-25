@@ -51,7 +51,7 @@
 				}else if(index==2){
 					this.updateJson = 800;
 				}
-				
+
 			}
 		}
 	}
@@ -60,7 +60,7 @@
 <style lang="less" scoped>
 #computed{
 	.rainbow{
-		.mixin_div(100%,50px,none,@color_blueviolet,center);
+		.mixin_div(100%,50px,none,#b00cb3,center);
 	}
 }
 </style>

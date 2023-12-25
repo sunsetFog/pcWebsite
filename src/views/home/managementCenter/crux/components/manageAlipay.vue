@@ -78,31 +78,31 @@ export default {
         .account-example{
             width: 100%;
             height: 330px;
-            border-bottom: 1px solid @color_blueviolet;
+            border-bottom: 1px solid #b00cb3;
             .account-list{
                 width: 100%;
                 height: 45px;
                 margin-top: 20px;
                 label{
-                    .mixin_span(100px,45px,none,@color_white,right);
+                    .mixin_span(100px,45px,none,#ffffff,right);
                     float: left;
                     margin-right: 15px;
-                    font-size: @font_size18;
+                    font-size: 18px;
                 }
                 div{
-                    .mixin_div(505px,43px,@color_indigo,@color_blueviolet,left);
+                    .mixin_div(505px,43px,#1b041d,#b00cb3,left);
                     float: left;
-                    font-size: @font_size18;
+                    font-size: 18px;
                     padding-left: 10px;
                     span:nth-of-type(1){
-                        .mixin_span(auto,43px,none,@color_blueviolet,right);
+                        .mixin_span(auto,43px,none,#b00cb3,right);
                         float: left;
                         margin-right: 10px;
                         max-width: 200px;
                         overflow: hidden;
                     }
                     span:nth-of-type(2){
-                        .mixin_span(auto,43px,none,@color_blueviolet,left);
+                        .mixin_span(auto,43px,none,#b00cb3,left);
                         float: left;
                     }
                 }
@@ -122,11 +122,11 @@ export default {
             margin-top: 40px;
             padding: 0px 0px 0px 275px;
             button{
-                .mixin_button(155px,34px,@color_white2,@color_blueviolet);
-                border: 1px solid @color_blueviolet;
+                .mixin_button(155px,34px,#d4c3b2,#b00cb3);
+                border: 1px solid #b00cb3;
             }
             button:hover{
-                background: @color_white2_hover;
+                background: #eceacc;
             }
         }
     }

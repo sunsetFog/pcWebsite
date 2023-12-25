@@ -72,29 +72,29 @@ export default {
             width: 100%;
             height: 45px;
             label{
-                .mixin_span(220px,45px,none,@color_white,right);
+                .mixin_span(220px,45px,none,#ffffff,right);
                 float: left;
                 margin-right: 15px;
-                font-size: @font_size18;
+                font-size: 18px;
             }
         }
         .account-name,.card-number{
             input{
                 .mixin_input(280px,43px);
                 float: left;
-                background: @color_indigo;
-                color: @color_blueviolet;
-                border: 1px solid @color_blueviolet;
-                font-size: @font_size18;
+                background: #1b041d;
+                color: #b00cb3;
+                border: 1px solid #b00cb3;
+                font-size: 18px;
             }
         }
         .card-number{
             margin-top: 40px;
         }
         .line-example{
-            .mixin_div(100%,120px,none,@color_blueviolet,left);
+            .mixin_div(100%,120px,none,#b00cb3,left);
             line-height: 90px;
-            border-bottom: 1px solid @color_blueviolet;
+            border-bottom: 1px solid #b00cb3;
             padding-left: 235px;
         }
         .confirm-add{
@@ -103,11 +103,11 @@ export default {
             margin-top: 50px;
             padding: 0px 0px 0px 275px;
             button{
-                .mixin_button(155px,34px,@color_white2,@color_blueviolet);
-                border: 1px solid @color_blueviolet;
+                .mixin_button(155px,34px,#d4c3b2,#b00cb3);
+                border: 1px solid #b00cb3;
             }
             button:hover{
-                background: @color_white2_hover;
+                background: #eceacc;
             }
         }
     }

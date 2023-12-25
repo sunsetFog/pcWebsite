@@ -193,8 +193,8 @@ export default {
             width: 155px;
             height: 620px;
             float: left;
-            background: @color_tone20;
-            font-size: @font_size20;
+            background: #291037;
+            font-size: 20px;
             .type-active{
                 .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/beijingkuang.png'));
             }
@@ -202,18 +202,18 @@ export default {
                 li{
                     .mixin_li(155px,65px);
                     margin-top: 50px;
-                    color: @color_white;
-                    background: @color_darkgray;
+                    color: #ffffff;
+                    background: #513663;
                     cursor: pointer;
                     position: relative;
                     span:nth-of-type(1){
-                        .mixin_span(100%,65px,none,@color_white,center);
+                        .mixin_span(100%,65px,none,#ffffff,center);
                         position: absolute;
                         left: 0px;
                         top: 0px;
                     }
                     span:nth-of-type(2){
-                        .mixin_span(10px,65px,none,@color_white,center);
+                        .mixin_span(10px,65px,none,#ffffff,center);
                         position: absolute;
                         right: -10px;
                         top: 0px;
@@ -231,18 +231,18 @@ export default {
                 width: 100%;
                 height: 45px;
                 label{
-                    .mixin_span(240px,45px,none,@color_white,right);
+                    .mixin_span(240px,45px,none,#ffffff,right);
                     float: left;
                     margin-right: 20px;
-                    font-size: @font_size18;
+                    font-size: 18px;
                 }
                 input{
                     .mixin_input(280px,43px);
                     float: left;
-                    background: @color_indigo;
-                    color: @color_blueviolet;
-                    border: 1px solid @color_blueviolet;
-                    font-size: @font_size18;
+                    background: #1b041d;
+                    color: #b00cb3;
+                    border: 1px solid #b00cb3;
+                    font-size: 18px;
                 }
             }
             .amount-deposited,.input-deposit{
@@ -258,12 +258,12 @@ export default {
                 height: 36px;
                 margin-top: 50px;
                 button{
-                    .mixin_button(155px,34px,@color_white2,@color_blueviolet);
+                    .mixin_button(155px,34px,#d4c3b2,#b00cb3);
                     margin-left: 320px;
-                    border: 1px solid @color_blueviolet;
+                    border: 1px solid #b00cb3;
                 }
                 button:hover{
-                    background: @color_white2_hover;
+                    background: #eceacc;
                 }
             }
         }
