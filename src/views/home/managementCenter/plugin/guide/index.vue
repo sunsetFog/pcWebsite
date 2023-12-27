@@ -1,8 +1,9 @@
 <template>
     <section>
+        <LineTextLine>vue3改版：driver是vue2插件，不支持vue3</LineTextLine>
         <el-button type="primary" @click.prevent.stop="questionGuide">
             <el-icon><Question /></el-icon>
-            &nbsp;分步引导---转vue3报错
+            &nbsp;分步引导
         </el-button>
     </section>
 </template>
