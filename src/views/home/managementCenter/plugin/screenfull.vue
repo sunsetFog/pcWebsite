@@ -1,10 +1,11 @@
 <template>
     <section>
-        <!-- 
+        <!--
             vue项目网页全屏功能screenfull   https://blog.csdn.net/yang1393214887/article/details/105687717
          -->
-         <el-button icon="el-icon-full-screen" v-if="!isFullscreen" type="primary" @click.prevent.stop="screenfull">
-            全屏
+         <el-button v-if="!isFullscreen" type="primary" @click.prevent.stop="screenfull">
+            <el-icon><Screen /></el-icon>
+            &nbsp;全屏
         </el-button>
     </section>
 </template>

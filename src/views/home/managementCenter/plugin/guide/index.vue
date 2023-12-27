@@ -1,7 +1,8 @@
 <template>
     <section>
-        <el-button icon="el-icon-question" type="primary" @click.prevent.stop="questionGuide">
-            分步引导---转vue3报错
+        <el-button type="primary" @click.prevent.stop="questionGuide">
+            <el-icon><Question /></el-icon>
+            &nbsp;分步引导---转vue3报错
         </el-button>
     </section>
 </template>

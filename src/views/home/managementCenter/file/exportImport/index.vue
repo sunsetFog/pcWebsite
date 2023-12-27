@@ -1,7 +1,7 @@
 <template>
     <section>
         <LineTextLine>文件下载--导出</LineTextLine>
-        <el-button type="primary" icon="el-icon-download" @click="exportExcel()">EasyExcel导出</el-button>
+        <el-button type="primary" @click="exportExcel()"><el-icon><Download /></el-icon>&nbsp;EasyExcel导出</el-button>
         <LineTextLine>文件下载--导出</LineTextLine>
         <el-button @click="excelWay">jeecgboot导出</el-button>
         <LineTextLine>文件上传--导入</LineTextLine>
