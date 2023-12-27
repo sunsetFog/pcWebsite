@@ -1,5 +1,5 @@
 <template>
-<!-- vue-cli脚手架
+    <!-- vue-cli脚手架
 vue h5即是html5:
     1.<!DOCTYPE html>声明，这样浏览器才能获知文档类型
     2.<meta charset="utf-8">“utf-8”是一种字符编码，使浏览器做“翻译”工作
@@ -53,11 +53,11 @@ router/index.js
     http://www.faviconico.org/favicon -->
     <section id="lifeCycle">
         <div ref="tissue" @click="texture" class="cucumber">
-            {{title}}
-            <span ref="exquisite" v-if="student.age">{{student.age}}</span>
+            {{ title }}
+            <span ref="exquisite" v-if="student.age">{{ student.age }}</span>
         </div>
         <h1>
-            study: keep-alive组件缓存--{{!$route.meta.keepAlive}}
+            study: keep-alive组件缓存--{{ !$route.meta.keepAlive }}
         </h1>
         <el-input v-model="cabbage" placeholder="请输入内容"></el-input>
     </section>
@@ -68,8 +68,8 @@ export default {
     name: 'lifeCycle',//组件名  study: keep-alive组件缓存
     props: ['importance'],//数据-父传子的绑定值
     components: {},//子父组件
-    data(){//数据
-        return{
+    data() {//数据
+        return {
             title: '周期',
             student: {
                 name: '',
@@ -85,7 +85,7 @@ export default {
             cabbage: "大白菜"
         }
     },
-    beforeCreate(){//创建前-用于拦截跳转---少用
+    beforeCreate() {//创建前-用于拦截跳转---少用
 
     },
     // 创建后-无dom操作,用于创建数据---常用
@@ -109,14 +109,14 @@ export default {
         // console.log('$set对象', this.overnight);
 
         // 应用情景一
-        this.$nextTick(function(){// 异步将回调延迟到下次 DOM 更新后执行
+        this.$nextTick(function () {// 异步将回调延迟到下次 DOM 更新后执行
             console.log('created-DOM操作', this.$refs.tissue);
         });
     },
-    mounted(){//挂在前-用于dom操作---常用
+    mounted() {//挂在前-用于dom操作---常用
         this.$forceUpdate();// 强制重新渲染当前组件
     },
-    beforeDestroy(){//销毁前-用于该页关闭后执行---用下面一个
+    beforeDestroy() {//销毁前-用于该页关闭后执行---用下面一个
 
     },
     destroyed() {
@@ -126,24 +126,24 @@ export default {
         */
     },
     // study: keep-alive组件缓存
-    activated(){//创建  keep-alive组件缓存，请看home.vue
+    activated() {//创建  keep-alive组件缓存，请看home.vue
         console.log('---activated---');
     },
     deactivated() {//销毁  keep-alive组件缓存
         console.log('---deactivated---');
     },
-    computed:{//计算属性-用于vuex的getter
+    computed: {//计算属性-用于vuex的getter
 
     },
     watch: {//监听数据变化，如输入框，路由变化
 
     },
     methods: {//方法
-        texture () {
+        texture() {
             // 应用情景二
             console.log('方法前DOM-1', this.$refs.exquisite);// undefined
             this.student.age = 19;
-            this.$nextTick(function(){// 异步将回调延迟到下次 DOM 更新后执行
+            this.$nextTick(function () {// 异步将回调延迟到下次 DOM 更新后执行
                 console.log('异步DOM-2', this.$refs.exquisite);// 有
             });
             console.log('方法后');
@@ -153,10 +153,15 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#lifeCycle{
+#lifeCycle {
     color: #b00cb3;
+
     .cucumber {
-        .mixin_div(100%,50px,none,#b00cb3,center);
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #b00cb3;
     }
 }
 </style>

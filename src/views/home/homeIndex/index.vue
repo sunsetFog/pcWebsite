@@ -195,7 +195,10 @@ export default defineComponent({
             }
 
             .game-frame {
-                .mixin_div(100%, 100%, none, auto, left);
+                width: 100%;
+                height: 100%;
+                text-align: left;
+                line-height: 100%;
                 padding: 0px 80px;
 
                 .carousel-header {
@@ -209,7 +212,11 @@ export default defineComponent({
 
                     ul {
                         li {
-                            .mixin_li(293.7px, 280px);
+                            width: 293.7px;
+                            height: 280px;
+                            float: left;
+                            text-align: center;
+                            line-height: 280px;
                             position: relative;
                             cursor: pointer;
 

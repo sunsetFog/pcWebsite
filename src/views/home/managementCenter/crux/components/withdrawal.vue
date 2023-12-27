@@ -1,46 +1,42 @@
 <template>
     <section id="game-withdrawal">
-        <el-dialog
-        v-model="rechargeActive"
-        width="1100px"
-        top="153px"
-        center
-        title="提款">
-        <div class="varieties-content">
-            <div class="payment-type">
-                <ul>
-                    <li v-for="(item,index) in withdrawal_types" :class="{'type-active':item.active}" @click="paymentType(index)">
-                        <span>{{item.name}}</span>
-                        <span v-if="item.active"></span>
-                    </li>
-                </ul>
-            </div>
-            <div class="payment-content">
-                <div class="current-balance">
-                    <label>当前余额:</label>
-                    <input type="text" disabled v-model.trim="money_total" placeholder="当前余额"/>
+        <el-dialog v-model="rechargeActive" width="1100px" top="153px" center title="提款">
+            <div class="varieties-content">
+                <div class="payment-type">
+                    <ul>
+                        <li v-for="(item, index) in withdrawal_types" :class="{ 'type-active': item.active }"
+                            @click="paymentType(index)">
+                            <span>{{ item.name }}</span>
+                            <span v-if="item.active"></span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="withdrawal-amount-s">
-                    <label>提款金额:</label>
-                    <img src="@/views/home/managementCenter/crux/components/recharge/img/jian.png" :class="{'amount-disable': withdrawal_amount=='','amount-pointer': withdrawal_amount!=''}" @click="addition(1)"/>
-                    <input v-model.trim="withdrawal_amount" type="text" placeholder="请输入提款金额"/>
-                    <img src="@/views/home/managementCenter/crux/components/recharge/img/jia.png" @click="addition(2)"/>
-                </div>
-                <div class="account-number" v-show="withdrawal_types[0].active">
-                    <label>收取银行卡:</label>
-                    <div class="user-account">
-                        <el-select v-model="bank_card" placeholder="请选择银行卡" size="small">
-                                <el-option
-                                v-for="(item,index) in bank_list"
-                                :key="item.bank_id"
-                                :label="item.cardno"
-                                :value="item.bank_id">
-                                </el-option>
-                        </el-select>
+                <div class="payment-content">
+                    <div class="current-balance">
+                        <label>当前余额:</label>
+                        <input type="text" disabled v-model.trim="money_total" placeholder="当前余额" />
                     </div>
-                    <button class="admin-account" @click="manageMeans(1)">管理银行卡</button>
-                </div>
-                <!-- <div class="account-number" v-show="withdrawal_types[1].active">
+                    <div class="withdrawal-amount-s">
+                        <label>提款金额:</label>
+                        <img src="@/views/home/managementCenter/crux/components/recharge/img/jian.png"
+                            :class="{ 'amount-disable': withdrawal_amount == '', 'amount-pointer': withdrawal_amount != '' }"
+                            @click="addition(1)" />
+                        <input v-model.trim="withdrawal_amount" type="text" placeholder="请输入提款金额" />
+                        <img src="@/views/home/managementCenter/crux/components/recharge/img/jia.png"
+                            @click="addition(2)" />
+                    </div>
+                    <div class="account-number" v-show="withdrawal_types[0].active">
+                        <label>收取银行卡:</label>
+                        <div class="user-account">
+                            <el-select v-model="bank_card" placeholder="请选择银行卡" size="small">
+                                <el-option v-for="(item, index) in bank_list" :key="item.bank_id" :label="item.cardno"
+                                    :value="item.bank_id">
+                                </el-option>
+                            </el-select>
+                        </div>
+                        <button class="admin-account" @click="manageMeans(1)">管理银行卡</button>
+                    </div>
+                    <!-- <div class="account-number" v-show="withdrawal_types[1].active">
                     <label>支付宝账号:</label>
                     <div class="user-account">
                         <el-select v-model="alipay_card" placeholder="请选择支付宝" size="small">
@@ -54,13 +50,13 @@
                     </div>
                     <button class="admin-account" @click="manageMeans(2)">管理支付宝</button>
                 </div> -->
-                <div class="line-bottom"></div>
-                <div class="payment-button">
-                    <button @click="exchange()">确认兑换</button>
+                    <div class="line-bottom"></div>
+                    <div class="payment-button">
+                        <button @click="exchange()">确认兑换</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <template #footer></template>
+            <template #footer></template>
         </el-dialog>
     </section>
 </template>
@@ -68,11 +64,11 @@
 <script>
 export default {
     name: 'game-withdrawal',
-    data(){
-        return{
+    data() {
+        return {
             rechargeActive: false,
             withdrawal_types: [
-                {name: '提款到银行卡',active: true},
+                { name: '提款到银行卡', active: true },
                 // {name: '提款到支付宝',active: false}
             ],
             bank_list: [],
@@ -84,21 +80,21 @@ export default {
         }
     },
     watch: {
-        withdrawal_amount(cur,old){
-            if(/[^\d]/g.test(cur)){
-                if(cur.match(/[^\d]/g)!=null){
-                   this.$message.error('请输入正整数！');
+        withdrawal_amount(cur, old) {
+            if (/[^\d]/g.test(cur)) {
+                if (cur.match(/[^\d]/g) != null) {
+                    this.$message.error('请输入正整数！');
                 }
                 this.withdrawal_amount = this.withdrawal_amount.replace(/[^\d]/g, '');
             }
-            if(cur>this.money_total){
+            if (cur > this.money_total) {
                 this.$message.error('提款金额不能大于当前金额！');
                 this.withdrawal_amount = parseInt(this.money_total);
             }
         }
     },
-    methods:{
-        changeMeans(value){
+    methods: {
+        changeMeans(value) {
             this.getBankJson();
             this.money_total = value;
             this.rechargeActive = true;
@@ -107,75 +103,75 @@ export default {
             this.bank_card = '';
             this.alipay_card = '';
         },
-        getBankJson(){
+        getBankJson() {
             var that = this;
-            that.$means.amateur_bank_lists(1,function(res){
+            that.$means.amateur_bank_lists(1, function (res) {
                 //console.log('提款bank%%',res);
                 that.bank_list = res.list;
                 that.getAlipayJson();
             })
         },
-        getAlipayJson(){
+        getAlipayJson() {
             var that = this;
-            that.$means.amateur_bank_lists(2,function(res){
+            that.$means.amateur_bank_lists(2, function (res) {
                 //console.log('提款alipay%%',res);
                 that.alipay_list = res.list;
             })
         },
-        paymentType(index){
-            for(let i=0;i<this.withdrawal_types.length;i++){
+        paymentType(index) {
+            for (let i = 0; i < this.withdrawal_types.length; i++) {
                 this.withdrawal_types[i].active = false;
             }
             this.withdrawal_types[index].active = true;
             this.withdrawal_amount = '';
         },
-        manageMeans(value){
-            if(value==1){
+        manageMeans(value) {
+            if (value == 1) {
                 this.$parent.hostMeans('managebank');
-            }else if(value==2){
+            } else if (value == 2) {
                 this.$parent.hostMeans('managealipay');
             }
         },
-        exchange(){
+        exchange() {
             var that = this;
-            if(this.withdrawal_types[0].active==true){
-                if(that.withdrawal_amount==''){
+            if (this.withdrawal_types[0].active == true) {
+                if (that.withdrawal_amount == '') {
                     that.$message.error('请输入提款金额！');
                     return;
-                }else if(that.bank_card==''){
+                } else if (that.bank_card == '') {
                     that.$message.error('请选取银行卡！');
                     return;
                 }
                 var card = that.bank_card;
-            }else{
-                if(that.withdrawal_amount==''){
+            } else {
+                if (that.withdrawal_amount == '') {
                     that.$message.error('请输入提款金额！');
                     return;
-                }else if(that.alipay_card==''){
+                } else if (that.alipay_card == '') {
                     that.$message.error('请选取支付宝！');
                     return;
                 }
                 var card = that.alipay_card;
             }
-                //console.log('amount',that.withdrawal_amount*10000);
-                that.$means.amateur_drawout(that.withdrawal_amount*10000,card,function(res){
-                    // console.log('success$$998888',res);
-                    that.money_total = res.balance/10000;
-                    that.money_total = that.money_total.toFixed(2);
-                    that.$means.amateur_getPlayer('money').setMoney(res.balance);
-                    that.$parent.hostMeans('know',that.withdrawal_amount);
-                })
+            //console.log('amount',that.withdrawal_amount*10000);
+            that.$means.amateur_drawout(that.withdrawal_amount * 10000, card, function (res) {
+                // console.log('success$$998888',res);
+                that.money_total = res.balance / 10000;
+                that.money_total = that.money_total.toFixed(2);
+                that.$means.amateur_getPlayer('money').setMoney(res.balance);
+                that.$parent.hostMeans('know', that.withdrawal_amount);
+            })
 
         },
-        addition(value){
-            if(value==1){
-                if(this.withdrawal_amount-200>0){
-                    this.withdrawal_amount = Number(this.withdrawal_amount)-200;
-                }else{
+        addition(value) {
+            if (value == 1) {
+                if (this.withdrawal_amount - 200 > 0) {
+                    this.withdrawal_amount = Number(this.withdrawal_amount) - 200;
+                } else {
                     this.withdrawal_amount = '';
                 }
-            }else if(value==2){
-                this.withdrawal_amount = Number(this.withdrawal_amount)+200;
+            } else if (value == 2) {
+                this.withdrawal_amount = Number(this.withdrawal_amount) + 200;
             }
         }
     }
@@ -183,35 +179,54 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#game-withdrawal{
-    .varieties-content{
+#game-withdrawal {
+    .varieties-content {
         width: 100%;
         height: 620px;
-        .payment-type{
+
+        .payment-type {
             width: 155px;
             height: 620px;
             float: left;
             background: #291037;
             font-size: 20px;
-            .type-active{
+
+            .type-active {
                 .mixin_image(url('~@/views/home/managementCenter/crux/components/recharge/img/beijingkuang.png'));
             }
-            ul{
-                li{
-                    .mixin_li(155px,65px);
+
+            ul {
+                li {
+                    width: 155px;
+                    height: 65px;
+                    float: left;
+                    text-align: center;
+                    line-height: 65px;
                     margin-top: 50px;
                     color: #ffffff;
                     background: #513663;
                     cursor: pointer;
                     position: relative;
-                    span:nth-of-type(1){
-                        .mixin_span(100%,65px,none,#ffffff,center);
+
+                    span:nth-of-type(1) {
+                        width: 100%;
+                        height: 65px;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 65px;
+                        color: #ffffff;
                         position: absolute;
                         left: 0px;
                         top: 0px;
                     }
-                    span:nth-of-type(2){
-                        .mixin_span(10px,65px,none,#ffffff,center);
+
+                    span:nth-of-type(2) {
+                        width: 10px;
+                        height: 65px;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 65px;
+                        color: #ffffff;
                         position: absolute;
                         right: -10px;
                         top: 0px;
@@ -220,24 +235,39 @@ export default {
                 }
             }
         }
-        .payment-content{
+
+        .payment-content {
             width: 84%;
             height: 620px;
             float: right;
             padding: 75px 45px 0px 45px;
-            .current-balance,.withdrawal-amount-s,.account-number{
+
+            .current-balance,
+            .withdrawal-amount-s,
+            .account-number {
                 width: 100%;
                 height: 45px;
-                label{
-                    .mixin_span(240px,45px,none,#ffffff,right);
+
+                label {
+                    width: 240px;
+                    height: 45px;
+                    display: inline-block;
+                    text-align: right;
+                    line-height: 45px;
+                    color: #ffffff;
                     float: left;
                     margin-right: 20px;
                     font-size: 18px;
                 }
             }
-            .current-balance{
-                input{
-                    .mixin_input(280px,43px);
+
+            .current-balance {
+                input {
+                    width: 280px;
+                    height: 43px;
+                    text-align: left;
+                    line-height: 43px;
+                    text-indent: 10px;
                     float: left;
                     background: #1b041d;
                     color: #b00cb3;
@@ -246,22 +276,31 @@ export default {
                     cursor: not-allowed;
                 }
             }
-            .withdrawal-amount-s{
+
+            .withdrawal-amount-s {
                 margin-top: 50px;
-                .amount-disable{
+
+                .amount-disable {
                     cursor: not-allowed;
                 }
-                .amount-pointer{
+
+                .amount-pointer {
                     cursor: pointer;
                 }
-                img:nth-of-type(1){
+
+                img:nth-of-type(1) {
                     width: 42px;
                     height: 38px;
                     float: left;
                     margin: 2px 14px 0px 0px;
                 }
-                input{
-                    .mixin_input(160px,43px);
+
+                input {
+                    width: 160px;
+                    height: 43px;
+                    text-align: left;
+                    line-height: 43px;
+                    text-indent: 10px;
                     float: left;
                     background: #1b041d;
                     color: #b00cb3;
@@ -270,7 +309,8 @@ export default {
                     text-indent: 0px;
                     text-align: center;
                 }
-                img:nth-of-type(2){
+
+                img:nth-of-type(2) {
                     width: 42px;
                     height: 38px;
                     float: left;
@@ -278,46 +318,51 @@ export default {
                     cursor: pointer;
                 }
             }
-            .account-number{
+
+            .account-number {
                 margin-top: 50px;
-                .user-account{
+
+                .user-account {
                     width: 280px;
                     height: 45px;
                     float: left;
                 }
-                .admin-account{
-                    .mixin_button(122px,34px,#d4c3b2,#b00cb3);
+
+                .admin-account {
+                    .mixin_button(122px, 34px, #d4c3b2, #b00cb3);
                     float: left;
                     margin: 5px 0px 0px 25px;
                     border: 1px solid #b00cb3;
                 }
-                .admin-account:hover{
+
+                .admin-account:hover {
                     background: #eceacc;
                 }
             }
-            .line-bottom{
+
+            .line-bottom {
                 width: 100%;
                 height: 45px;
                 margin-top: 15px;
                 border-bottom: 1px solid #b00cb3;
             }
-            .payment-button{
+
+            .payment-button {
                 width: 100%;
                 height: 36px;
                 margin-top: 50px;
-                button{
-                    .mixin_button(155px,34px,#d4c3b2,#b00cb3);
+
+                button {
+                    .mixin_button(155px, 34px, #d4c3b2, #b00cb3);
                     margin-left: 320px;
                     border: 1px solid #b00cb3;
                 }
-                button:hover{
+
+                button:hover {
                     background: #eceacc;
                 }
             }
         }
-    }
-    .example-footer{
-        .mixin_div(100%,0px,none,auto,left);
     }
 }
 </style>

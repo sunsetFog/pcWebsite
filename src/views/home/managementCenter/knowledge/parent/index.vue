@@ -88,7 +88,11 @@ export default {
     padding: 15px;
 
     .rainbow {
-        .mixin_div(100%, 50px, none, #b00cb3, center);
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        color: #b00cb3;
     }
 }
 </style>

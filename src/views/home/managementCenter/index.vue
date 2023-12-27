@@ -1,72 +1,63 @@
 <template>
-<section id="management">
-    <div class="example-frame">
-        <img class="big-fish" src="@sky/pcDesign/pages/login/img/fish.png"/>
-        <div class="manage--content">
-            <aside class="manage-content-left">
-                <el-scrollbar style="width:100%;height:100%;">
-                    <el-menu
-                    :default-active="menuValue"
-                    :unique-opened="true"
-                    class="el-menu-vertical-demo"
-                    @select="selectMenu"
-                    @open="handleOpen"
-                    @close="handleClose"
-                    background-color="#513663"
-                    text-color="#d4c3b2"
-                    active-text-color="#ffd04b"
-                    >
-                    <template v-for="(item, index01) in menuList">
-                        <!-- 第一级 -->
-                        <!-- el-menu-item的index绑定是@select事件的参数,也是:default-active的参数 -->
-                        <el-menu-item :index="item.key" v-if="item.children.length == 0" :key="item.key">
-                            <div style="width: 100%;height: 100%;">
-                                <img class="icon-url-margin" src="@/views/home/managementCenter/crux/img/shezhi.png"/>
-                                设置
-                            </div>
-                        </el-menu-item>
-                        <!-- el-submenu的index绑定是@open事件的参数 -->
-                        <el-sub-menu :index="item.key" v-else :key="item.key">
-                            <template #title>
-                            <img class="icon-url-margin" :src="item.icon"/>
-                            <span>{{item.title}}</span>
+    <section id="management">
+        <div class="example-frame">
+            <img class="big-fish" src="@sky/pcDesign/pages/login/img/fish.png" />
+            <div class="manage--content">
+                <aside class="manage-content-left">
+                    <el-scrollbar style="width:100%;height:100%;">
+                        <el-menu :default-active="menuValue" :unique-opened="true" class="el-menu-vertical-demo"
+                            @select="selectMenu" @open="handleOpen" @close="handleClose" background-color="#513663"
+                            text-color="#d4c3b2" active-text-color="#ffd04b">
+                            <template v-for="(item, index01) in menuList">
+                                <!-- 第一级 -->
+                                <!-- el-menu-item的index绑定是@select事件的参数,也是:default-active的参数 -->
+                                <el-menu-item :index="item.key" v-if="item.children.length == 0" :key="item.key">
+
+                                    <img class="icon-url-margin" src="@/views/home/managementCenter/crux/img/shezhi.png" />
+                                    设置
+                                </el-menu-item>
+                                <!-- el-submenu的index绑定是@open事件的参数 -->
+                                <el-sub-menu :index="item.key" v-else :key="item.key">
+                                    <template #title>
+                                        <img class="icon-url-margin" :src="item.icon" />
+                                        <span>{{ item.title }}</span>
+                                    </template>
+
+                                    <section v-for="(row, index02) in item.children">
+                                        <!-- 第二级 -->
+                                        <el-menu-item :index="row.key" v-if="row.children.length == 0">
+                                            <img class="icon-url-margin" :src="row.icon" />
+                                            {{ row.title }}
+                                        </el-menu-item>
+
+                                        <el-sub-menu :index="row.key" v-else>
+                                            <template #title>
+                                                <img class="icon-url-margin" :src="row.icon" />
+                                                <span>{{ row.title }}</span>
+                                            </template>
+                                            <section v-for="(val, index03) in row.children">
+                                                <!-- 第三级 -->
+                                                <el-menu-item :index="val.key">
+                                                    <img class="icon-url-margin" :src="val.icon" />
+                                                    {{ val.title }}
+                                                </el-menu-item>
+                                            </section>
+                                        </el-sub-menu>
+
+                                    </section>
+
+                                </el-sub-menu>
                             </template>
 
-                            <section v-for="(row, index02) in item.children">
-                                <!-- 第二级 -->
-                                <el-menu-item :index="row.key" v-if="row.children.length == 0">
-                                    <img class="icon-url-margin" :src="row.icon"/>
-                                    {{row.title}}
-                                </el-menu-item>
+                        </el-menu>
 
-                                <el-sub-menu :index="row.key" v-else>
-                                    <template #title>
-                                    <img class="icon-url-margin" :src="row.icon"/>
-                                    <span>{{row.title}}</span>
-                                    </template>
-                                    <section v-for="(val,index03) in row.children">
-                                        <!-- 第三级 -->
-                                        <el-menu-item  :index="val.key">
-                                            <img class="icon-url-margin" :src="val.icon"/>
-                                            {{val.title}}
-                                        </el-menu-item>
-                                    </section>
-                                </el-sub-menu>
+                    </el-scrollbar>
 
-                            </section>
-
-                        </el-sub-menu>
-                    </template>
-
-                    </el-menu>
-
-                </el-scrollbar>
-
-            </aside>
-            <article class="manage-content-right">
+                </aside>
+                <article class="manage-content-right">
 
 
-                <!--
+                    <!--
                     study: keep-alive组件缓存
 
                     keep-alive组件缓存，页面加载快，从而节省性能
@@ -90,32 +81,32 @@
 
                     测试：输入框改变内容，跳转组件，输入框内容不变就缓存ok了
                 -->
-                <router-view v-slot="{ Component }">
-                    <keep-alive :include="['lifeCycle']">
-                        <component :is="Component" />
-                    </keep-alive>
-                </router-view>
+                    <router-view v-slot="{ Component }">
+                        <keep-alive :include="['lifeCycle']">
+                            <component :is="Component" />
+                        </keep-alive>
+                    </router-view>
 
-                <!-- <keep-alive :include="['lifeCycle']">
+                    <!-- <keep-alive :include="['lifeCycle']">
                     <router-view></router-view>
                 </keep-alive> -->
 
-                <!-- <router-view v-if="$route.meta.keepAlive"></router-view> -->
+                    <!-- <router-view v-if="$route.meta.keepAlive"></router-view> -->
 
 
-            </article>
+                </article>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 </template>
 
 <script>
 import lodash from 'lodash'
-import {mapMutations,mapGetters,mapActions} from 'vuex';
-export default{
+import { mapMutations, mapGetters, mapActions } from 'vuex';
+export default {
     name: 'management',
-    data(){
-        return{
+    data() {
+        return {
 
         }
     },
@@ -133,7 +124,7 @@ export default{
     deactivated() {
         console.log('---managementCenter-deactivated---');
     },
-    methods:{
+    methods: {
         // 选中菜单
         selectMenu(key) {
             this.recursion(this.menuList, key);
@@ -150,7 +141,7 @@ export default{
             for (let i = 0; i < arr.length; i++) {
                 let item = arr[i];
 
-                if(item.key == key) {
+                if (item.key == key) {
                     console.log("--小白兔--", item);
                     // 菜单选中值
                     this.$store.commit('menuOfValue', item.key);
@@ -166,24 +157,27 @@ export default{
 </script>
 
 <style lang="less" scoped>
-#management{
+#management {
     width: 100%;
-    .example-frame{
+
+    .example-frame {
         width: 100%;
         height: 1200px;
         .mixin_image(url('~@/views/home/managementCenter/crux/img/bg-guanli.jpg'));
         position: relative;
-        .big-fish{
+
+        .big-fish {
             width: 326px;
             height: 387px;
             position: absolute;
             left: 0px;
             bottom: 0px;
         }
-        .manage--content{
+
+        .manage--content {
             width: 1200px;
             height: 1200px;
-            background: rgba(88,51,82,0.6);
+            background: rgba(88, 51, 82, 0.6);
             border-left: 1px solid #b00cb3;
             border-right: 1px solid #b00cb3;
             position: absolute;
@@ -191,7 +185,8 @@ export default{
             top: 0px;
             margin-left: -600px;
             padding: 45px 43px 0px 43px;
-            .manage-content-left{
+
+            .manage-content-left {
                 width: 230px;
                 height: auto;
                 float: left;
@@ -199,17 +194,20 @@ export default{
                 margin-right: 40px;
                 height: 1130px;
                 text-align: left;
-                .icon-url-margin{
+
+                .icon-url-margin {
                     width: 20px;
                     height: 20px;
                     margin-right: 11px;
                     margin-top: -5px;
                 }
+
                 :deep(.el-scrollbar__wrap) {
                     overflow-x: hidden !important;
                 }
             }
-            .manage-content-right{
+
+            .manage-content-right {
                 width: 840px;
                 height: 1130px;
                 float: right;

@@ -3,7 +3,7 @@
         <!-- Base64加密解密站长工具  http://tool.chinaz.com/Tools/Base64.aspx -->
         <ul>
             <li v-for="item in encryption">
-                ------原来: {{item.title1}}------加密: {{item.title2}}------解密: {{decodeWay(item.title2)}}
+                ------原来: {{ item.title1 }}------加密: {{ item.title2 }}------解密: {{ decodeWay(item.title2) }}
             </li>
         </ul>
     </section>
@@ -12,9 +12,9 @@
 <script>
 const Base64 = require("js-base64").Base64
 export default {
-    data(){
-        return{
-            encryption: [{title1: '彤彤'},{title1: '小彬'},{title1: '里克'},{title1: '123456'}],
+    data() {
+        return {
+            encryption: [{ title1: '彤彤' }, { title1: '小彬' }, { title1: '里克' }, { title1: '123456' }],
         }
     },
     created() {
@@ -32,10 +32,14 @@ export default {
 </script>
 
 <style lang="less" scoped>
-#base64{
-    ul{
-        li{
-            .mixin_li(100%,50px);
+#base64 {
+    ul {
+        li {
+            width: 100%;
+            height: 50px;
+            float: left;
+            text-align: center;
+            line-height: 50px;
             color: #b00cb3;
         }
     }

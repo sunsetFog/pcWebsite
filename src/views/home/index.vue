@@ -417,7 +417,11 @@ export default {
 
         ul {
             li {
-                .mixin_li(135px, 53px);
+                width: 135px;
+                height: 53px;
+                float: left;
+                text-align: center;
+                line-height: 53px;
                 cursor: pointer;
                 padding: 15px 33px;
             }
@@ -482,7 +486,11 @@ export default {
                     height: 15px;
 
                     li {
-                        .mixin_li(auto, 15px);
+                        width: auto;
+                        height: 15px;
+                        float: left;
+                        text-align: center;
+                        line-height: 15px;
                         padding: 0px 12px;
                         cursor: pointer;
                     }
@@ -507,7 +515,11 @@ export default {
                 .password {
                     position: absolute;
                     top: 8px;
-                    .mixin_input(180px, 32px);
+                    width: 180px;
+                    height: 32px;
+                    text-align: left;
+                    line-height: 32px;
+                    text-indent: 10px;
                     float: left;
                     background: #3d1351;
                     color: #ac24df;
@@ -575,18 +587,32 @@ export default {
                         }
 
                         span {
-                            .mixin_span(auto, 50px, none, #f5d276, left);
+                            width: auto;
+                            height: 50px;
+                            display: inline-block;
+                            text-align: left;
+                            line-height: 50px;
+                            color: #f5d276;
                             float: right;
                         }
                     }
 
                     .balance {
-                        .mixin_div(auto, 50px, none, #732c94, left);
+                        width: auto;
+                        height: 50px;
+                        text-align: left;
+                        line-height: 50px;
+                        color: #732c94;
                         float: right;
                     }
 
                     .exit-login {
-                        .mixin_span(auto, 50px, none, #eb2020, left);
+                        width: auto;
+                        height: 50px;
+                        display: inline-block;
+                        text-align: left;
+                        line-height: 50px;
+                        color: #eb2020;
                         text-decoration: underline;
                         float: right;
                         margin-left: 15px;
@@ -657,7 +683,11 @@ export default {
                     color: #ffffff;
 
                     li {
-                        .mixin_li(14.28%, 95px);
+                        width: 14.28%;
+                        height: 95px;
+                        float: left;
+                        text-align: center;
+                        line-height: 95px;
                         cursor: pointer;
                         font-size: 16px;
                         overflow: hidden;
@@ -671,4 +701,5 @@ export default {
             }
         }
     }
-}</style>
+}
+</style>
