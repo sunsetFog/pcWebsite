@@ -187,6 +187,7 @@ export default {
                 }
 
                 console.log(`${JSON.stringify(item)}     判断 ${flag}    || ${item || '默认值'}     ?? ${item ?? '默认值'}     && ${item && '默认值'}     ! ${!item}     !! ${!!item}`);
+                console.log("--转数字--", Number(item))
             }
 
             let obj1={a:{b:()=>{return 666}}}
