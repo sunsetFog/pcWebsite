@@ -16,6 +16,15 @@ export default {
         this.demo6();
     },
     methods: {
+        // 兼容处理
+        demo0(arr) {
+            // 是否为数组，返回true或false     比这个好用 arr || []
+            if(Array.isArray(arr)) {
+                return arr;
+            } else {
+                return [];
+            }
+        },
         demo1() {
             //数组概念：用来存储一系列数据的集合,下标从0开始，下标最大值为length-1
             // 定义数组   一维数组
@@ -23,6 +32,14 @@ export default {
             var arr2 = new Array(1, '哈哈', 3);
             var arr3 = [1, 2, 3];
             console.log('数组的长度', arr3.length);
+            // 空数组判断
+            if(arr3.length) {
+                return
+            }
+            // 不是空数组判断
+            if(!arr3.length) {
+
+            }
             // 二维数组
             var arr4 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]];
 
@@ -52,7 +69,6 @@ export default {
                 11  数组.slice(开始下标,结束下标) 留头不留尾
 
                 12 数组.includes('数组项，对象数组项也行')   元素是否存在，返回true或false
-                13 Array.isArray(数组)  是否为数组，返回true或false
             */
 
             var arr = [10, 6, -2, 1];

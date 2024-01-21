@@ -138,6 +138,7 @@ export default {
         // overflow-x: scroll;//x轴出现滚动条
 
         // box-shadow: 1px 1px 10px 0 #C9CACB; // 阴影
+        // text-shadow: 5px 5px 10px aqua;	//文本阴影   右、下、模糊度、颜色
 
 		// text-indent: 30px;//首行缩进
         // white-space: nowrap;//文本强制不换行
@@ -154,7 +155,6 @@ export default {
         // border-radius: 10px;//圆角
         // cursor: pointer;//鼠标小手
         // cursor: not-allowed;// 鼠标禁用图标
-        // text-shadow: 5px 5px 10px aqua;	//文本阴影   右、下、模糊度、颜色
 
         // zoom: 100%;  等于100%是原图、大于100%是放大、小于100%是缩小
 
