@@ -26,6 +26,11 @@
         <LineTextLine>三秒后消失</LineTextLine>
         <el-button @click="play = !play">开始动画{{play}}</el-button>
         <span class="cartoon" v-if="play">+1</span>
+        <LineTextLine>水波纹</LineTextLine>
+        <button class="cabbage" @click="drawWay">
+            水波纹
+            <div id="birdApt" class=""></div>
+        </button>
     </section>
 </template>
 
@@ -35,6 +40,15 @@ export default {
         return {
             isActive: 0,
             play: false
+        }
+    },
+    methods: {
+        drawWay() {
+            let birdApt = document.getElementById('birdApt');
+            birdApt.className = 'activeWater'
+            setTimeout(()=>{
+                birdApt.className = ''
+            }, 450)
         }
     }
 }
@@ -143,5 +157,57 @@ export default {
     .cartoon {
         opacity: 0;
         animation: overturn 3s linear;
+    }
+    .cabbage {
+        width: fit-content;
+        height: 30px;
+        padding: 0px 16px;
+        border-radius: 4px;
+        background: var(--Text-primary-500, #179CFF);
+        color: var(--text-white-100, #FFF);
+        box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+        font-family: "PingFang SC";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        position: relative;
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #179CFF;
+            border-radius: 4px;
+            opacity: 0.5;
+            visibility: hidden;
+            // transform: scale(1.2);
+
+            // width: calc(100% + 20px);
+            // height: calc(100% + 20px);
+            // transform: translate(-10px, -10px);
+        }
+        .activeWater {
+            animation: pumpkin 0.45s ease-in-out;
+            animation-fill-mode: both;
+            visibility: visible;
+            // opacity: 0.5;
+        }
+    }
+    @keyframes pumpkin {
+        0% {
+            width: 100%;
+            height: 100%;
+            // transform: scale(1);
+            opacity: 0.5;
+        }
+        100% {
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            transform: translate(-10px, -10px);
+            // transform: scale(1.2);
+            opacity: 0;
+        }
     }
 }</style>
