@@ -1,7 +1,7 @@
 <template>
     <section id="management">
         <div class="example-frame">
-            <img class="big-fish" src="@sky/pcDesign/pages/login/img/fish.png" />
+            <img class="big-fish" src="@sky/rafaelDesign/web/pages/login/img/fish.png" />
             <div class="manage--content">
                 <aside class="manage-content-left">
                     <el-scrollbar style="width:100%;height:100%;">

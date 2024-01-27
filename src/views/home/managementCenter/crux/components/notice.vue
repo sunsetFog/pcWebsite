@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import pagination from '@sky/pcDesign/components/pagination.vue';
+import pagination from '@sky/rafaelDesign/web/components/pagination.vue';
 export default {
     name: 'notice',
     components: { pagination },

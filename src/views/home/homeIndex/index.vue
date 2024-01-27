@@ -10,7 +10,7 @@
             </el-carousel>
         </div>
         <div class="enter-game">
-            <img class="big-fish" src="@sky/pcDesign/pages/login/img/fish.png" @click="fishMeans()" />
+            <img class="big-fish" src="@sky/rafaelDesign/web/pages/login/img/fish.png" @click="fishMeans()" />
             <div class="advertisement">
 
             </div>

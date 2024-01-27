@@ -1,7 +1,7 @@
 <template>
 <section id="agent-system">
     <div class="system-example">
-        <img class="big-fish" src="@sky/pcDesign/pages/login/img/fish.png" @click="fishMeans()"/>
+        <img class="big-fish" src="@sky/rafaelDesign/web/pages/login/img/fish.png" @click="fishMeans()"/>
         <div class="manage-content">
             <iframe :src="agentSrc" id="map-frame" class="map-frame" ref="map-frame" @load="systemMeans()"></iframe>
         </div>
@@ -19,7 +19,7 @@
         align="bottom" 垂直对齐   和img的align相同，也表示float
  -->
 <script>
-import footers from '@sky/pcDesign/components/footer/index.vue';
+import footers from '@sky/rafaelDesign/web/components/footer/index.vue';
 export default{
     name: 'agent-system',
     components: {footers},

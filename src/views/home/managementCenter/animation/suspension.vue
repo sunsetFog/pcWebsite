@@ -131,7 +131,7 @@
          <LineTextLine>悬浮出现</LineTextLine>
         <div class="portrait-center">
             <div class="tangerine1">
-                <img src="@sky/static/image1/invoice.png"/>
+                <img src="@sky/rafaelDesign/static/image1/invoice.png"/>
             </div>
             <div class="tangerine2">
                 <el-icon><Plus/></el-icon>
@@ -141,10 +141,10 @@
         <LineTextLine>悬浮出现&中心放大</LineTextLine>
         <div class="domineering">
             <div class="rabbit1">
-                <img class="yujie" src="@sky/static/video/yujie.jpg"/>
+                <img class="yujie" src="@sky/rafaelDesign/static/video/yujie.jpg"/>
             </div>
             <div class="rabbit2">
-                <img class="play-open" src="@sky/static/video/play-open.png"/>
+                <img class="play-open" src="@sky/rafaelDesign/static/video/play-open.png"/>
             </div>
         </div>
         <LineTextLine>悬浮中心放大</LineTextLine>
@@ -164,7 +164,7 @@
         </div>
 
         <LineTextLine>悬浮上移</LineTextLine>
-        <img class="imperial-sister" src="@sky/static/video/yujie.jpg"/>
+        <img class="imperial-sister" src="@sky/rafaelDesign/static/video/yujie.jpg"/>
         <LineTextLine>悬浮宽高过渡</LineTextLine>
         <div class="pumpkin">
             <div class="gourd">
@@ -177,16 +177,16 @@
             </div>
         </div>
         <LineTextLine>悬浮旋转180度</LineTextLine>
-        <img class="spinning" src="@sky/static/picture/breezy/180.png"/>
+        <img class="spinning" src="@sky/rafaelDesign/static/picture/breezy/180.png"/>
         <LineTextLine>悬浮翻转180度就隐藏</LineTextLine>
         <div class="papaya">
-            <img class="img01" src="@sky/static/picture/breezy/starstruck-default.png"/>
-            <img class="img02" src="@sky/static/picture/breezy/starstruck-bronze.png"/>
+            <img class="img01" src="@sky/rafaelDesign/static/picture/breezy/starstruck-default.png"/>
+            <img class="img02" src="@sky/rafaelDesign/static/picture/breezy/starstruck-bronze.png"/>
         </div>
         <LineTextLine>悬浮用animation，失去焦点就不会动画</LineTextLine>
         <div class="peach">
-            <img class="img01" src="@sky/static/picture/breezy/starstruck-default.png"/>
-            <img class="img02" src="@sky/static/picture/breezy/starstruck-bronze.png"/>
+            <img class="img01" src="@sky/rafaelDesign/static/picture/breezy/starstruck-default.png"/>
+            <img class="img02" src="@sky/rafaelDesign/static/picture/breezy/starstruck-bronze.png"/>
         </div>
 
     </section>

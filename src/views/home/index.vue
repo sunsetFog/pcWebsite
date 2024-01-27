@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import footers from '@sky/pcDesign/components/footer/index.vue';
+import footers from '@sky/rafaelDesign/web/components/footer/index.vue';
 import recharge from '@/views/home/managementCenter/crux/components/recharge/index.vue';
 import withdrawal from '@/views/home/managementCenter/crux/components/withdrawal.vue';
 import manageBank from '@/views/home/managementCenter/crux/components/manageBank.vue';

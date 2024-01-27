@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import upload1 from '@sky/pcDesign/components/upload1.vue';
+import upload1 from '@sky/rafaelDesign/web/components/upload1.vue';
 export default {
     name: "upload00",
     components: { upload1 }

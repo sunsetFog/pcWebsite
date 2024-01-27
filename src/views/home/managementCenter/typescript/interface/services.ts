@@ -1,4 +1,4 @@
-import InRequest from '@sky/axios/request1/index';
+import InRequest from '@sky/rafaelDesign/axios/request1/index';
 // 枚举-接口api
 enum Api {
     list = 'http://geek.itheima.net/v1_0/channels',

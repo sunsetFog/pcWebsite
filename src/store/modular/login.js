@@ -1,6 +1,6 @@
 // @ts-nocheck
 'use sloppy'
-import apiHttp from '@sky/axios/request2/http.js';
+import apiHttp from '@sky/rafaelDesign/axios/request2/http.js';
 import lodash from 'lodash'
 import finalRouter from '@/router/modules/finalRouter.ts'
 

@@ -2,7 +2,7 @@
     <section id="download">
         <LineTextLine>文件下载--本地文件</LineTextLine>
         <el-button @click="downloadTxt()">下载添加内容的文本</el-button>
-        <el-button @click="downloadFile('@sky/static/capital/rem.js')">下载静态资源</el-button>
+        <el-button @click="downloadFile('@sky/rafaelDesign/static/capital/rem.js')">下载静态资源</el-button>
         <LineTextLine>下载图片</LineTextLine>
         <el-button @click="previewToDownload">图片预览转图片下载</el-button>
         <LineTextLine>文件预览</LineTextLine>

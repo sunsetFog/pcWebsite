@@ -7,7 +7,7 @@
     vue3改版：图片预览是vue2插件，不支持vue3
  -->
 <script>
-import previewPictures from '@sky/pcDesign/components/previewPictures.vue';
+import previewPictures from '@sky/rafaelDesign/web/components/previewPictures.vue';
 export default {
     name: "previewPictures00",
     components: { previewPictures }

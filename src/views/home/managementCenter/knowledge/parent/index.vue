@@ -32,8 +32,8 @@
 
 <script>
 import myChildren from './children';
-import cTitle from "@sky/pcDesign/components/footer/index.vue";
-import sMain from "@sky/pcDesign/components/footer/index.vue";
+import cTitle from "@sky/rafaelDesign/web/components/footer/index.vue";
+import sMain from "@sky/rafaelDesign/web/components/footer/index.vue";
 export default {
     components: { myChildren, cTitle, sMain },
     data() {

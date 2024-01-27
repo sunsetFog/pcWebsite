@@ -9,7 +9,7 @@
 //配置main.js
 // import apiHttp from './api/http.js';
 // Vue.prototype.$apihttp = apiHttp;
-import { login } from "@sky/axios/request2/user";
+import { login } from "@sky/rafaelDesign/axios/request2/user";
 import axios from 'axios';
 export default {
     data(){

@@ -5,7 +5,7 @@
                 <el-icon><Close  @click="closeWay()"/></el-icon>
             </div>
             <div class="video-body" @mouseenter="enterWay" @mouseleave="leaveWay">
-                <video :poster="require('./img/center02.png')" :src="require('@sky/static/video/58244a10da66c5401.mp4')"
+                <video :poster="require('./img/center02.png')" :src="require('@sky/rafaelDesign/static/video/58244a10da66c5401.mp4')"
                  :controls="true" width="100%" :autoplay="false" ref="videoRef"
                  :onPlay="playActive" :onPause="pauseActive" @playing="playingWay" @ended="endedWay">
                 </video>

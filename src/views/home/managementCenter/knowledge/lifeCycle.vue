@@ -14,7 +14,7 @@ main.js
 
 
     5.加载js或css
-    import '@sky/static/capital/flexible.js';
+    import '@sky/rafaelDesign/static/capital/flexible.js';
 
     7.pc端适配(不好用)  https://blog.csdn.net/weixin_41257563/article/details/97266234
     utils.js
@@ -27,7 +27,7 @@ main.js
         const loaders = options.usePostCSS ? [cssLoader, postcssLoader, px2remLoader] : [cssLoader, px2remLoader]
     npm install lib-flexible --save
     npm install px2rem-loader --save-dev
-    import '@sky/static/capital/flexible.js';//加载js，并540改document.body.clientWidth
+    import '@sky/rafaelDesign/static/capital/flexible.js';//加载js，并540改document.body.clientWidth
     配置build/utils.js，加入px2rem-loader
 
 router/index.js

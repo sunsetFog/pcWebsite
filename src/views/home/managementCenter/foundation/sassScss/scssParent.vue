@@ -67,7 +67,7 @@ $text-color: red;
 
 
 
-$path: '~@sky/static/image1/';
+$path: '~@sky/rafaelDesign/static/image1/';
 $bean: 'invoice';
 // 模板字符串语法(反引号``)在 scss 中是无效的
 .cartoon {

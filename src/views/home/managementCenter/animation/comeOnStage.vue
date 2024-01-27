@@ -11,7 +11,7 @@
                 <p>盘内提供英雄时时乐独特玩法，激情不间断，比赛之余小憩更精彩</p>
             </div>
             <div class="box-right">
-                <img src="@sky/static/picture/breezy/electronic01.png" />
+                <img src="@sky/rafaelDesign/static/picture/breezy/electronic01.png" />
             </div>
         </main>
         <main v-if="isActive == 1">
@@ -20,7 +20,7 @@
                 <p>盘内提供英雄时时乐独特玩法，激情不间断，比赛之余小憩更精彩</p>
             </div>
             <div class="box-right">
-                <img src="@sky/static/picture/breezy/electronic02.png" />
+                <img src="@sky/rafaelDesign/static/picture/breezy/electronic02.png" />
             </div>
         </main>
         <LineTextLine>三秒后消失</LineTextLine>
@@ -63,7 +63,7 @@ export default {
             padding: 0 0 7px 0;
             background: none;
             box-sizing: border-box;
-            background-image: url('~@sky/static/picture/breezy/btn01.png');
+            background-image: url('~@sky/rafaelDesign/static/picture/breezy/btn01.png');
             background-size: 100% 100%;
             background-repeat: no-repeat;
             color: #3f5075;
@@ -75,7 +75,7 @@ export default {
 
         .is-active {
             color: #fff !important;
-            background-image: url('~@sky/static/picture/breezy/btn02.png') !important;
+            background-image: url('~@sky/rafaelDesign/static/picture/breezy/btn02.png') !important;
             background-size: 100% 100%;
             background-repeat: no-repeat;
         }

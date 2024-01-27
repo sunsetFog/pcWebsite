@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import footers from '@sky/pcDesign/components/footer/index.vue';
+import footers from '@sky/rafaelDesign/web/components/footer/index.vue';
 export default {
     name: "modifier",
     components: { footers },

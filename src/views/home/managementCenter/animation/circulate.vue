@@ -5,15 +5,15 @@
         <br />
         位置：news\src\reportForms\pages\luckDraw\upAndDown.vue
         <LineTextLine>上下移动</LineTextLine>
-        <img class="sendOut" src="@sky/static/picture/breezy/sendOut.png" />
+        <img class="sendOut" src="@sky/rafaelDesign/static/picture/breezy/sendOut.png" />
         <LineTextLine>水波</LineTextLine>
         <div class="ripple">
-            <img src="@sky/static/picture/breezy/1.png" />
-            <img src="@sky/static/picture/breezy/2.png" />
+            <img src="@sky/rafaelDesign/static/picture/breezy/1.png" />
+            <img src="@sky/rafaelDesign/static/picture/breezy/2.png" />
         </div>
         <LineTextLine>旋转</LineTextLine>
         <div class="runaround">
-            <img src="@sky/static/picture/breezy/logo192.png" />
+            <img src="@sky/rafaelDesign/static/picture/breezy/logo192.png" />
         </div>
         <LineTextLine>一闪一闪亮晶晶</LineTextLine>
         <div class="honey">

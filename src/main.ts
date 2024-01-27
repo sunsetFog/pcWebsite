@@ -13,13 +13,13 @@ import '@root/global.scss';
 import 'font-awesome/css/font-awesome.min.css';
 
 // mock
-import '@sky/database/index';
+import '@sky/rafaelDesign/database/index';
 
 const rainbow = createApp(App);
 // 全局注册组件
-import LineTextLine from '@sky/pcDesign/components/lineTextLine/index.vue';
-import CloudEchart from '@sky/pcDesign/components/echarts/cloudEchart.vue';
-import Layout1 from '@sky/pcDesign/components/layout1/index.vue';
+import LineTextLine from '@sky/rafaelDesign/web/components/lineTextLine/index.vue';
+import CloudEchart from '@sky/rafaelDesign/web/components/echarts/cloudEchart.vue';
+import Layout1 from '@sky/rafaelDesign/web/components/layout1/index.vue';
 rainbow.component('LineTextLine', LineTextLine);
 rainbow.component('CloudEchart', CloudEchart);
 rainbow.component('Layout1', Layout1);
@@ -32,14 +32,14 @@ Object.keys(Icons).forEach((key) => {
 
 // --- 原型 ---
 
-import means from '@sky/means/index.js';
+import means from '@sky/rafaelDesign/means/index.js';
 rainbow.config.globalProperties.$means = means;
 
 // study: 全局注册过滤器
-import filters from '@sky/filters';
+import filters from '@sky/rafaelDesign/filters';
 rainbow.config.globalProperties.$filters = filters;
 // axios
-import apiHttp from '@sky/axios/request2/http.js';
+import apiHttp from '@sky/rafaelDesign/axios/request2/http.js';
 rainbow.config.globalProperties.$apihttp = apiHttp;
 
 // study: indexDb缓存(本地数据库)

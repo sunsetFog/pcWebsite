@@ -1,14 +1,14 @@
 <template>
     <section id="relativePath">
         <LineTextLine>直接用</LineTextLine>
-        <img src="@sky/static/image1/lizhi.jpg"/>
-        <img src="@sky/static/picture/breezy/mangguo.jpg"/>
+        <img src="@sky/rafaelDesign/static/image1/lizhi.jpg"/>
+        <img src="@sky/rafaelDesign/static/picture/breezy/mangguo.jpg"/>
 
         <LineTextLine>import图片路径</LineTextLine>
         <img :src="import_ai"/>
 
         <LineTextLine>require图片路径</LineTextLine>
-        <img :src="require('@sky/static/image1/lizhi.jpg')"/>
+        <img :src="require('@sky/rafaelDesign/static/image1/lizhi.jpg')"/>
     </section>
 </template>
 
@@ -30,14 +30,14 @@ Module not found: Error: Can't resolve 'style-loader' in
 assets/logo_blue.png
 
 绝对路径，带~  被webpack解析为 require() 动态引入
-~@sky/static/image1/theme/logo_blue.png
-background: url('~@sky/static/image1/theme/logo_blue.png') no-repeat center center;
+~@sky/rafaelDesign/static/image1/theme/logo_blue.png
+background: url('~@sky/rafaelDesign/static/image1/theme/logo_blue.png') no-repeat center center;
 
 绝对路径，相对根目录的路径 webpack不解析
 /src/assets/logo_blue.png
 
 */
-import lizhi from '@sky/static/image1/lizhi.jpg'
+import lizhi from '@sky/rafaelDesign/static/image1/lizhi.jpg'
 export default {
     name: 'relativePath',
     data () {

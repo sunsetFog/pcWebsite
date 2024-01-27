@@ -28,7 +28,7 @@ export default {
     methods: {
         fileDownLoad(path) {
             console.log('bingo+++66', axios);
-            // return;@click="fileDownLoad('@sky/static/manifest.json')"
+            // return;@click="fileDownLoad('@sky/rafaelDesign/static/manifest.json')"
             let urls = path.split('/');
             axios.create().get(path, {
                 responseType: 'blob'
