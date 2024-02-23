@@ -24,8 +24,18 @@
                 <div class="nextPage"></div>
             </div>
         </div>
-        <br/>
+        <br />
         <img src="./img/bd_living.png" class="living" />正在直播
+        <LineTextLine>边框</LineTextLine>
+        <button class="autumn">
+            <div class="ice"></div>
+            <span>专业</span>
+            <div class="draw"></div>
+        </button>
+        <LineTextLine>摇晃</LineTextLine>
+        <div class="cabbage">
+            <img src="./img/gift.png" />
+        </div>
     </section>
 </template>
 
@@ -188,7 +198,130 @@ section {
             }
         }
     }
+
     .living {
         animation: flash 1s linear infinite;
+    }
+
+    .autumn {
+        margin-left: 200px;
+        padding: 2px 11px;
+        border-radius: 12px;
+        background: #fff;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+            color: #179CFF;
+            font-size: 12px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .ice {
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            right: 1px;
+            bottom: 1px;
+            background-color: #fff;
+            z-index: 2;
+            border-radius: 12px;
+        }
+
+        .draw {
+            position: absolute;
+            z-index: 1;
+            width: 200%;
+            padding-bottom: 200%;
+            background: conic-gradient(at center, transparent, #45b0ff 30%, transparent 30%);
+            animation: dragonfly 1s linear infinite;
+        }
+
+        @keyframes dragonfly {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+
+    .cabbage {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        img {
+            width: 44px;
+            position: absolute;
+            animation-name: upAnimation;
+            transform-origin: center bottom;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes upAnimation {
+            0% {
+                transform: rotate(0deg);
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            10% {
+                transform: rotate(-10deg);
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            20% {
+                transform: rotate(10deg);
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            28% {
+                transform: rotate(-8deg);
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+
+            36% {
+                transform: rotate(8deg);
+                transition-timing-function: cubic-bezier(0.755, 0.5, 0.855, 0.06);
+            }
+
+            42% {
+                transform: rotate(-6deg);
+                transition-timing-function: cubic-bezier(0.755, 0.5, 0.855, 0.06);
+            }
+
+            48% {
+                transform: rotate(6deg);
+                transition-timing-function: cubic-bezier(0.755, 0.5, 0.855, 0.06);
+            }
+
+            52% {
+                transform: rotate(-4deg);
+                transition-timing-function: cubic-bezier(0.755, 0.5, 0.855, 0.06);
+            }
+
+            56% {
+                transform: rotate(4deg);
+                transition-timing-function: cubic-bezier(0.755, 0.5, 0.855, 0.06);
+            }
+
+            60% {
+                transform: rotate(0deg);
+                transition-timing-function: cubic-bezier(0.755, 0.5, 0.855, 0.06);
+            }
+
+            100% {
+                transform: rotate(0deg);
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+        }
     }
 }</style>

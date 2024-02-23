@@ -16,7 +16,7 @@ export default {
         }
     },
     mounted(){
-        this.demo12();
+        this.demo10();
     },
     methods: {
         demo1(){
@@ -158,8 +158,15 @@ export default {
             let listArr = [ 5, 6 ]
             const [ aaa, bbb, ccc = '噢' ] = listArr
             console.log("--数组的解构赋值--", aaa, "---", bbb, "---", ccc)
-
-
+            // 具有初始化/配置功能的函数链
+            function name6(params = {}) {
+                console.log("name7", name6.Setup(params));
+            }
+            // 其实name6.Setup就是个新方法。。。
+            name6.Setup = (params) => {
+                console.log("Setup", params)
+            }
+            console.log("name6", name6({id: 666}))
         },
         demo11 () {
             let ly = 867;
